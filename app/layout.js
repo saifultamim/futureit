@@ -25,9 +25,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
       suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <div className='fixed w-full'>
+      <div  className="z-40 w-full sticky top-0">
           <Header />
         <Navbar />
       </div>

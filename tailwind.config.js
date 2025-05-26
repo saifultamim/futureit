@@ -31,6 +31,15 @@ module.exports = {
         ivory:"ivory"
         // 50: "rgb(216 254 197 / 40%)",
       },
+      backgroundImage : {
+        services:
+          "linear-gradient(74.86deg, #FEF6DF -2.19%, #FEFEFC 46.31%, #FFF5DC 94.8%)",
+          testimonial:
+          "linear-gradient(74.86deg, #FEF6DF -2.19%, #FEFEFC 46.31%,#FFF5DC 94.8%)",
+          callToUs:
+          "linear-gradient(90deg, #EE3373 0%, #EE3373 34.38%, #EE3373 94.79%)",
+          contactNumber: "linear-gradient(97.64deg, #00BCCF 1.51%, #00BCCF 108.53%)",
+      },
     },
   },
   plugins: [],

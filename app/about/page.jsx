@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CourseCart = () => {
+const page = () => {
     return (
         <div>
-            
+            <p>this is about page</p>
         </div>
     );
 };
 
-export default CourseCart;
+export default page;

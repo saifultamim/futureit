@@ -1,33 +1,37 @@
-"use client";
-import Button from "@/components/ui/Butotn";
-import Image from "next/image";
-import React from "react";
-import heroImage from "@/public/images/hero.png";
+import { React, Image, heroImage } from "../home";
 
 const Hero = () => {
   return (
-    <div className="flex items-end h-screen w-11/12 mx-auto border-2 border-blue-600">
-      {/* left side */}
-      <div className="w-full">
-        <h1 className="text-6xl font-siliguri">
-          পূরণ করতে লক্ষ্য
-          <br />
-          <span className="text-secondary text-8xl font-semibold">
-            হতে হবে দক্ষ
-          </span>
-        </h1>
-        <p className="font-siliguri">
-          স্কিল ডেভেলপমেন্ট করবো - দক্ষতার মাধ্যমে সমৃদ্ধ হবো
-        </p>
-        <Button className="bg-secondary font-siliguri text-xl">
-          আরো দেখুন
-        </Button>
+    <>
+      <div className="">
+        <div className="grid grid-cols-1 lg:grid-cols-2 relative py-5 lg:py-0 w-11/12 mx-auto  h-fit">
+          <div className="space-y-3 lg:space-y-4 my-auto ">
+            <h1 className="text-[28px] lg:text-[65px] font-siliguri font-medium leading-[140%]">
+              পূরণ করতে লক্ষ্য
+              <br />
+              <span className="text-secondary text-[39px] lg:text-[90px]">
+                হতে হবে দক্ষ
+              </span>
+            </h1>
+            <div className="font-siliguri text-sm lg:text-base text-black lg:leading-[28px] whitespace-pre-line">
+              স্কিল ডেভেলপমেন্ট করবো - দক্ষতার মাধ্যমে সমৃদ্ধ হবো
+            </div>
+            <button className="font-siliguri text-white w-40 pt-3 pb-2 bg-secondary rounded-lg font-medium text-xl flex items-center justify-center">
+              আরো দেখুন
+            </button>
+          </div>
+
+          <div className="hidden md:block h-fit -mt-5">
+            <Image
+              src={heroImage}
+              alt="imageAlt"
+              placeholder="blur"
+              className="object-cover "
+            />
+          </div>
+        </div>
       </div>
-      <div className="border border-green-600 w-full">
-        <Image src={heroImage} alt="hero image" className="" />
-      </div>
-      <div></div>
-    </div>
+    </>
   );
 };
 
