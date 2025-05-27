@@ -1,11 +1,11 @@
-import React from 'react';
+import MainAboutUs from "@/features/web/about/MainAboutUs";
 
-const page = () => {
-    return (
-        <div>
-            <p>this is about page</p>
-        </div>
-    );
+const About = () => {
+  return (
+    <div className="w-11/12 mx-auto lg:px-6">
+      <MainAboutUs />
+    </div>
+  );
 };
 
-export default page;
+export default About;

@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
         <div>
    <div className="shadow-lg bg-white py-4 md:py-3 z-40 w-full">
-        <div className="container w-11/12 mx-auto">
+        <div className="container w-11/12 lg:px-6 mx-auto">
           <nav className="flex items-center justify-start md:justify-between h-full lg:space-x-5">
             <Link
               href="/"
@@ -124,7 +124,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/success-story"
                   className="font-siliguri text-lg text-[#1F1E1E]"
                 >
                   সাফল্যের গল্প
@@ -132,7 +132,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="font-siliguri text-lg text-[#1F1E1E]"
                 >
                   যোগাযোগ

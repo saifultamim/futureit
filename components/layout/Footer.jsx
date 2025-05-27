@@ -5,12 +5,12 @@ import SocialIcons from "../ui/SocialIcons";
 const Footer = () => {
   return (
     <footer className="bg-[#050506]">
-      <div className="top-footer py-10 w-11/12 mx-auto">
+      <div className="top-footer py-10 w-11/12 lg:px-6 mx-auto">
         <div className="container">
           <div className="flex flex-wrap lg:flex-row lg:space-x-12 sm:gap-x-10 gap-y-10">
             <div className="text-white lg:flex-1">
               <img src={FOOTER_DATA.logoSrc} alt="Logo" />
-              <p className="text-sm font-normal text-justify text-[#BDBCBC] py-6">
+              <p className="text-sm font-normal text-justify text-[#BDBCBC] py-6 font-siliguri">
                 {FOOTER_DATA.description}
               </p>
 
@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
 
             <div className="text-white">
-              <div className="font-hindSliguri text-[21px] mb-6">
+              <div className="font-siliguri text-[21px] mb-6">
                 {FOOTER_DATA.contact.title}
               </div>
               <ul className="text-sm text-[#FFFFFF] flex flex-col space-y-3 sm:space-y-4 font-noto">
@@ -26,7 +26,7 @@ const Footer = () => {
                   return (
                     <li key={index} className="flex items-start space-x-4">
                       <div>
-                        <p className="font-bold mb-1">{item.lines[0]}</p>
+                        <p className="font-bold  mb-1">{item.lines[0]}</p>
                         {item.lines.slice(1).map((line, idx) => (
                           <p
                             key={idx}
@@ -43,10 +43,10 @@ const Footer = () => {
             </div>
 
             <div className="text-white sm:flex-1">
-              <div className="font-hindSliguri text-[21px] mb-6">
+              <div className="font-siliguri text-[21px] mb-6">
                 {FOOTER_DATA.popularCourses.title}
               </div>
-              <ul className="text-sm text-[#FFFFFF] flex flex-col space-y-3 sm:space-y-4">
+              <ul className="text-sm text-[#FFFFFF] flex flex-col space-y-3 sm:space-y-4 font-siliguri">
                 {FOOTER_DATA.popularCourses.courses.map((course, index) => (
                   <li key={index}>
                     <Link href={course.url}>{course.name}</Link>
@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
 
             <div className="text-white sm:flex-1">
-              <div className="font-hindSliguri text-[21px] mb-6">
+              <div className="font-siliguri text-[21px] mb-6">
                 {FOOTER_DATA.others.title}
               </div>
               <ul className="text-sm text-[#FFFFFF] flex flex-col space-y-3 sm:space-y-4">

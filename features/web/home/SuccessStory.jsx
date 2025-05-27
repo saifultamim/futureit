@@ -7,7 +7,7 @@ const SuccessStory = () => {
   return (
     <>
       <section className="bg-[#FDFCF6] py-10">
-        <div className="container w-11/12 mx-auto">
+        <div className="container w-11/12 lg:px-6 mx-auto">
           <div className="text-center leading-tight mb-8">
             <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">সাফল্যের গল্প</h2>
             <p className="text-[#605F62] font-inter text-base">

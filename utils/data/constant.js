@@ -1,39 +1,39 @@
-export const TIMEZONE = "America/New_York";
+// export const TIMEZONE = "America/New_York";
 
-export const ModalTypes = {
-  QUESTION_MODAL: "questionmodal",
-  HOME_WORK_SUBMIT_MODAL: "hwsubmitmodal",
-};
+// export const ModalTypes = {
+//   QUESTION_MODAL: "questionmodal",
+//   HOME_WORK_SUBMIT_MODAL: "hwsubmitmodal",
+// };
 
-export const BLOG_CATEGORY_OPTIONS = [
-  { value: "", label: "--select--" },
-  { value: "Admissions", label: "Admissions" },
-  { value: "News", label: "News" },
-  { value: "Event", label: "Event" },
-  { value: "Discussion", label: "Discussion" },
-  { value: "Tips", label: "Tips" },
-  { value: "Digital Marketing", label: "Digital Marketing" },
-  { value: "Spoken English", label: "Spoken English" },
-  { value: "Skill Development", label: "Skill Development" },
-];
+// export const BLOG_CATEGORY_OPTIONS = [
+//   { value: "", label: "--select--" },
+//   { value: "Admissions", label: "Admissions" },
+//   { value: "News", label: "News" },
+//   { value: "Event", label: "Event" },
+//   { value: "Discussion", label: "Discussion" },
+//   { value: "Tips", label: "Tips" },
+//   { value: "Digital Marketing", label: "Digital Marketing" },
+//   { value: "Spoken English", label: "Spoken English" },
+//   { value: "Skill Development", label: "Skill Development" },
+// ];
 
-export const BIZID = 2;
-export const COURSE_SHOW_LENGTH = 6;
-export const STORY_SHOW_LENGTH = 4;
-export const SHORT_TEXT_LENGTH = 4;
-export const PASSWORD_SALTROUNDS = 10;
-export const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB in bytes
-export const NOTICE_FETCH_LIMIT = 10; // 2MB in bytes
+// export const BIZID = 2;
+// export const COURSE_SHOW_LENGTH = 6;
+// export const STORY_SHOW_LENGTH = 4;
+// export const SHORT_TEXT_LENGTH = 4;
+// export const PASSWORD_SALTROUNDS = 10;
+// export const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB in bytes
+// export const NOTICE_FETCH_LIMIT = 10; // 2MB in bytes
 
 // Webpage all off section content data
-export const HERO_SECTION = {
-  title: "পূরণ করতে লক্ষ্য",
-  subtitle: "",
-  highlightedText: "হতে হবে দক্ষ",
-  description: "স্কিল ডেভেলপমেন্ট করবো - দক্ষতার মাধ্যমে সমৃদ্ধ হবো",
-  buttonText: "আরো দেখুন",
-  imageAlt: "hero-banner",
-};
+// export const HERO_SECTION = {
+//   title: "পূরণ করতে লক্ষ্য",
+//   subtitle: "",
+//   highlightedText: "হতে হবে দক্ষ",
+//   description: "স্কিল ডেভেলপমেন্ট করবো - দক্ষতার মাধ্যমে সমৃদ্ধ হবো",
+//   buttonText: "আরো দেখুন",
+//   imageAlt: "hero-banner",
+// };
 
 export const FOOTER_ABOUT_PAGE_PARAMETER = {
   ABOUT: "about",
@@ -138,3 +138,6 @@ export const FOOTER_DATA = {
 // export const SUPPORT_POST_STUDENT = "stu";
 // export const SUPPORT_POST_TEACHER = "tea";
 // export const SUPPORT_POST_ADMIN = "adm";
+
+
+

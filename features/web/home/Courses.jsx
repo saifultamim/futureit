@@ -9,9 +9,9 @@ export default function Courses() {
   return (
     <>
       <section className="bg-white py-10 md:py-16">
-        <div className="container w-11/12 mx-auto">
+        <div className="container w-11/12 lg:px-6 mx-auto">
           <div className="text-center">
-            <h2 className="font-hindSliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
+            <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
               জনপ্রিয় কোর্সসমূহ
             </h2>
           </div>

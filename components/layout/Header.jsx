@@ -12,16 +12,16 @@ const Header = () => {
   return (
     <header>
       <div className="bg-secondary hidden lg:block">
-        <div className="container h-11 py-6 w-11/12  mx-auto">
+        <div className="container h-11 py-6 w-11/12 lg:px-6  mx-auto">
           <div className="flex items-center justify-between h-full leading-7">
             <div className="flex items-center space-x-8 text-white">
               <div className="text-base flex items-center space-x-1 leading-normal">
                 <FaPhoneAlt className="text-sm" />
-                <span className="pt-1">01958-536790</span>
+                <span className="pt-1 font-siliguri">01958-536790</span>
               </div>
               <div className="text-base flex items-center space-x-1 leading-normal">
                 <FaEnvelope />
-                <span className="pt-1">info.edufutureit@gmail.com</span>
+                <span className="pt-1 font-siliguri">info.edufutureit@gmail.com</span>
               </div>
             </div>
 

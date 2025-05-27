@@ -13,7 +13,7 @@ const Services = () => {
 
   return (
     <section className="bg-services py-10">
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 lg:px-6 mx-auto">
         <div className="text-left leading-tight mb-8">
           <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
             আমাদের বিশেষ সেবা সমূহ
@@ -28,7 +28,7 @@ const Services = () => {
             {servicesIcon?.map((item, idx) => (
               <li
                 key={item?.id}
-                className={`flex items-center space-x-2 rounded-md py-1.5 px-3 border cursor-pointer bg-[#F39200] border-[#EE3373]  `}
+                className={`flex items-center space-x-2 rounded-md py-1.5 px-3 border cursor-pointer bg-secondary  `}
               >
                 {/* Display only the icon for this specific item */}
                 {item?.image && ( // Use the index to cycle through the icons

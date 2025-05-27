@@ -5,7 +5,7 @@ const MileStones = () => {
 
   return (
     <section className="py-10">
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 lg:px-6 mx-auto">
         <div className="text-center leading-tight mb-8">
           <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">মাইলফলক</h2>
           <p className="text-gray-500 font-inter text-base">
@@ -33,7 +33,7 @@ const MileStones = () => {
                 className={`flex flex-col items-start justify-center space-y-2 ${achievement.backgroundColor} rounded-lg py-4 md:py-0 px-4 md:px-8`}
               >
                 {/* Value displayed on the first line */}
-                <p className="text-black font-semibold text-xl lg:text-4xl">
+                <p className="text-black font-semibold text-xl lg:text-4xl font-siliguri">
                   {achievement.value}
                 </p>
                 {/* Title displayed on the second line */}

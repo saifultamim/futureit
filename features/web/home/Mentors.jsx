@@ -12,9 +12,9 @@ const Mentors = () => {
   return (
     <>
       <section className="bg-[#FCFCF5] py-10">
-        <div className="container w-11/12 mx-auto">
+        <div className="container w-11/12 lg:px-6 mx-auto">
           <div className="text-center leading-tight mb-8">
-            <h2 className="title">আমাদের মেন্টরগণ</h2>
+            <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">আমাদের মেন্টরগণ</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
@@ -48,7 +48,7 @@ const Mentors = () => {
                         {mentor?.name}
                       </h4>
                       <p
-                        className="text-[#8C94A3] font-normal text-sm flex h-10"
+                        className="text-[#8C94A3] font-normal text-sm flex h-10 font-siliguri"
                         dangerouslySetInnerHTML={{
                           __html: mentor?.desc,
                         }}
@@ -59,7 +59,7 @@ const Mentors = () => {
               ))}
           </div>
 
-          <div className="flex flex-wrap justify-start md:justify-center items-center mt-10 space-y-4 md:space-y-0 md:space-x-3">
+          <div className="flex flex-wrap justify-start md:justify-center items-center mt-10 space-y-4 md:space-y-0 md:space-x-3 font-siliguri">
             <p className="font-normal text-sm text-[#6E7485]">
               প্রশিক্ষকের অপেক্ষায় হাজার হাজার শিক্ষার্থী। এখন শেখানো শুরু করুন
               এবং উপার্জন শুরু করুন!

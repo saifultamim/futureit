@@ -9,10 +9,10 @@ export default function HomeEventSection() {
   ]
   return (
     <section className="py-10">
-      <div className="container w-11/12 mx-auto">
+      <div className="container w-11/12 lg:px-6 mx-auto">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold">ইভেন্ট এবং কার্যকলাপ</h2>
-          <p className="text-base text-gray-600">
+          <h2 className="text-3xl font-bold font-siliguri">ইভেন্ট এবং কার্যকলাপ</h2>
+          <p className="text-base text-gray-600 font-siliguri">
             আমাদের ফটো গ্যালারিতে দেখে আসুন আমাদের ইভেন্টস ও অর্জন সমূহ
           </p>
         </div>
