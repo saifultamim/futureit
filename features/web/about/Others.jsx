@@ -2,16 +2,16 @@ import { about, career, facilities, missionVision } from "@/utils/data/about/oth
 
 export const About = () => {
     return (
-        <div>
-       <p className="text-lg lg:text-2xl font-medium text-[#4a4949] leading-normal">
+        <div className='lg:mt-10 md:mt-8 mb-16'>
+       <p className="text-lg lg:text-2xl font-medium text-[#4a4949] leading-normal font-siliguri">
       {about.title}
     </p>
 
-    <div className="flex flex-col my-6">
+    <div className="flex flex-col my-6 font-siliguri">
       <h3 className="text-xl">{about?.question}</h3>
       <small>{about?.desc}</small>
 
-      <ul className="mt-4 space-y-3">
+      <ul className="mt-4 space-y-3 font-siliguri">
         {about?.features?.map((feature, index) => (
           <li key={index}>● {feature}</li>
         ))}
@@ -25,7 +25,7 @@ export const MissionVission = () => {
         <div>
    {
     missionVision?.map((params,idx)=>(
-        <div key={idx} className="flex flex-col">
+        <div key={idx} className="flex flex-col font-siliguri py-5">
       <h3 className="text-xl mb-4">{params?.title}</h3>
       <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: params?.desc }} />
       
@@ -38,8 +38,8 @@ export const MissionVission = () => {
 
 export const Facilities = () => {
     return (
-        <div>
- <div className="flex flex-col">
+        <div className='lg:mt-10 md:mt-8 mb-16'>
+ <div className="flex flex-col font-siliguri">
       <h3 className="text-xl">
        {facilities?.coreTitle}
       </h3>
@@ -52,7 +52,7 @@ export const Facilities = () => {
         ))}
       </ul>
     </div>
-    <div className="flex flex-col mt-10">
+    <div className="flex flex-col mt-10 font-siliguri">
       <h3 className="text-xl">
         {facilities?.mainCoursesTitle}
       </h3>
@@ -71,7 +71,7 @@ export const Facilities = () => {
 
 export const Career = () => {
     return (
-        <div>
+        <div className='lg:mt-10 md:mt-8 mb-16 font-siliguri'>
     <h3 className="text-xl mb-4">{career?.title}</h3>
     <p className="text-lg font-medium text-[#4a4949] leading-normal">
      {career?.desc}
