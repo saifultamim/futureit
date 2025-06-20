@@ -26,7 +26,6 @@ const VideoModal = ({ isOpen, onClose, videoSrc }) => {
               <div className="overflow-hidden rounded-lg">
                 <iframe
                   width="100%"
-                  // height="450"
                   className="h-52 lg:h-[400px]"
                   src={videoSrc + "?autoplay=1"}
                   title="YouTube video player"

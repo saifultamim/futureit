@@ -19,7 +19,6 @@ const AboutSection = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-5 sm:gap-10">
             <div className="md:col-span-2 p-6 shadow-lg rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-              {/* <FaBullseye className="text-6xl text-blue-500 mb-3 mx-auto animate-pulse" /> */}
               {mission.icon}
               <h4 className="text-3xl font-bold text-blue-800 mb-3">
                 {mission.title}
@@ -29,7 +28,6 @@ const AboutSection = () => {
               </p>
             </div>
             <div className="md:col-span-2 p-6 shadow-lg rounded-lg bg-gradient-to-r from-green-50 to-green-100 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-              {/* <FaLightbulb className="text-6xl text-green-500 mb-3 mx-auto animate-pulse" /> */}
               {vision.icon}
               <h4 className="text-3xl font-bold text-green-800 mb-3">
                 {vision.title}
@@ -40,7 +38,6 @@ const AboutSection = () => {
             </div>
             <div className="md:col-span-4">
               <div className="p-6 shadow-lg rounded-lg bg-gradient-to-r from-red-50 to-red-100 hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                {/* <FaHandHoldingHeart className="text-6xl text-red-500 mb-3 mx-auto animate-pulse" /> */}
                 {motive.icon}
                 <h4 className="text-3xl font-bold text-red-800 mb-3">
                   {motive.title}
@@ -62,7 +59,6 @@ const AboutSection = () => {
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* =========================================== */}
             {coreValues?.map((coreValue, idx) => (
               <div
                 key={idx}
@@ -72,7 +68,6 @@ const AboutSection = () => {
                   <div
                     className={`w-16 h-16 ${coreValue.bgColor} rounded-full flex items-center justify-center`}
                   >
-                    {/* <FaStar className="text-4xl text-yellow-500" /> */}
                     {coreValue.icon}
                   </div>
                 </div>
@@ -82,7 +77,6 @@ const AboutSection = () => {
                 <p className="text-gray-600 text-justify">{coreValue.desc}</p>
               </div>
             ))}
-            {/* ================================================ */}
           </div>
         </div>
       </section>

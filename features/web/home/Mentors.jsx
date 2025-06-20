@@ -1,25 +1,26 @@
-'use client'
-import { useState } from 'react';
-import  Image from "next/image";
+"use client";
+import { useState, React } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import {mentors,MentorsModal} from '.'
+import { mentors, MentorsModal } from ".";
 const Mentors = () => {
-      const [isModalOpen, setModalOpen] = useState(false);
-       const openModal = () => setModalOpen(true);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
-
 
   return (
     <>
       <section className="bg-[#FCFCF5] py-10">
         <div className="container w-11/12 lg:px-6 mx-auto">
           <div className="text-center leading-tight mb-8">
-            <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">আমাদের মেন্টরগণ</h2>
+            <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
+              আমাদের মেন্টরগণ
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {mentors.length > 0 &&
-              mentors?.map((mentor,idx) => (
+              mentors?.map((mentor, idx) => (
                 <Link
                   key={idx}
                   href="#"
@@ -44,7 +45,11 @@ const Mentors = () => {
                       />
                     )}
                     <div className="bg-white flex flex-col items-center justify-center mt-[-16px] relative md:rounded-t-xl rounded-b-md text-center w-full p-2.5">
-                      <h4 className="font-inter text-[#1D2026] text-base leading-5 font-semibold mb-1">
+                      <h4
+                        className={`font-inter text-[#1D2026]  ${
+                          mentor?.name.length > 24 ? "text-sm" : "text-base"
+                        } leading-5 font-semibold mb-1`}
+                      >
                         {mentor?.name}
                       </h4>
                       <p
@@ -73,11 +78,10 @@ const Mentors = () => {
             </button>
           </div>
 
-          {/* Modal */}
           <MentorsModal isOpen={isModalOpen} onClose={closeModal} />
         </div>
       </section>
     </>
   );
-}
+};
 export default Mentors;

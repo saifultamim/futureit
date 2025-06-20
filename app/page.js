@@ -24,7 +24,6 @@ export default function Home() {
       <Testimonial />
       <Collaborates />
       <CallToUs />
-      {/* <Event /> */}
     </div>
   );
 }

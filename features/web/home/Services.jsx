@@ -1,15 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { React,Video,servicesIcon,Image } from "./";
+import { useState, React } from "react";
+import { Video, servicesIcon, Image } from "./";
 
 const Services = () => {
   const [selectedVideoUrl, setSelectedVideoUrl] = useState(
     "https://www.youtube.com/embed/gScdRiOngAQ?si=CfYu-KYq1k_4RK2L"
   );
-
-
-
 
   return (
     <section className="bg-services py-10">
@@ -30,11 +27,10 @@ const Services = () => {
                 key={item?.id}
                 className={`flex items-center space-x-2 rounded-md py-1.5 px-3 border cursor-pointer bg-secondary  `}
               >
-                {/* Display only the icon for this specific item */}
-                {item?.image && ( // Use the index to cycle through the icons
+                {item?.image && (
                   <div className="w-8 h-8">
                     <Image
-                      src={item?.image} // Show the icon based on the index
+                      src={item?.image}
                       alt="icon"
                       width={32}
                       height={32}
@@ -43,9 +39,9 @@ const Services = () => {
                 )}
 
                 <h4
-                  className={`font-siliguri lg:text-lg md:text-base text-sm "text-black"`}
+                  className={`font-siliguri lg:text-lg md:text-base text-sm text-white`}
                 >
-                  {/* {item.xtitle} */} আমাদের বিশেষ সেবা সমূহ
+                  আমাদের বিশেষ সেবা সমূহ
                 </h4>
               </li>
             ))}

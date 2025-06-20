@@ -1,39 +1,11 @@
-// export const TIMEZONE = "America/New_York";
-
-// export const ModalTypes = {
-//   QUESTION_MODAL: "questionmodal",
-//   HOME_WORK_SUBMIT_MODAL: "hwsubmitmodal",
-// };
-
-// export const BLOG_CATEGORY_OPTIONS = [
-//   { value: "", label: "--select--" },
-//   { value: "Admissions", label: "Admissions" },
-//   { value: "News", label: "News" },
-//   { value: "Event", label: "Event" },
-//   { value: "Discussion", label: "Discussion" },
-//   { value: "Tips", label: "Tips" },
-//   { value: "Digital Marketing", label: "Digital Marketing" },
-//   { value: "Spoken English", label: "Spoken English" },
-//   { value: "Skill Development", label: "Skill Development" },
-// ];
-
-// export const BIZID = 2;
-// export const COURSE_SHOW_LENGTH = 6;
-// export const STORY_SHOW_LENGTH = 4;
-// export const SHORT_TEXT_LENGTH = 4;
-// export const PASSWORD_SALTROUNDS = 10;
-// export const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB in bytes
-// export const NOTICE_FETCH_LIMIT = 10; // 2MB in bytes
-
-// Webpage all off section content data
-// export const HERO_SECTION = {
-//   title: "পূরণ করতে লক্ষ্য",
-//   subtitle: "",
-//   highlightedText: "হতে হবে দক্ষ",
-//   description: "স্কিল ডেভেলপমেন্ট করবো - দক্ষতার মাধ্যমে সমৃদ্ধ হবো",
-//   buttonText: "আরো দেখুন",
-//   imageAlt: "hero-banner",
-// };
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaInstagram,
+  FaTiktok,
+} from "react-icons/fa";
+import footerLogo from "@/public/images/logofooter.png";
 
 export const FOOTER_ABOUT_PAGE_PARAMETER = {
   ABOUT: "about",
@@ -43,31 +15,40 @@ export const FOOTER_ABOUT_PAGE_PARAMETER = {
 };
 
 export const FOOTER_DATA = {
-  logoSrc: "/images/logofooter.png",
+  logoSrc: footerLogo,
   description:
     "স্মার্ট বাংলাদেশ বিনির্মাণে দক্ষতা অর্জনের মাধ্যমে নিজেকে যোগ্য করার অন্যতম ট্রেনিং ইনস্টিটিউট এডুফিউচার আইটি",
+
   socialLinks: [
     {
-      icon: "FaFacebookF",
-      bgColor: "#F49401",
-      url: "https://www.facebook.com/FutureITLanguageTrainingInstitute",
+      href: "https://www.facebook.com/share/14oDwAsD4RC/",
+      icon: <FaFacebookF className="text-[#00BCCF]" />,
+      hoverBgColor: "hover:bg-blue-600",
     },
     {
-      icon: "FaYoutube",
-      bgColor: "#20252D",
-      url: "https://www.youtube.com/@futureitinstitute1192",
+      href: "https://www.youtube.com/@edufutureit",
+      icon: <FaYoutube className="text-[#00BCCF]" />,
+      hoverBgColor: "hover:bg-red-600",
     },
     {
-      icon: "FaInstagram",
-      bgColor: "#20252D",
-      url: "https://www.facebook.com/FutureITLanguageTrainingInstitute",
+      href: "https://www.linkedin.com/in/edufutureit",
+      icon: <FaLinkedinIn className="text-[#00BCCF]" />,
+      hoverBgColor: "hover:bg-[#0077B5]",
     },
     {
-      icon: "FaLinkedinIn",
-      bgColor: "#20252D",
-      url: "https://www.facebook.com/FutureITLanguageTrainingInstitute",
+      href: "https://www.instagram.com/futureitinstitute",
+      icon: <FaInstagram className="text-[#00BCCF]" />,
+      hoverBgColor:
+        "hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-500",
+    },
+    {
+      href: "https://www.tiktok.com/@edufutureit",
+      icon: <FaTiktok className="text-[#00BCCF]" />,
+      hoverBgColor:
+        "hover:bg-gradient-to-r hover:from-black hover:via-pink-500 hover:to-[#69C9D0]",
     },
   ],
+
   contact: {
     title: "যোগাযোগ",
     address: [
@@ -79,10 +60,7 @@ export const FOOTER_DATA = {
           "Bangla Motor, Dhaka",
         ],
       },
-      // {
-      //   icon: "FaMapMarkerAlt",
-      //   lines: ["Head Office:", "Razzak Plaza (Level-3)", "Moghbazar, Dhaka"],
-      // },
+
       {
         icon: "FaMapMarkerAlt",
         lines: [
@@ -132,12 +110,3 @@ export const FOOTER_DATA = {
     ],
   },
 };
-
-// export const COMPANY_NAME = "EduFuture IT";
-
-// export const SUPPORT_POST_STUDENT = "stu";
-// export const SUPPORT_POST_TEACHER = "tea";
-// export const SUPPORT_POST_ADMIN = "adm";
-
-
-

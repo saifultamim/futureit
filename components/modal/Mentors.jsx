@@ -1,5 +1,3 @@
-
-
 const MentorsModal = ({ isOpen, onClose }) => {
   const handleClose = () => {
     onClose();
@@ -7,9 +5,8 @@ const MentorsModal = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-
-  }
+    onClose();
+  };
   return (
     <div className={`modal ${isOpen ? "block" : "hidden"}`}>
       <div className="fixed inset-0 bg-black text-gray-600 bg-opacity-80 flex items-center justify-center z-50">
@@ -23,11 +20,8 @@ const MentorsModal = ({ isOpen, onClose }) => {
               <input
                 type="text"
                 className="w-full p-2 border border-gray-300 rounded  text-base"
-                // value={name}
                 placeholder="John"
-          
               />
-              
             </div>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-600">
@@ -36,11 +30,8 @@ const MentorsModal = ({ isOpen, onClose }) => {
               <input
                 type="tel"
                 className="w-full p-2 border border-gray-300 rounded  text-base"
-                // value={mobile}
                 placeholder="018*******"
-               
               />
-             
             </div>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-600">
@@ -48,9 +39,7 @@ const MentorsModal = ({ isOpen, onClose }) => {
               </label>
               <input
                 type="email"
-                // value={email}
                 placeholder="example@gmail.com"
-               
                 className="w-full p-2 border border-gray-300 rounded text-base"
               />
             </div>
@@ -59,8 +48,7 @@ const MentorsModal = ({ isOpen, onClose }) => {
                 Present Address
               </label>
               <textarea
-                defaultValue=''
-              
+                defaultValue=""
                 className="w-full p-2 border border-gray-300 rounded text-base"
               ></textarea>
             </div>

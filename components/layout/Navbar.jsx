@@ -1,26 +1,22 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import logo from "@/public/images/logo.png";
 import menusvg from "@/public/images/menu.svg";
-import {
- 
-  FaChevronRight,
-  FaChevronDown,
-} from "react-icons/fa";
+import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import CourseSearch from "../ui/course/Search";
 const Navbar = () => {
-     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Responsive menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     document.body.classList.toggle("overflow-hidden");
   };
-    return (
-        <div>
-   <div className="shadow-lg bg-white py-4 md:py-3 z-40 w-full">
+  return (
+    <div>
+      <div className="shadow-lg bg-white py-4 md:py-3 z-40 w-full">
         <div className="container w-11/12 lg:px-6 mx-auto">
           <nav className="flex items-center justify-start md:justify-between h-full lg:space-x-5">
             <Link
@@ -57,7 +53,6 @@ const Navbar = () => {
                     যোগাযোগ
                   </Link>
                 </li>
-             
               </ul>
             </div>
 
@@ -74,7 +69,7 @@ const Navbar = () => {
 
                 <button
                   className="flex-1 flex justify-end"
-                   onClick={toggleMobileMenu}
+                  onClick={toggleMobileMenu}
                 >
                   <Image
                     src={menusvg}
@@ -91,26 +86,21 @@ const Navbar = () => {
             className={`w-2/3 h-screen fixed top-0 left-0 bg-white z-40 p-6 shadow-4xl rounded-r-lg overflow-hidden  ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}
-             onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             <ul className="flex flex-col items-start space-y-4 w-full">
               <li className="w-full ">
-            
-                  <Link
-                    href="/about"
-                    className="font-siliguri text-lg text-[#1F1E1E] font-semibold flex justify-between items-center"
-                  >
-                    <span>লগইন করুন</span>
-                    <FaChevronRight></FaChevronRight>
-                  </Link>
-                
+                <Link
+                  href="/about"
+                  className="font-siliguri text-lg text-[#1F1E1E] font-semibold flex justify-between items-center"
+                >
+                  <span>লগইন করুন</span>
+                  <FaChevronRight></FaChevronRight>
+                </Link>
               </li>
               <li className="w-full border-b border-[#b9b8b8]"></li>
               <li>
-                <Link
-                  href="/"
-                  className="font-siliguri text-lg text-[#1F1E1E]"
-                >
+                <Link href="/" className="font-siliguri text-lg text-[#1F1E1E]">
                   হোম
                 </Link>
               </li>
@@ -138,21 +128,9 @@ const Navbar = () => {
                   যোগাযোগ
                 </Link>
               </li>
-              {/* <li>
-                <Link href="https://prottoy360.com/" target="_blank">
-                  <Image
-                    src={prottoylogo}
-                    alt="prottoy"
-                    placeholder="blur"
-                    className="object-cover w-[118px] p-[3px]"
-                    width="100px"
-                  />
-                </Link>
-              </li> */}
             </ul>
           </nav>
 
-          {/* Add the overlay class to the body when the mobile menu is open */}
           {isMobileMenuOpen && (
             <div
               className="overlay"
@@ -161,8 +139,8 @@ const Navbar = () => {
           )}
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Navbar;

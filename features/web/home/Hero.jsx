@@ -26,7 +26,7 @@ const Hero = () => {
               src={heroImage}
               alt="imageAlt"
               placeholder="blur"
-              className="object-cover "
+              className="object-cover"
             />
           </div>
         </div>

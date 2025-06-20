@@ -1,15 +1,14 @@
-
-import {SuccessStoryCard,displayedSuccessStories} from ".";
+import { SuccessStoryCard, displayedSuccessStories } from ".";
 
 const SuccessStory = () => {
-
-
   return (
     <>
       <section className="bg-[#FDFCF6] py-10">
         <div className="container w-11/12 lg:px-6 mx-auto">
           <div className="text-center leading-tight mb-8">
-            <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">সাফল্যের গল্প</h2>
+            <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
+              সাফল্যের গল্প
+            </h2>
             <p className="text-[#605F62] font-inter text-base">
               আমাদের দৃঢ়প্রতিজ্ঞ শিক্ষার্থীদের সফলতার গল্প শুনুন ওদের কাছ
               থেকেই।
@@ -18,11 +17,8 @@ const SuccessStory = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             {displayedSuccessStories &&
-              displayedSuccessStories.map((successStory,idx) => (
-                <SuccessStoryCard
-                  key={idx}
-                  successStory={successStory}
-                />
+              displayedSuccessStories.map((successStory, idx) => (
+                <SuccessStoryCard key={idx} successStory={successStory} />
               ))}
           </div>
 
@@ -39,5 +35,5 @@ const SuccessStory = () => {
       </section>
     </>
   );
-}
+};
 export default SuccessStory;

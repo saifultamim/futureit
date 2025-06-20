@@ -11,8 +11,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #F5F5F5;
-    --foreground: #0a0a0a; 
+    --background: #f5f5f5;
+    --foreground: #0a0a0a;
     /* #0a0a0a;  #ededed; */
   }
 }
@@ -47,3 +47,26 @@ body {
   background: #555;
 }
 
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .circle {
+    left: 57% !important;
+  }
+}
+
+@media (min-width: 1535px) {
+  .circle {
+    left: 57% !important;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 2000px) {
+  .circle {
+    left: 40% !important;
+  }
+}
+
+@media (min-width: 2001px) {
+  .circle {
+    left: 38% !important;
+  }
+}

@@ -11,7 +11,6 @@ const CallToUs = () => {
               </span>
             </p>
             <button className="bg-contactNumber p-4 md:p-5 leading-[10px] lg:leading-[6px] rounded-xl text-lg font-medium">
-              {/* <i className="fa-solid fa-phone pr-1"></i> */}
               01958-536790
             </button>
           </div>
@@ -19,5 +18,5 @@ const CallToUs = () => {
       </section>
     </>
   );
-}
+};
 export default CallToUs;

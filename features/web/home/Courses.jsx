@@ -1,10 +1,9 @@
-import { CourseCart,courses} from "./";
+import { CourseCart, courses } from "./";
 
 export default function Courses() {
   const courseLength = courses ? Object.keys(courses).length : 0;
 
-
-  const displayedCourses = courses ? courses.slice(0,6) : "";
+  const displayedCourses = courses ? courses.slice(0, 6) : "";
 
   return (
     <>

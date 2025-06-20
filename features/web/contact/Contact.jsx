@@ -1,4 +1,3 @@
-
 import Form from "./Form";
 
 const Contact = () => {
@@ -27,7 +26,6 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div className="ml-4 mb-4 flex flex-col space-y-4">
-               
                   <div>
                     <p className="font-bold">Corporate Office:</p>
                     <p className="text-gray-600 ">

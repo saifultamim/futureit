@@ -10,22 +10,14 @@ const MainAboutUs = () => {
     <div>
       {/* Default About Page */}
       {!content && <AboutUs />}
-   
-      {content === "about" && (
-        <About />
-      )}
-      
-      {content === "mission-and-vision" && (
-       <MissionVission />
-      )}
-     
-      {content === "facilities" && (
-     <Facilities />
-      )}
- 
-      {content === "career-plan" && (
-       <Career />
-      )}
+
+      {content === "about" && <About />}
+
+      {content === "mission-and-vision" && <MissionVission />}
+
+      {content === "facilities" && <Facilities />}
+
+      {content === "career-plan" && <Career />}
     </div>
   );
 };

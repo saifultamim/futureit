@@ -1,4 +1,3 @@
-
 import { cn } from "@/utils/tailwind-utils";
 import React from "react";
 
@@ -8,7 +7,7 @@ const Button = ({
   isLoading = false,
   size = "md",
   disabled,
-  className="",
+  className = "",
   ...props
 }) => {
   const baseStyles =

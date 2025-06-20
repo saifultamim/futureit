@@ -1,7 +1,8 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 import VideoModal from "@/components/modal/Video";
+import playIcon from "@/public/images/playicon.png";
 
 const SuccessStoryCard = ({ successStory }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,11 +33,7 @@ const SuccessStoryCard = ({ successStory }) => {
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
           onClick={() => handleVideoOpen(successStory?.src)}
         >
-          <img
-            src="/images/playicon.png"
-            alt="playicon"
-            className="w-12 md:w-auto"
-          />
+          <Image src={playIcon} alt="playicon" className="w-12 md:w-auto" />
         </div>
       </div>
       <VideoModal

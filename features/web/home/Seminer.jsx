@@ -2,10 +2,8 @@ import Image from "next/image";
 import seminarImage from "@/public/images/seminer.png";
 
 const Seminer = () => {
+  const seminers = [];
 
-
-const seminers = []
- 
   return (
     <>
       <section className="py-12 ">
@@ -13,7 +11,9 @@ const seminers = []
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <div className="text-left leading-tight mb-8">
-                <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">ফ্রি সেমিনারের সময়সূচী</h2>
+                <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
+                  ফ্রি সেমিনারের সময়সূচী
+                </h2>
                 <p className="text-[#605F62] font-inter text-base">
                   কোন কোর্সে ভর্তি হবেন, সেই কোর্সে কাজের সুযোগ কেমন , সে বিষয়ে
                   বিস্তারিত জানতে জয়েন করুন আমাদের ফ্রি সেমিনারে
@@ -22,13 +22,6 @@ const seminers = []
 
               {seminers?.length > 0 ? (
                 <div>
-                  {/* {seminers.map((seminar, index) => (
-                    <SeminarItem
-                      key={index}
-                      seminar={seminar}
-                      openModal={openModal}
-                    />
-                  ))} */}
                   <p>set the items</p>
                 </div>
               ) : (
@@ -51,5 +44,5 @@ const seminers = []
       </section>
     </>
   );
-}
+};
 export default Seminer;

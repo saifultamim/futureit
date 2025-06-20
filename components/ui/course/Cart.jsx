@@ -1,9 +1,9 @@
 import Link from "next/link";
 import ImageComponent from "../Image";
+import arrow from "@/public/images/icons/arrow-up-right.png";
+import Image from "next/image";
 
 const CourseCart = ({ course }) => {
-  // const imgUrl = "/images/courses";
-
   return (
     <div
       className="border border-[#0000001A] rounded-3xl relative"
@@ -18,7 +18,7 @@ const CourseCart = ({ course }) => {
           className="flex items-start justify-between font-siliguri font-bold text-md text-[#1F1E1E] pt-2 pb-2 h-14 leading-[100%]"
         >
           {course?.title}
-          <img src="/images/icons/arrow-up-right.png" alt="arrow" className="ml-2" />
+          <Image src={arrow} alt="arrow" className="ml-2" />
         </Link>
 
         <div className="flex items-start font-siliguri cursor-default">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FOOTER_DATA } from "@/utils/data/constant";
+import Image from "next/image";
 import SocialIcons from "../ui/SocialIcons";
 
 const Footer = () => {
@@ -9,12 +10,14 @@ const Footer = () => {
         <div className="container">
           <div className="flex flex-wrap lg:flex-row lg:space-x-12 sm:gap-x-10 gap-y-10">
             <div className="text-white lg:flex-1">
-              <img src={FOOTER_DATA.logoSrc} alt="Logo" />
+              <Image src={FOOTER_DATA.logoSrc} alt="Logo" />
               <p className="text-sm font-normal text-justify text-[#BDBCBC] py-6 font-siliguri">
                 {FOOTER_DATA.description}
               </p>
 
-              <SocialIcons size="w-8 h-8" bgColor="bg-[#ffffff]" />
+              <div className="flex items-center space-x-4">
+                 <SocialIcons size="w-8 h-8" bgColor="bg-[#ffffff]" />
+              </div>
             </div>
 
             <div className="text-white">
