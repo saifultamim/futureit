@@ -2,7 +2,7 @@
 import { useState, React } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { mentors, MentorsModal } from ".";
+import { mentors, MentorsModal } from "../";
 const Mentors = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = () => setModalOpen(true);

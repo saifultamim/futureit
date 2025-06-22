@@ -1,4 +1,4 @@
-import { courses, teaching, facilities } from "./";
+import { courses, teaching, facilities } from "..";
 const Overview = () => {
   return (
     <div>
@@ -28,7 +28,7 @@ const Overview = () => {
       </section>
 
       <section className="font-siliguri py-10 bg-sky-100 bg-opacity-30">
-        <div className="container">
+        <div className="container px-5">
           <h3 className="text-4xl font-semibold text-[#4a4949] mb-3">
             {teaching.title}
           </h3>
@@ -37,7 +37,10 @@ const Overview = () => {
           </p>
           <ul className="list-disc list-inside text-[#605f62] space-y-2">
             {teaching?.features?.map((feature, idx) => (
-              <li key={idx} className="leading-normal md:leading-7 font-medium text-justify">
+              <li
+                key={idx}
+                className="leading-normal md:leading-7 font-medium text-justify"
+              >
                 <strong>{feature?.title}</strong> {feature?.desc}
               </li>
             ))}
@@ -56,7 +59,10 @@ const Overview = () => {
             </p>
             <ul className="list-disc list-inside text-[#605f62] mb-8 space-y-2">
               {facilities?.features?.map((feature, idx) => (
-                <li key={idx} className="leading-normal md:leading-7 font-medium text-justify">
+                <li
+                  key={idx}
+                  className="leading-normal md:leading-7 font-medium text-justify"
+                >
                   {feature}
                 </li>
               ))}

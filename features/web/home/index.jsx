@@ -8,7 +8,7 @@ import { milestones } from "@/utils/data/home/milestones";
 import { displayedSuccessStories } from "@/utils/data/home/successStory";
 import { servicesIcon } from "@/utils/data/home/services";
 import Video from "@/components/ui/Video";
-import SuccessStoryCard from "@/components/ui/SuccessStoryCard";
+import SuccessStoryCard from "@/features/web/SuccessStory/components/SuccessStoryCard";
 import MentorsModal from "@/components/modal/Mentors";
 
 export {

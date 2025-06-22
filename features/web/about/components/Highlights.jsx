@@ -1,4 +1,4 @@
-import { highlights, Image } from "./";
+import { highlights, Image } from "..";
 
 const Highlights = () => {
   return (
@@ -24,14 +24,16 @@ const Highlights = () => {
                 {params?.items && (
                   <ul className="list-disc list-inside text-[#605f62] mb-8 space-y-2">
                     {params?.items.map((item, idx) => (
-                      <li key={idx} className="leading-normal md:leading-7 font-medium text-justify">
+                      <li
+                        key={idx}
+                        className="leading-normal md:leading-7 font-medium text-justify"
+                      >
                         <strong>{item?.title}</strong> {item?.desc}
                       </li>
                     ))}
                   </ul>
                 )}
               </div>
-
               <div
                 className={`col-span-1 my-auto hidden md:block ${
                   idx % 2 !== 0 ? "md:order-1" : "md:order-2"
@@ -42,7 +44,7 @@ const Highlights = () => {
                   alt={params?.title}
                   width={500}
                   height={500}
-                  className="rounded-lg shadow-md "
+                  className={`rounded-lg ${highlights?.length-1 == idx ? '' : 'shadow-md'}`}
                 />
               </div>
             </div>

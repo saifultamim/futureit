@@ -1,7 +1,7 @@
 import { courseLessons, courseVideo } from "@/utils/data/courseLessons";
 import React from "react";
 import { FaRegDotCircle } from "react-icons/fa";
-const SpecificCourse = () => {
+const SpecificCoursePage = () => {
 
   return (
     <div>
@@ -80,4 +80,4 @@ const SpecificCourse = () => {
   );
 };
 
-export default SpecificCourse;
+export default SpecificCoursePage;

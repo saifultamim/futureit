@@ -1,6 +1,6 @@
 import React from "react";
-import { SuccessStoryCard } from "./home";
 import { successStories } from "@/utils/data/successStory";
+import SuccessStoryCard from "./SuccessStoryCard";
 
 const SuccessStory = () => {
   return (

@@ -1,4 +1,4 @@
-import { milestones, Image } from ".";
+import { milestones, Image } from "../";
 
 const MileStones = () => {
   return (

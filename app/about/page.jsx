@@ -1,16 +1,27 @@
 import { Loading } from "@/components/ui/Loading";
-import MainAboutUs from "@/features/web/about/MainAboutUs";
+import AboutPageContent from "@/features/web/about/components/AboutPageContent";
+import {
+  About,
+  Career,
+  Facilities,
+  MissionVission,
+} from "@/features/web/about/components/Others";
 import { Suspense } from "react";
 
-const About = () => {
+const AboutPage = ({ searchParams }) => {
   return (
     <div className="w-11/12 mx-auto lg:px-6">
-      <Suspense fallback={<Loading />}>
-        {" "}
-        <MainAboutUs />{" "}
-      </Suspense>
+      {!searchParams?.content && <AboutPageContent />}
+
+      {searchParams?.content === "about" && <About />}
+
+      {searchParams?.content === "mission-and-vision" && <MissionVission />}
+
+      {searchParams?.content === "facilities" && <Facilities />}
+
+      {searchParams?.content === "career-plan" && <Career />}
     </div>
   );
 };
 
-export default About;
+export default AboutPage;

@@ -1,4 +1,4 @@
-import { SuccessStoryCard, displayedSuccessStories } from ".";
+import { SuccessStoryCard, displayedSuccessStories } from "../";
 
 const SuccessStory = () => {
   return (

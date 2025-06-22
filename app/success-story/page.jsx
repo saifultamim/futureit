@@ -1,7 +1,7 @@
-import SuccessStory from "@/features/web/SuccessStory";
 import React from "react";
+import SuccessStory from "@/features/web/SuccessStory/components/SuccessStory";
 
-const successStory = () => {
+const successStoryPage = () => {
   return (
     <div>
       <SuccessStory />
@@ -9,4 +9,4 @@ const successStory = () => {
   );
 };
 
-export default successStory;
+export default successStoryPage;

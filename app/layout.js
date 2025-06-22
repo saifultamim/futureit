@@ -23,13 +23,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-      suppressHydrationWarning={true}
-      >
-      <div  className="z-40 w-full sticky top-0">
+      <body suppressHydrationWarning={true}>
+        <div className="z-40 w-full sticky top-0">
           <Header />
-        <Navbar />
-      </div>
+          <Navbar />
+        </div>
         {children}
         <Footer />
       </body>

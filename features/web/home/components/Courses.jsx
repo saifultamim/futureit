@@ -1,4 +1,4 @@
-import { CourseCart, courses } from "./";
+import { CourseCart, courses } from "../";
 
 export default function Courses() {
   const courseLength = courses ? Object.keys(courses).length : 0;

@@ -1,4 +1,4 @@
-import { React, Image, heroImage } from "../home";
+import { React, Image, heroImage } from "../";
 
 const Hero = () => {
   return (

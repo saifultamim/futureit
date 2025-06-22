@@ -1,8 +1,8 @@
-import { directorMessage, Image } from "./";
+import { directorMessage, Image } from "..";
 
 const DirectorMessage = () => {
   return (
-    <div>
+   
       <section className="font-siliguri py-10 lg:mt-9">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10">
@@ -27,7 +27,7 @@ const DirectorMessage = () => {
           </div>
         </div>
       </section>
-    </div>
+    
   );
 };
 

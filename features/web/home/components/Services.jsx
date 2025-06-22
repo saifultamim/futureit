@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, React } from "react";
-import { Video, servicesIcon, Image } from "./";
+import { Video, servicesIcon, Image } from "../";
 
 const Services = () => {
   const [selectedVideoUrl, setSelectedVideoUrl] = useState(

@@ -4,7 +4,7 @@ const Form = () => {
   return (
     <div>
       <div className="card h-fit" id="form">
-        <h2 className="mb-4 text-2xl font-bold dark:text-white">
+        <h2 className="mb-4 text-2xl font-bold dark:text-black">
           Ready to Get Started?
         </h2>
         <form id="contactForm">

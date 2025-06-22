@@ -110,3 +110,18 @@ export const FOOTER_DATA = {
     ],
   },
 };
+
+export const CONTACT = {
+  corporate : {
+    name:'Corporate Office',
+    area1:'Rupayan Trade Centre (Level-17)',
+    area2:'Bangla Motor, Dhaka'
+  },
+  branch : {
+    name:'Uttara Branch',
+    area1:'House - 88 (Level-3)',
+    area2:'Lake Drive Road, Sector-7, Uttara, Dhaka',
+  },
+  mobile:'01958536783',
+  mail:'info.edufutureit@gmail.com'
+}

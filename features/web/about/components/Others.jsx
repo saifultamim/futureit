@@ -25,6 +25,7 @@ export const About = () => {
     </div>
   );
 };
+
 export const MissionVission = () => {
   return (
     <div className="lg:mt-5 md:mt-3 mb-11">

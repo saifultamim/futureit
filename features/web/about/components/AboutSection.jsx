@@ -1,10 +1,10 @@
-import { aboutUs, mission, vision, motive, coreValues } from ".";
+import { aboutUs, mission, vision, motive, coreValues } from "../";
 const AboutSection = () => {
   return (
     <div>
       {/* about us */}
       <section className="font-siliguri py-10 bg-sky-100 bg-opacity-30">
-        <div className="container px-5">
+        <div className="container md:px-5 px-3">
           <h3 className="text-xl md:text-4xl font-semibold text-[#4a4949] mb-3 md:mb-6">
             {aboutUs.title}
           </h3>
@@ -53,7 +53,7 @@ const AboutSection = () => {
 
       {/* core values */}
       <section className="font-siliguri py-10 bg-sky-100 bg-opacity-30">
-        <div className="container">
+        <div className="container md:px-5 px-3">
           <h3 className="text-xl md:text-4xl font-semibold text-[#4a4949] mb-3 md:mb-6">
             Core Values
           </h3>
