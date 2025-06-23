@@ -2,6 +2,7 @@ import React from "react";
 import SocialIcons from "../ui/SocialIcons";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import Link from "next/link";
+import { HEADER_PARAMETER } from "@/utils/data/constant";
 
 const Header = () => {
   return (
@@ -11,12 +12,14 @@ const Header = () => {
           <div className="flex items-center space-x-8 text-white">
             <div className="text-base flex items-center space-x-1 leading-normal">
               <FaPhoneAlt className="text-sm" />
-              <span className="pt-1 font-siliguri">01958-536790</span>
+              <span className="pt-1 font-siliguri">
+                {HEADER_PARAMETER?.mobile}
+              </span>
             </div>
             <div className="text-base flex items-center space-x-1 leading-normal">
               <FaEnvelope />
               <span className="pt-1 font-siliguri">
-                info.edufutureit@gmail.com
+                {HEADER_PARAMETER?.email}
               </span>
             </div>
           </div>
@@ -28,7 +31,7 @@ const Header = () => {
               href="/login"
               className="block py-2 px-3.5 leading-normal bg-white rounded-md text-secondary text-sm font-semibold"
             >
-              লগইন / রেজিস্ট্রার
+              {HEADER_PARAMETER?.login}
             </Link>
           </div>
         </div>

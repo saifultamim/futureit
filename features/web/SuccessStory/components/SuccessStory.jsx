@@ -4,8 +4,8 @@ import SuccessStoryCard from "./SuccessStoryCard";
 
 const SuccessStory = () => {
   return (
-    <div className="bg-primary py-10 font-siliguri w-11/12 lg:px-6 mx-auto">
-      <div className="container px-3">
+    <div className="bg-primary py-10 font-siliguri container w-11/12 lg:px-6 mx-auto">
+      <div className=" px-3">
         <div className="mb-12">
           <h2 className="text-4xl font-semibold text-[#050400] mb-5">
             {successStories?.title}

@@ -7,10 +7,14 @@ const Services = () => {
   const [selectedVideoUrl, setSelectedVideoUrl] = useState(
     "https://www.youtube.com/embed/gScdRiOngAQ?si=CfYu-KYq1k_4RK2L"
   );
+  const [activeId, setActiveId] = useState(1);
+ const handleClick = (id) => {
+    setActiveId(id);
+  };
 
   return (
     <section className="bg-services py-10">
-      <div className="w-11/12 lg:px-6 mx-auto">
+      <div className="container w-11/12 lg:px-6 mx-auto">
         <div className="text-left leading-tight mb-8">
           <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
             আমাদের বিশেষ সেবা সমূহ
@@ -20,12 +24,14 @@ const Services = () => {
             উন্নতির অভিজ্ঞতা নিন।
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          <ul className="flex flex-col space-y-3 w-full lg:w-[330px] md:w-5/6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-0 md:gap-3 gap-0">
+          <ul className="flex flex-col space-y-3 w-full ">
             {servicesIcon?.map((item, idx) => (
               <li
                 key={item?.id}
-                className={`flex items-center space-x-2 rounded-md py-1.5 px-3 border cursor-pointer bg-secondary  `}
+                // className={`flex items-center space-x-2 rounded-md py-1.5 px-3 border cursor-pointer bg-secondary  `}
+                onClick={() => handleClick(item?.id)}
+                 className={`flex items-center space-x-2 rounded-md py-1.5 px-3 cursor-pointer border border-secondary border-opacity-30  ${ activeId === item?.id ? "bg-secondary text-white" : "bg-white text-black"}`}
               >
                 {item?.image && (
                   <div className="w-8 h-8">
@@ -39,7 +45,8 @@ const Services = () => {
                 )}
 
                 <h4
-                  className={`font-siliguri lg:text-lg md:text-base text-sm text-white`}
+                  // className={`font-siliguri lg:text-lg md:text-base text-sm text-white`}
+                   className={`font-siliguri lg:text-lg md:text-base text-sm `}
                 >
                   আমাদের বিশেষ সেবা সমূহ
                 </h4>
@@ -47,7 +54,7 @@ const Services = () => {
             ))}
           </ul>
 
-          <div className="mt-6 lg:ml-16 md:mt-0 col-span-2">
+          <div className="mt-6 lg:ml-16 md:mt-0 col-span-2 ">
             {selectedVideoUrl && <Video videoUrl={selectedVideoUrl} />}
           </div>
         </div>

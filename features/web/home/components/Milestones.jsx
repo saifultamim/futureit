@@ -3,7 +3,7 @@ import { milestones, Image } from "../";
 const MileStones = () => {
   return (
     <section className="py-10">
-      <div className="w-11/12 lg:px-6 mx-auto">
+      <div className="container w-11/12 lg:px-6 mx-auto">
         <div className="text-center leading-tight mb-8">
           <h2 className="font-siliguri text-3xl md:text-4xl font-bold text-[#1F1E1E] mb-3">
             মাইলফলক

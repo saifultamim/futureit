@@ -1,12 +1,11 @@
-import { courseLessons, courseVideo } from "@/utils/data/courseLessons";
+import { courseLessons, courseVideo } from "@/utils/data/home/courseLessons";
 import React from "react";
 import { FaRegDotCircle } from "react-icons/fa";
 const SpecificCoursePage = () => {
-
   return (
     <div>
       <section className=" bg-white py-6">
-        <div className="containe w-11/12 lg:px-6 mx-auto">
+        <div className="container w-11/12 lg:px-6 mx-auto">
           <div className="flex flex-wrap md:flex-nowrap space-y-5 md:space-y-0 md:space-x-5 py-6">
             <div className="w-full md:w-2/3">
               <h1 className="font-semibold text-2xl md:text-4xl lg:text-5xl leading-[120%] text-[#101828] mb-2 font-siliguri">

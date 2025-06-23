@@ -10,7 +10,7 @@ import { Suspense } from "react";
 
 const AboutPage = ({ searchParams }) => {
   return (
-    <div className="w-11/12 mx-auto lg:px-6">
+    <div className="container w-11/12 mx-auto lg:px-6">
       {!searchParams?.content && <AboutPageContent />}
 
       {searchParams?.content === "about" && <About />}

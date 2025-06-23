@@ -6,6 +6,7 @@ import { FaChevronRight, FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import CourseSearch from "../ui/course/Search";
+import { NAVBAR_PARAMETER } from "@/utils/data/constant";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -34,7 +35,7 @@ const Navbar = () => {
                     href="/about"
                     className="font-siliguri text-base text-[#1F1E1E] leading-5"
                   >
-                    আমাদের সম্পর্কে
+                    {NAVBAR_PARAMETER?.aboutUs}
                   </Link>
                 </li>
                 <li>
@@ -42,7 +43,7 @@ const Navbar = () => {
                     href="/success-story"
                     className="font-siliguri text-base text-[#1F1E1E] leading-5"
                   >
-                    সাফল্যের গল্প
+                    {NAVBAR_PARAMETER?.successStory}
                   </Link>
                 </li>
                 <li>
@@ -50,7 +51,7 @@ const Navbar = () => {
                     href="/contact"
                     className="font-siliguri text-base text-[#1F1E1E] leading-5"
                   >
-                    যোগাযোগ
+                    {NAVBAR_PARAMETER?.contact}
                   </Link>
                 </li>
               </ul>
@@ -59,11 +60,13 @@ const Navbar = () => {
             <div className="block md:hidden lg:hidden w-full">
               <div className="flex items-center gap-4">
                 <Link
-                  href="#"
+                  href="/course"
                   className="font-siliguri text-[#1F1E1E] md:text-white border border-secondary
                   bg-transparent md:bg-secondary rounded-md font-bold text-lg flex items-center justify-center  py-3 px-4"
                 >
-                  <span className="uppercase leading-5 ">ব্রাউজ কোর্স</span>
+                  <span className="uppercase leading-5 ">
+                    {NAVBAR_PARAMETER?.browseCourse}
+                  </span>
                   <FaChevronDown className="ml-3 text-sm" />
                 </Link>
 
@@ -91,17 +94,17 @@ const Navbar = () => {
             <ul className="flex flex-col items-start space-y-4 w-full">
               <li className="w-full ">
                 <Link
-                  href="/about"
+                  href="/login"
                   className="font-siliguri text-lg text-[#1F1E1E] font-semibold flex justify-between items-center"
                 >
-                  <span>লগইন করুন</span>
+                  <span>{NAVBAR_PARAMETER?.login}</span>
                   <FaChevronRight></FaChevronRight>
                 </Link>
               </li>
               <li className="w-full border-b border-[#b9b8b8]"></li>
               <li>
                 <Link href="/" className="font-siliguri text-lg text-[#1F1E1E]">
-                  হোম
+                  {NAVBAR_PARAMETER?.home}
                 </Link>
               </li>
               <li>
@@ -109,7 +112,7 @@ const Navbar = () => {
                   href="/about"
                   className="font-siliguri text-lg text-[#1F1E1E]"
                 >
-                  আমাদের সম্পর্কে
+                  {NAVBAR_PARAMETER?.aboutUs}
                 </Link>
               </li>
               <li>
@@ -117,7 +120,7 @@ const Navbar = () => {
                   href="/success-story"
                   className="font-siliguri text-lg text-[#1F1E1E]"
                 >
-                  সাফল্যের গল্প
+                  {NAVBAR_PARAMETER?.successStory}
                 </Link>
               </li>
               <li>
@@ -125,7 +128,7 @@ const Navbar = () => {
                   href="/contact"
                   className="font-siliguri text-lg text-[#1F1E1E]"
                 >
-                  যোগাযোগ
+                  {NAVBAR_PARAMETER?.contact}
                 </Link>
               </li>
             </ul>

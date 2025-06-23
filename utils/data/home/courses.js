@@ -8,23 +8,27 @@ export const courses = [
     title: "Mastering Digital Marketing (Online) Course",
     img: course1,
     price: "24999",
+    xitemcode: "ITM000065",
   },
   {
     id: 2,
     title: "Mastering Digital Marketing (Offline) Course",
     img: course2,
     price: "27500",
+    xitemcode: "ITM000066",
   },
   {
     id: 3,
     title: "All-in-One Graphic Design Guide",
     img: course3,
     price: "28500",
+    xitemcode: "ITM000067",
   },
   {
     id: 4,
     title: "All-in-One Graphic Design Guide",
     img: course4,
     price: "12500",
+    xitemcode: "ITM000068",
   },
 ];

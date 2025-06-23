@@ -55,7 +55,7 @@ body {
     @apply border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-sm focus:outline-none block w-full mt-2;
   }
     .btn {
-    @apply bg-transparent text-[#000000b5] text-lg  pb-0 border-2 border-secondary  font-medium font-siliguri transition duration-150 ease-out hover:ease-in hover:bg-secondary hover:text-white;
+    @apply bg-transparent text-[#000000b5] text-lg  leading-normal pt-2 pb-1  border-2 border-secondary  font-medium font-siliguri transition duration-150 ease-out hover:ease-in hover:bg-secondary hover:text-white;
   }
 
   .gradientText{

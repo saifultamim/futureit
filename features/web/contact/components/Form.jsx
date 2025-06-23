@@ -12,7 +12,7 @@ const Form = () => {
             <div className="mx-0 mb-1 sm:mb-4">
               <div className="mx-0 mb-1 sm:mb-4">
                 <label
-                  for="name"
+                  htmlFor="name"
                   className="pb-1 text-xs uppercase tracking-wider"
                 >
                   Name
@@ -27,7 +27,7 @@ const Form = () => {
               </div>
               <div className="mx-0 mb-1 sm:mb-4">
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="pb-1 text-xs uppercase tracking-wider"
                 >
                   Email
@@ -43,7 +43,7 @@ const Form = () => {
             </div>
             <div className="mx-0 mb-1 sm:mb-4">
               <label
-                for="textarea"
+                htmlFor="textarea"
                 className="pb-1 text-xs uppercase tracking-wider"
               >
                 Message

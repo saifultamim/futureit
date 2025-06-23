@@ -3,7 +3,7 @@ import { highlights, Image } from "..";
 const Highlights = () => {
   return (
     <div>
-      <section className="font-siliguri bg-primary py-10">
+      <section className="font-siliguri bg-primary py-5 md:py-10 ">
         <div className="container px-3 mx-auto">
           {highlights?.map((params, idx) => (
             <div
@@ -44,7 +44,9 @@ const Highlights = () => {
                   alt={params?.title}
                   width={500}
                   height={500}
-                  className={`rounded-lg ${highlights?.length-1 == idx ? '' : 'shadow-md'}`}
+                  className={`rounded-lg ${
+                    highlights?.length - 1 == idx ? "" : "shadow-md"
+                  }`}
                 />
               </div>
             </div>

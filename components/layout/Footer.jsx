@@ -9,13 +9,13 @@ const Footer = () => {
       <div className="top-footer py-10 w-11/12 lg:px-6 mx-auto">
         <div className="container">
           <div className="flex flex-wrap lg:flex-row lg:space-x-12 sm:gap-x-10 gap-y-10">
-            <div className="text-white lg:flex-1">
-              <Image src={FOOTER_DATA.logoSrc} alt="Logo" />
+            <div className="text-white lg:flex-1 md:mx-auto">
+              <Image src={FOOTER_DATA.logoSrc} alt="Logo" className='max-w-60 md:mx-auto' />
               <p className="text-sm font-normal text-justify text-[#BDBCBC] py-6 font-siliguri">
                 {FOOTER_DATA.description}
               </p>
 
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 md:justify-center">
                  <SocialIcons size="w-8 h-8" bgColor="bg-[#ffffff]" />
               </div>
             </div>

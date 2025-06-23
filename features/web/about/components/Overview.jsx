@@ -27,9 +27,9 @@ const Overview = () => {
         </div>
       </section>
 
-      <section className="font-siliguri py-10 bg-sky-100 bg-opacity-30">
+      <section className="font-siliguri py-5 md:py-10 bg-sky-100 bg-opacity-30">
         <div className="container px-5">
-          <h3 className="text-4xl font-semibold text-[#4a4949] mb-3">
+          <h3 className="text-xl md:text-4xl font-semibold text-[#4a4949] mb-3">
             {teaching.title}
           </h3>
           <p className="leading-normal md:leading-7 font-medium text-[#605f62] mb-8 text-justify">
@@ -48,7 +48,7 @@ const Overview = () => {
         </div>
       </section>
 
-      <section className="font-siliguri bg-primary py-10">
+      <section className="font-siliguri bg-primary pt-5 md:pt-10 ">
         <div className="container px-3 mx-auto">
           <div className="">
             <h3 className="text-xl md:text-4xl font-semibold text-[#4a4949] mb-3 md:mb-6">

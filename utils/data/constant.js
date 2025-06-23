@@ -7,6 +7,21 @@ import {
 } from "react-icons/fa";
 import footerLogo from "@/public/images/logofooter.png";
 
+export const HEADER_PARAMETER = {
+  mobile: "01958-536790",
+  email: "info.edufutureit@gmail.com",
+  login: "লগইন / রেজিস্ট্রার",
+};
+
+export const NAVBAR_PARAMETER = {
+  home: "হোম",
+  aboutUs: "আমাদের সম্পর্কে",
+  successStory: " সাফল্যের গল্প",
+  contact: "যোগাযোগ",
+  browseCourse: "ব্রাউজ কোর্স",
+  login: "লগইন করুন",
+};
+
 export const FOOTER_ABOUT_PAGE_PARAMETER = {
   ABOUT: "about",
   MISSION_AND_VISION: "mission-and-vision",
@@ -112,16 +127,16 @@ export const FOOTER_DATA = {
 };
 
 export const CONTACT = {
-  corporate : {
-    name:'Corporate Office',
-    area1:'Rupayan Trade Centre (Level-17)',
-    area2:'Bangla Motor, Dhaka'
+  corporate: {
+    name: "Corporate Office",
+    area1: "Rupayan Trade Centre (Level-17)",
+    area2: "Bangla Motor, Dhaka",
   },
-  branch : {
-    name:'Uttara Branch',
-    area1:'House - 88 (Level-3)',
-    area2:'Lake Drive Road, Sector-7, Uttara, Dhaka',
+  branch: {
+    name: "Uttara Branch",
+    area1: "House - 88 (Level-3)",
+    area2: "Lake Drive Road, Sector-7, Uttara, Dhaka",
   },
-  mobile:'01958536783',
-  mail:'info.edufutureit@gmail.com'
-}
+  mobile: "01958536783",
+  mail: "info.edufutureit@gmail.com",
+};

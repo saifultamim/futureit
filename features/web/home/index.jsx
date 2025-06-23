@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { React } from "react";
 import heroImage from "@/public/images/hero.png";
 import CourseCart from "@/components/ui/course/Cart";
 import { courses } from "@/utils/data/home/courses";
@@ -13,7 +12,6 @@ import MentorsModal from "@/components/modal/Mentors";
 
 export {
   Image,
-  React,
   heroImage,
   CourseCart,
   courses,
