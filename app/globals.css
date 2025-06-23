@@ -48,3 +48,29 @@ body {
   /* background: #555; */
   background : '#EE3373'
 }
+
+
+/* =========================================== */
+ .login-input {
+    @apply border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-sm focus:outline-none block w-full mt-2;
+  }
+    .btn {
+    @apply bg-transparent text-[#000000b5] text-lg  pb-0 border-2 border-secondary  font-medium font-siliguri transition duration-150 ease-out hover:ease-in hover:bg-secondary hover:text-white;
+  }
+
+  .gradientText{
+  background: linear-gradient(
+      93.77deg,
+      rgb(206 92 13) 0%,
+      rgb(2 28 12 / 79%) 25%
+    ),
+    #e6dacf;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  display: inline-block;
+}
+/* ================================================ */
