@@ -33,7 +33,7 @@ const SuccessStoryCard = ({ successStory }) => {
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
           onClick={() => handleVideoOpen(successStory?.src)}
         >
-          <Image src={playIcon} alt="playicon" className="w-12 md:w-auto" />
+          <Image src={playIcon} alt="playicon" className="w-12 md:w-16" />
         </div>
       </div>
       <VideoModal

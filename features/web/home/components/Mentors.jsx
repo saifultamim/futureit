@@ -4,6 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { mentors, MentorsModal } from "../";
 const Mentors = () => {
+  const [visibleCount, setVisibleCount] = useState(12);
+  const visibleComments = mentors.slice(0, visibleCount);
+  const hasMore = visibleCount < mentors.length;
+
   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
@@ -18,50 +22,65 @@ const Mentors = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-            {mentors.length > 0 &&
-              mentors?.map((mentor, idx) => (
-                <Link
-                  key={idx}
-                  href="#"
-                  className="block relative h-fit md:h-80 w-full md:w-64 border border-[#afacac33] shadow-lg rounded-lg"
-                >
-                  <div className="relative w-full md:w-[239px] mx-auto px-2 pt-3.5">
-                    {mentor?.img ? (
-                      <Image
-                        src={mentor?.img}
-                        width={239}
-                        height={240}
-                        alt={mentor?.name}
-                        className="z-50 w-full rounded-lg"
-                      />
-                    ) : (
-                      <Image
-                        src="/images/no.jpg"
-                        width={200}
-                        height={200}
-                        alt={mentor?.name}
-                        className="z-50 w-full rounded-lg"
-                      />
-                    )}
-                    <div className="bg-white flex flex-col items-center justify-center mt-[-16px] relative md:rounded-t-xl rounded-b-md text-center w-full p-2.5">
-                      <h4
-                        className={`font-inter text-[#1D2026]  ${
-                          mentor?.name.length > 24 ? "text-sm" : "text-base"
-                        } leading-5 font-semibold mb-1`}
-                      >
-                        {mentor?.name}
-                      </h4>
-                      <p
-                        className="text-[#8C94A3] font-normal text-sm flex h-10 font-siliguri"
-                        dangerouslySetInnerHTML={{
-                          __html: mentor?.desc,
-                        }}
-                      ></p>
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+              {visibleComments.length > 0 &&
+                visibleComments?.map((mentor, idx) => (
+                  <Link
+                    key={idx}
+                    href={`/teacher/${mentor?.id}`}
+                    className="block relative w-full border border-[#afacac33]  shadow-lg rounded-lg mx-auto p-3.5"
+                  >
+                    <div className="relative  mx-auto ">
+                      {mentor?.img ? (
+                        <Image
+                          src={mentor?.img}
+                          width={239}
+                          height={240}
+                          alt={mentor?.name}
+                          className="z-50 w-full rounded-lg"
+                        />
+                      ) : (
+                        <Image
+                          src="/images/no.jpg"
+                          width={200}
+                          height={200}
+                          alt={mentor?.name}
+                          className="z-50 w-full rounded-lg"
+                        />
+                      )}
+                      <div className="bg-white flex flex-col items-center justify-center relative md:rounded-t-xl rounded-b-md text-center w-full p-2.5 h-20">
+                        <h4
+                          className={`font-inter text-[#1D2026]  ${
+                            mentor?.name.length > 24 ? "text-sm" : "text-base"
+                          } leading-5 font-semibold mb-1`}
+                        >
+                          {mentor?.name}
+                        </h4>
+                        <p
+                          className="text-[#8C94A3] font-normal text-sm flex  font-siliguri"
+                          dangerouslySetInnerHTML={{
+                            __html: mentor?.desc,
+                          }}
+                        ></p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+            </div>
+
+            {hasMore && (
+              <div className="w-full mt-8">
+                <button
+                  onClick={() => setVisibleCount((prev) => prev + 12)}
+                  className="flex justify-center items-center h-full  w-full "
+                >
+                  <span className="bg-secondary font-siliguri text-white px-4 py-2 rounded-md">
+                    আরও দেখুন
+                  </span>
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-wrap justify-start md:justify-center items-center mt-10 space-y-4 md:space-y-0 md:space-x-3 font-siliguri">
