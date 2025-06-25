@@ -1,5 +1,10 @@
 import Form from "@/features/web/contact/components/Form";
 import { CONTACT } from "@/utils/data/constant";
+import { getPageTitle } from "@/utils/MetaData";
+
+export const generateMetadata = () => ({
+  title: getPageTitle("contact"),
+});
 
 const ContactPage = () => {
   return (

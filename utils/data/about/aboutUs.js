@@ -9,11 +9,11 @@ import {
 } from "react-icons/fa";
 export const aboutUs = {
   title: " About Us",
-  desc: "Future IT Language Training Institute is a premier institution providing cutting-edge IT and soft skills training. We believe in nurturing talent and fostering a learning environment that encourages creativity, critical thinking, and collaboration. Recognizing the rapid evolution of technology and the increasing importance of soft skills in the modern workplace, our founders created a comprehensive training institute that would equip learners with the knowledge and abilities needed to thrive in today's competitive landscape.",
+  desc: "Edufuture is a dynamic and future-oriented training institute committed to excellence in IT and language education. We provide career-focused courses designed for students, job seekers, entrepreneurs, and working professionals. Through innovative teaching and real-world applications, we help individuals transform their dreams into achievements.",
 };
 export const mission = {
   title: "Mission",
-  desc: "We aim to bridge the gap between education and industry by delivering high-quality, industry-relevant training programs that equip learners with the practical skills and expertise necessary for success in their chosen fields.",
+  desc: "To deliver cutting-edge, accessible, and industry-relevant education in IT and language that enhances professional capabilities and unlocks lifelong opportunities.",
   icon: (
     <FaBullseye className="text-6xl text-blue-500 mb-3 mx-auto animate-pulse" />
   ),
@@ -21,7 +21,7 @@ export const mission = {
 
 export const vision = {
   title: "Vision",
-  desc: " We envision a future where individuals from all walks of life can access top-notch training and development opportunities that enable them to achieve their personal and professional goals.",
+  desc: "To become a trusted national leader in skill-based education—producing globally competent professionals who drive innovation and growth.",
   icon: (
     <FaLightbulb className="text-6xl text-green-500 mb-3 mx-auto animate-pulse" />
   ),
@@ -29,7 +29,12 @@ export const vision = {
 
 export const motive = {
   title: "Motive",
-  desc: "At Future IT Language Training Institute, our motive encapsulates the essence of our vision and commitment to our learners. 'Learn Fun Earn' isn't just a tagline; it's a guiding principle that drives everything we do. 'Learn Fun Earn' isn't just a motto—it's a promise. Join us on this journey of discovery, growth, and achievement, and let's learn, have fun, and earn together!",
+  desc:[
+    'Promote freelancing and entrepreneurship',
+    'Empower individuals with digital and linguistic fluency',
+    'Bridge the education-to-employment gap',
+    'Empower individuals with digital and linguistic fluency',
+  ],
   icon: (
     <FaHandHoldingHeart className="text-6xl text-red-500 mb-3 mx-auto animate-pulse" />
   ),

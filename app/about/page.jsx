@@ -1,4 +1,4 @@
-import { Loading } from "@/components/ui/Loading";
+
 import AboutPageContent from "@/features/web/about/components/AboutPageContent";
 import {
   About,
@@ -6,7 +6,12 @@ import {
   Facilities,
   MissionVission,
 } from "@/features/web/about/components/Others";
-import { Suspense } from "react";
+import { getPageTitle } from "@/utils/MetaData";
+
+export const generateMetadata = () => ({
+  title: getPageTitle("about"),
+});
+
 
 const AboutPage = ({ searchParams }) => {
   return (

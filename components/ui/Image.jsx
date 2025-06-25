@@ -7,8 +7,6 @@ const ImageComponent = ({ imgUrl, itemId }) => {
         <Image
           src={imgUrl}
           alt={`${itemId}.jpg`}
-          width="3000"
-          height="300"
           className="w-full h-56 rounded-t-3xl"
         />
       ) : (

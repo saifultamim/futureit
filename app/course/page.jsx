@@ -1,7 +1,10 @@
-import ImageComponent from "@/components/ui/Image";
+
 import { CourseCart, courses } from "@/features/web/home";
-import Link from "next/link";
-import Image from "next/image";
+import { getPageTitle } from "@/utils/MetaData";
+
+export const generateMetadata = () => ({
+  title: getPageTitle("course"),
+});
 
 const CoursePage = () => {
   return (

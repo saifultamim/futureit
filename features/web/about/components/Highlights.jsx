@@ -18,7 +18,7 @@ const Highlights = () => {
                 <h3 className="text-xl md:text-4xl font-semibold text-[#4a4949] mb-3 md:mb-6">
                   {params?.title}
                 </h3>
-                <p className="leading-normal md:leading-7 font-medium text-[#605f62] mb-8 text-justify">
+                <p className="leading-normal md:leading-7 font-medium text-[#605f62] mb-5 text-justify">
                   {params?.desc}
                 </p>
                 {params?.items && (
@@ -28,14 +28,14 @@ const Highlights = () => {
                         key={idx}
                         className="leading-normal md:leading-7 font-medium text-justify"
                       >
-                        <strong>{item?.title}</strong> {item?.desc}
+                        <strong>{item}</strong> {item?.desc}
                       </li>
                     ))}
                   </ul>
                 )}
               </div>
               <div
-                className={`col-span-1 my-auto hidden md:block ${
+                className={`col-span-1 lg:my-auto ${ highlights?.length - 1 == idx ? "md:my-auto" : ""}  hidden md:block ${
                   idx % 2 !== 0 ? "md:order-1" : "md:order-2"
                 }`}
               >

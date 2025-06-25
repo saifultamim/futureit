@@ -59,7 +59,7 @@ const Navbar = () => {
 
             <div className="block md:hidden lg:hidden w-full">
               <div className="flex items-center gap-4">
-                <Link
+                {/* <Link
                   href="/course"
                   className="font-siliguri text-[#1F1E1E] md:text-white border border-secondary
                   bg-transparent md:bg-secondary rounded-md font-bold text-lg flex items-center justify-center  py-3 px-4"
@@ -68,8 +68,19 @@ const Navbar = () => {
                     {NAVBAR_PARAMETER?.browseCourse}
                   </span>
                   <FaChevronDown className="ml-3 text-sm" />
+                </Link> */}
+                <Link
+                  href="/"
+                  className="block md:hidden w-full max-w-[160px] logo"
+                >
+                  <Image
+                    src={logo}
+                    alt="logo"
+                    width={800}
+                    height={500}
+                    priority
+                  />
                 </Link>
-
                 <button
                   className="flex-1 flex justify-end"
                   onClick={toggleMobileMenu}
@@ -129,6 +140,18 @@ const Navbar = () => {
                   className="font-siliguri text-lg text-[#1F1E1E]"
                 >
                   {NAVBAR_PARAMETER?.contact}
+                </Link>
+              </li>
+              <li className='w-full'>
+                <Link
+                  href="/course"
+                  className="font-siliguri text-[#1F1E1E] md:text-white border border-secondary
+                  bg-transparent md:bg-secondary rounded-md font-bold text-lg flex items-center justify-center  py-3 px-4"
+                >
+                  <span className="uppercase leading-5 ">
+                    {NAVBAR_PARAMETER?.browseCourse}
+                  </span>
+                  <FaChevronDown className="ml-3 text-sm" />
                 </Link>
               </li>
             </ul>
