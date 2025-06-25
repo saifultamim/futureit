@@ -26,8 +26,6 @@ const Teacher = ({ params }) => {
                   className="z-50 w-full rounded-lg  mx-auto"
                 />
               </div>
-
-              {/* <div className="flex flex-col space-y-2 w-full font-siliguri border border-red-600"></div> */}
             </div>
             <div className="lg:w-2/3 md:w-3/4">
               <h1 className="font-semibold text-5xl  text-[#101828] mb-3 font-siliguri">
