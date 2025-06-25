@@ -1,4 +1,3 @@
-
 import Courses from "@/features/web/home/components/Courses";
 import Hero from "@/features/web/home/components/Hero";
 import MileStones from "@/features/web/home/components/Milestones";

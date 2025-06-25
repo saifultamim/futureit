@@ -1,4 +1,3 @@
-
 import AboutPageContent from "@/features/web/about/components/AboutPageContent";
 import {
   About,
@@ -11,7 +10,6 @@ import { getPageTitle } from "@/utils/MetaData";
 export const generateMetadata = () => ({
   title: getPageTitle("about"),
 });
-
 
 const AboutPage = ({ searchParams }) => {
   return (

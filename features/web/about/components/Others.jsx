@@ -50,7 +50,8 @@ export const Facilities = () => {
         <ul className="mt-4 space-y-3 list-disc ml-5">
           {facilities?.core.map((facility, index) => (
             <li key={index}>
-              <span className="font-semibold">{facility?.title}: &nbsp;</span><br/>
+              <span className="font-semibold">{facility?.title}: &nbsp;</span>
+              <br />
               <span>{facility?.description}</span>
             </li>
           ))}
@@ -67,12 +68,13 @@ export const Career = () => {
       <p className="text-lg font-medium text-[#4a4949] leading-normal pb-1">
         {career?.desc}
       </p>
-       <div className="flex flex-col mt-10 font-siliguri">
+      <div className="flex flex-col mt-10 font-siliguri">
         <h3 className="text-xl">{career?.courseTitle}</h3>
         <ul className="mt-4 space-y-3 list-disc ml-5">
           {career?.courses.map((course, index) => (
             <li key={index}>
-              <span className="font-semibold">{course?.name}: &nbsp;</span><br/>
+              <span className="font-semibold">{course?.name}: &nbsp;</span>
+              <br />
               <span>{course?.description}</span>
             </li>
           ))}

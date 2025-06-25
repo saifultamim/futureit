@@ -42,13 +42,11 @@ const AboutSection = () => {
                 <h4 className="text-3xl font-bold text-red-800 mb-3">
                   {motive.title}
                 </h4>
-                  <ul className="leading-relaxed md:leading-8 font-medium text-[#747374]  grid lg:grid-cols-2 grid-cols-1 list-disc px-4">
-                    {
-                      motive?.desc.map((params,idx)=>(
-                      <li key={idx}>{params}</li>
-                      ))
-                    }
-              </ul>
+                <ul className="leading-relaxed md:leading-8 font-medium text-[#747374]  grid lg:grid-cols-2 grid-cols-1 list-disc px-4">
+                  {motive?.desc.map((params, idx) => (
+                    <li key={idx}>{params}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

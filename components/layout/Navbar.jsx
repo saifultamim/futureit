@@ -142,7 +142,7 @@ const Navbar = () => {
                   {NAVBAR_PARAMETER?.contact}
                 </Link>
               </li>
-              <li className='w-full'>
+              <li className="w-full">
                 <Link
                   href="/course"
                   className="font-siliguri text-[#1F1E1E] md:text-white border border-secondary

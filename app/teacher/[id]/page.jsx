@@ -2,16 +2,15 @@ import { mentors } from "@/utils/data/home/mentors";
 import Image from "next/image";
 
 export async function generateMetadata({ params }) {
-const mentor = mentors.find((m) => m.id.toString() === params.id);
+  const mentor = mentors.find((m) => m.id.toString() === params.id);
   return {
-    title: `EduFutureIT | ${mentor.name }`,
+    title: `EduFutureIT | ${mentor.name}`,
   };
 }
 
 const Teacher = ({ params }) => {
-  console.log("teacher params : ", params);
   const mentor = mentors.find((m) => m.id.toString() === params.id);
-  console.log("find teacher ", mentor);
+
   return (
     <>
       <section className="course-details-wrap bg-white md:py-10 ">

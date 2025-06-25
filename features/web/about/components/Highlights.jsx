@@ -35,7 +35,9 @@ const Highlights = () => {
                 )}
               </div>
               <div
-                className={`col-span-1 lg:my-auto ${ highlights?.length - 1 == idx ? "md:my-auto" : ""}  hidden md:block ${
+                className={`col-span-1 lg:my-auto ${
+                  highlights?.length - 1 == idx ? "md:my-auto" : ""
+                }  hidden md:block ${
                   idx % 2 !== 0 ? "md:order-1" : "md:order-2"
                 }`}
               >

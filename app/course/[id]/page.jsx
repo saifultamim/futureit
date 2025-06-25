@@ -1,17 +1,16 @@
 import { courseLessons, courseVideo } from "@/utils/data/home/courseLessons";
 import React from "react";
 import { FaRegDotCircle } from "react-icons/fa";
-import {courses} from '@/utils/data/home/courses'
+import { courses } from "@/utils/data/home/courses";
 
 export async function generateMetadata({ params }) {
-const course = courses?.find((m) => m.xitemcode === params.id);
+  const course = courses?.find((m) => m.xitemcode === params.id);
   return {
-      title: `EduFutureIT | ${course?.title}`,
+    title: `EduFutureIT | ${course?.title}`,
   };
 }
 
-const SpecificCoursePage = async({params}) => {
-
+const SpecificCoursePage = async ({ params }) => {
   return (
     <div>
       <section className=" bg-white py-6">

@@ -19,5 +19,5 @@ const CallToUs = () => {
       </section>
     </>
   );
-}
+};
 export default CallToUs;

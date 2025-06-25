@@ -1,4 +1,3 @@
-
 import { CourseCart, courses } from "@/features/web/home";
 import { getPageTitle } from "@/utils/MetaData";
 
