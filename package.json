@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "moment-timezone": "^0.6.0",
     "next": "14.2.25",
+    "quill": "^2.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.5.0",
+    "react-quilljs": "^2.0.5",
     "swiper": "^11.2.8",
     "tailwind-merge": "^3.3.0"
   },

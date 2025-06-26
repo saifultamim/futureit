@@ -38,7 +38,7 @@ const Testimonial = () => {
         >
           {/* Prev Button */}
           <button
-            className={`swiper-button-prev-custom absolute md:left-2 left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#f26f9d] text-white hover:bg-secondary shadow md:-mt-0 -mt-4 ${
+            className={`swiper-button-prev-custom absolute md:left-2 left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full border border-secondary text-black hover:text-white hover:bg-secondary shadow md:-mt-0 -mt-4 ${
               isBeginning ? "opacity-40 cursor-not-allowed" : ""
             }`}
             onClick={() => swiperRef.current?.slidePrev()}
@@ -49,7 +49,7 @@ const Testimonial = () => {
 
           {/* Next Button */}
           <button
-            className={`swiper-button-next-custom absolute md:right-2 right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#f26f9d] text-white hover:bg-secondary shadow md:-mt-0 -mt-4 ${
+            className={`swiper-button-next-custom absolute md:right-2 right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full border border-[#f26f9d] text-black hover:text-white hover:bg-secondary shadow md:-mt-0 -mt-4 ${
               isEnd ? "opacity-40 cursor-not-allowed" : ""
             }`}
             onClick={() => swiperRef.current?.slideNext()}

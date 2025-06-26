@@ -6,6 +6,7 @@ import {
   FaTiktok,
 } from "react-icons/fa";
 import footerLogo from "@/public/images/logofooter.png";
+import { Icons } from "@/components/Icon";
 
 export const HEADER_PARAMETER = {
   mobile: "01958-536790",
@@ -140,3 +141,71 @@ export const CONTACT = {
   mobile: "01958536783",
   mail: "info.edufutureit@gmail.com",
 };
+
+
+export const dashboardMenuItems= [
+  {
+    id: "dashboard",
+    label: "Dashboard",
+    href: "/dashboard",
+    icon: <Icons.dashboard size={20} />,
+  },
+  {
+    id: "class",
+    label: "Join Class",
+     icon: <Icons.plus size={20} />,
+    href: "/dashboard/join-class",
+  },
+  {
+    id: "homework",
+    label: "Home Work Submit",
+     icon: <Icons.check size={20} />,
+    href: "/dashboard/homework",
+  },
+  {
+    id: "exams",
+    label: "Exams",
+     icon: <Icons.book size={20} />,
+    children: [
+      {
+        id: "manageexams",
+        label: "Manage Exam",
+        href: "/dashboard/exam",
+      },
+      {
+        id: "certificate",
+        label: "Download Certificate",
+        href: "/dashboard/certificate",
+      },
+    ],
+  },
+  {
+    id: "supports",
+    label: "Support",
+     icon: <Icons.user size={20} />,
+    children: [
+      {
+        id: "notice",
+        label: "Notices",
+        href: "/student/notice",
+      },
+      {
+        id: "material",
+        label: "Study Material",
+        href: "/student/study-material",
+      },
+      {
+        id: "marketplace",
+        label: "Marketplace Video",
+        href: "/student/marketplace-video",
+      },
+    ],
+  },
+  {
+    id: "livesupport",
+    label: "Live support",
+     icon: <Icons.radio size={20} />,
+    href: "/dashboard/support",
+  },
+];
+
