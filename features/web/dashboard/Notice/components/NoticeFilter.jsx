@@ -1,54 +1,20 @@
 "use client";
 
+import { Icons } from "@/components/Icon";
 import { useState, useCallback, useTransition } from "react";
-import { Course, Batch } from "../types";
-import { Loader2 } from "lucide-react";
-import { fetchBatches } from "../actions/notice";
 
-
-
-const NoticeFilter = ({
-  studentEnrollCourses,
-  studentId,
-  onSearch,
-}) => {
+const NoticeFilter = ({ studentEnrollCourses, studentId, onSearch }) => {
   const [isPending, startTransition] = useTransition();
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedBatch, setSelectedBatch] = useState("");
-  const [batches, setBatches] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
-
-  const handleCourseChange = useCallback(async (courseId) => {
-    setSelectedCourse(courseId);
-    setSelectedBatch("");
-
-    if (!courseId) {
-      setBatches([]);
-      return;
-    }
-
-    setIsFetching(true);
-    try {
-      const newBatches = await fetchBatches(courseId, studentId);
-      setBatches(newBatches);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setIsFetching(false);
-    }
-  }, []);
-
-  const handleSearch = useCallback(() => {
-    if (!selectedCourse || !selectedBatch) return;
-
-    startTransition(() => {
-      onSearch({
-        courseId: selectedCourse,
-        batchId: selectedBatch,
-        studentId: studentId,
-      });
-    });
-  }, [selectedCourse, selectedBatch, onSearch]);
+  const batches = [
+    { id: 1, xbatchname: "xbatchname" },
+    { id: 2, xbatchname: "xbatchname" },
+  ];
+  const handleSearch = () => {
+    
+  }
 
   return (
     <form>
@@ -91,7 +57,7 @@ const NoticeFilter = ({
             </select>
             {isFetching && (
               <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-                <Loader2 className="h-5 w-5 text-gray-400 animate-spin" />
+                <Icons.loader className="h-5 w-5 text-gray-400 animate-spin" />
               </div>
             )}
           </div>
@@ -105,7 +71,7 @@ const NoticeFilter = ({
       >
         {isPending ? (
           <p className="flex items-center">
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Icons.loader className="mr-2 h-4 w-4 animate-spin" />
             Searching...
           </p>
         ) : (

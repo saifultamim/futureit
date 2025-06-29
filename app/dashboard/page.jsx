@@ -2,6 +2,7 @@ import Card from '@/components/ui/card/Card'
 import CardContent from '@/components/ui/card/CardContent'
 import CardHead from '@/components/ui/card/CardHead'
 import CardTitle from '@/components/ui/card/CardTitle'
+import ClassLists from '@/features/web/dashboard/join-class/components/ClassList'
 import NoticeList from '@/features/web/dashboard/Notice/components/List'
 
 import AssignBatchList from '@/features/web/dashboard/StudentAssignBatchs'
@@ -26,7 +27,11 @@ const dashboardPage = () => {
   xtitle: 'xtitle',
   xdescription: 'xdescription',
 }
+  ]
 
+  const classes = [
+    {xclass:'1001',lesson:{xdesc:'xdesc'},xstartdate:'11-07-2025',xstarttime:'8:00',xmeetingpass:'9:00',xjoinlink:'xjoinlink'},
+     {xclass:'1002',lesson:{xdesc:'xdesc'},xstartdate:'11-07-2025',xstarttime:'8:00',xmeetingpass:'9:00',xjoinlink:'xjoinlink'},
   ]
   return (
     <div>
@@ -71,6 +76,18 @@ const dashboardPage = () => {
             <NoticeList notices={batchNotices} />
           </CardContent>
         </Card>
+
+        {/* Class Schedule */}
+
+         <Card>
+          <CardHead>
+            <CardTitle>Class Schedule</CardTitle>
+          </CardHead>
+          <CardContent>
+            <ClassLists classes={classes} />
+          </CardContent>
+        </Card>
+
       </div>
     </div>
     </div>

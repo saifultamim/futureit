@@ -1,14 +1,29 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/Table";
+import { dateFormat } from "@/utils/dateTimeUtils";
+import {
+  formatDueDateStatus,
+  isHomeworkDueDateValid,
+} from "@/utils/homeworkValidation";
+import React from "react";
+
 const HomeworkTable = ({
   homeworkItems,
   expandedRow,
   toggleExpand,
   openModal,
 }) => {
-  const isDueDatePassed = (dueDate)=> {
+  const isDueDatePassed = (dueDate) => {
     if (!dueDate) return false;
     return !isHomeworkDueDateValid(dueDate).isValid;
   };
-
+console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++ ',homeworkItems)
   return (
     <Table className="table-auto">
       <TableHeader>
@@ -27,13 +42,13 @@ const HomeworkTable = ({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {homeworkItems.map((homework, index) => {
+        {homeworkItems?.map((homework, index) => {
           const dueDateStatus = formatDueDateStatus(homework?.xduedate);
           const isSubmitted = homework?.homework_submit?.length === 1;
           const isOverdue = dueDateStatus.isPastDue;
 
           return (
-            <React.Fragment key={homework.xquesid}>
+            <React.Fragment key={homework?.xquesid}>
               <TableRow className="hover:bg-gray-50">
                 <TableCell className="text-center text-gray-700 font-medium">
                   {index + 1}
@@ -61,7 +76,7 @@ const HomeworkTable = ({
                           : "text-green-600"
                       }`}
                     >
-                      {dueDateStatus.message}
+                      {dueDateStatus?.message}
                     </div>
                   </div>
                 </TableCell>
@@ -114,7 +129,7 @@ const HomeworkTable = ({
                       {homework?.xfile_name && (
                         <div>
                           <a
-                            href={`${HOMEWORK_QUESTION_URL}${homework.xfile_name}`}
+                            href={homework?.homework_submit[0]?.xfile_name}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-500 underline hover:text-blue-700"
@@ -126,7 +141,7 @@ const HomeworkTable = ({
                       {homework?.homework_submit?.[0]?.xfile_name && (
                         <div>
                           <a
-                            href={`${homework.homework_submit[0].xfile_name}`}
+                            href={homework?.homework_submit[0]?.xfile_name}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-green-500 underline hover:text-green-700"
@@ -204,7 +219,5 @@ const HomeworkTable = ({
     </Table>
   );
 };
-
-
 
 export default HomeworkTable;

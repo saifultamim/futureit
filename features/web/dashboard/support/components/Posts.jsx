@@ -1,41 +1,35 @@
 "use client";
 
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import { fetchPostList } from "../../actions/post";
-import { TPostCount, TSupportPost, TSupportPostWithComment } from "../../types/support";
-import { useSession } from "next-auth/react";
+
 import { Filter } from "./filter";
-import { Icons } from "@/components/Icon";
+
 import { ProfileImagePost } from "./profileImagePost";
-import { POST_STATUS } from "@/lib/constant";
+
 import { FaComment } from "react-icons/fa";
 import { Comment } from "./comment/comment";
+import { Icons } from "@/components/Icon";
+import { POST_STATUS } from "@/utils/data/constant";
 
-type TFetchPostList = {
-    result: {
-        posts: TSupportPost[];
-        counts: TPostCount[];
-    };
-};
 
-export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boolean) => void; isAction: boolean }) => {
-    const session = useSession();
-    const [posts, setPosts] = useState<TSupportPost[] | null>(null);
+export const Posts = ({ setIsAction, isAction }) => {
+     const session = {data:{user:{id:1}}}
+    const [posts, setPosts] = useState(null);
     const [fetchLoading, setFetchLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [limit, setLimit] = useState(10);
     const [filter, setFilter] = useState("All");
-    const [counts, setCounts] = useState<TPostCount[]>([]);
+    const [counts, setCounts] = useState([]);
     const [hasMore, setHasMore] = useState(true);
-    const observer = useRef<IntersectionObserver>();
-    const lastPostRef = useRef<HTMLDivElement>(null);
-    const [showComments, setShowComments] = useState<boolean | number | null>(false);
-    const [commentIndex, setCommentIndex] = useState<number | null>(null);
-    const [expendedPosts, setExpendedPosts] = useState<{ [key: string]: boolean }>({});
-    const [showCommentsLoading, setShowCommentsLoading] = useState<boolean>(false);
+    const observer = useRef();
+    const lastPostRef = useRef(null);
+    const [showComments, setShowComments] = useState(false);
+    const [commentIndex, setCommentIndex] = useState(null);
+    const [expendedPosts, setExpendedPosts] = useState({});
+    const [showCommentsLoading, setShowCommentsLoading] = useState(false);
 
     // Handle filter change
-    const handleFilterChange = (newFilter: string) => {
+    const handleFilterChange = (newFilter) => {
         setFilter(newFilter);
         setPage(1); // Reset to first page when filter changes
         setPosts(null); // Clear existing posts
@@ -44,26 +38,26 @@ export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boole
     const fetchPostL = useCallback(async () => {
         try {
             setFetchLoading(true);
-            const res = await fetchPostList<TFetchPostList>({
+            const res = await fetchPostList({
                 queryParams: `userId=${session?.data?.user?.id}&page=${page}&limit=${limit}&filter=${filter}`,
             });
             setFetchLoading(false);
             setCounts(res?.result?.counts);
 
             // Append new posts or set initial posts
-            setPosts((prevPosts) => (page === 1 ? (res?.result?.posts as TSupportPostWithComment[]) : [...(prevPosts || []), ...(res?.result?.posts as TSupportPostWithComment[])]));
+            setPosts((prevPosts) => (page === 1 ? (res?.result?.posts) : [...(prevPosts || []), ...(res?.result?.posts)]));
 
             // Check if there are more posts
             setHasMore(res?.result?.posts?.length === limit);
         } catch (error) {
-            console.error((error as Error).message);
+            console.error((error).message);
             setFetchLoading(false);
         }
     }, [session?.data?.user?.id, page, limit, filter]);
 
     // Intersection Observer callback
     const loadMore = useCallback(
-        (entries: IntersectionObserverEntry[]) => {
+        (entries) => {
             const target = entries[0];
             if (target.isIntersecting && hasMore && !fetchLoading) {
                 setPage((prevPage) => prevPage + 1);
@@ -94,14 +88,14 @@ export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boole
         if (isAction && session?.data?.user.id) fetchPostL();
     }, [fetchPostL, isAction, session?.data?.user.id]);
 
-    const toggleShowMore = (postId: string | number) => {
+    const toggleShowMore = (postId) => {
         setExpendedPosts((prevState) => ({
             ...prevState,
             [postId]: !prevState[postId],
         }));
     };
 
-    const fetchComments = async (postId: string) => {
+    const fetchComments = async (postId) => {
         try {
             await new Promise((resolve) => setTimeout(resolve, 700));
         } catch (error) {
@@ -109,7 +103,7 @@ export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boole
         }
     };
 
-    const handleClickComment = (_post: any, _index: number) => {
+    const handleClickComment = (_post, _index) => {
         if (_post?.xstatus === "Pending") return;
 
         if (commentIndex === _index) {
@@ -128,10 +122,10 @@ export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boole
 
 
 
-    const postsRender = (_posts: TSupportPostWithComment[] = []) => {
+    const postsRender = (_posts = []) => {
         if (fetchLoading) return <SkeletonCard />;
         if (_posts?.length === 0) return <NoPostsFound />;
-        return _posts?.map((post: any, index) => (
+        return _posts?.map((post, index) => (
             <div key={post.xsl} ref={index === _posts.length - 1 ? lastPostRef : null}>
                 <div key={index} className={`bg-slate-50 relative border-2 border-gray-300 rounded-xl mb-4 shadow-[0_2px_10px_3px_rgba(0,0,0,0.1)]`}>
                     {/* Question status */}
@@ -168,7 +162,7 @@ export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boole
                         {post?.xmessage?.length > 300 ? (
                             <div>
                                 <div id='quilljs-editor' dangerouslySetInnerHTML={{ __html: expendedPosts[post.xsl || ""] ? post.xmessage : post.xmessage.slice(0, 300) + "..." }} />
-                                <button onClick={() => toggleShowMore(post?.xsl as number)} className='text-blue-500 text-[12px] md:text-[14px] hover:underline'>
+                                <button onClick={() => toggleShowMore(post?.xsl)} className='text-blue-500 text-[12px] md:text-[14px] hover:underline'>
                                     {expendedPosts[post.xsl || ""] ? "Show Less" : "Show More"}
                                 </button>
                             </div>
@@ -193,6 +187,8 @@ export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boole
                     </div>
                     {/* comment section  */}
                     {commentIndex === index && showComments !== null && <Comment setIsAction={setIsAction} isAction={isAction} post={post} showCommentsLoading={showCommentsLoading} />}
+                 
+              
                 </div>
             </div>
         ));
@@ -203,7 +199,7 @@ export const Posts = ({ setIsAction, isAction }: { setIsAction: (isAction: boole
             <div>
                 <Filter filter={filter} setFilter={handleFilterChange} counts={counts} />
             </div>
-            <div className='max-w-[600px] mx-auto mt-14 flex flex-col gap-6'>{postsRender(posts as TSupportPostWithComment[])}</div>
+            <div className='max-w-[600px] mx-auto mt-14 flex flex-col gap-6'>{postsRender(posts)}</div>
         </div>
     );
 };
@@ -255,7 +251,7 @@ const NoPostsFound = () => {
         <div className='flex justify-center items-center min-h-[50vh]'>
             <div className='flex flex-col items-center gap-2 border border-red-200/85 rounded-xl px-4 py-6 min-w-[300px] mx-auto'>
                 <div className=''>
-                    <Icons.alert2 className='text-yellow-500 text-4xl' />
+                    {/* <Icons.alert2 className='text-yellow-500 text-4xl' /> */} alert2-Icons
                 </div>
 
                 <h4 className='text-center text-gray-500 text-lg'>No Posts Found</h4>

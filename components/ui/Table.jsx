@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import { cn } from "@/utils/tailwind-utils";
 
@@ -10,6 +11,7 @@ const Table = (({ className, ...props }, ref) => (
     />
   </div>
 ));
+
 Table.displayName = "Table";
 
 const TableHeader = (({ className, ...props }, ref) => (
@@ -47,6 +49,7 @@ const TableHead =(({ className, ...props }, ref) => (
     )}
     {...props}
   />
+ 
 ));
 TableHead.displayName = "TableHead";
 

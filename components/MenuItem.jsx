@@ -44,13 +44,13 @@ export const MenuItem = ({
           <button
             type="button"
             onClick={handleToggle}
-            className={`flex items-center w-full p-2 text-base text-gray-900 transition-all duration-200 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 ${
-              isCurrentActive ? "bg-gray-100 dark:bg-gray-700" : ""
+            className={`flex items-center w-full p-2 text-base text-gray-900 transition-all duration-200 rounded-lg group hover:bg-gray-100  ${
+              isCurrentActive ? "bg-gray-100 " : ""
             }`}
             style={{ paddingLeft: `${level * 1}rem` }}
           >
             {item.icon}
-            <span className="flex-1 text-sm ms-3 text-left rtl:text-right whitespace-nowrap">
+            <span className="flex-1 text-sm ms-3 text-left rtl:text-right text-gray-900 whitespace-nowrap">
               {item.label}
             </span>
             <Icons.carrowdown
@@ -94,10 +94,10 @@ export const MenuItem = ({
         <Link
           href={item.href || "#"}
           className={cn(
-            "flex items-center p-2 text-gray-900 rounded-md dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group",
-            pathname === item.href && "bg-gray-100 dark:bg-gray-700",
-            item.href === "/student/support" &&
-              "text-red-600 text-lg font-semibold animate-pulse"
+            "flex items-center p-2 text-gray-900 rounded-md dark:text-gray-800 hover:bg-gray-100  group",
+            pathname === item.href && "bg-gray-100 dark:bg-gray-100",
+            item.href === "/dashboard/support" &&
+              "text-white text-lg font-semibold animate-pulse"
           )}
           style={{ paddingLeft: `${level * 1}rem` }}
         >

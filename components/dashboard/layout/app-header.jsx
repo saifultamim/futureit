@@ -7,8 +7,6 @@
 // // // import { NotificationDropdown } from "./_components/NotificationDropdown";
 // // // import { UserProfileDropdown } from "./_components/UserProfileDropdown";
 
-
-
 // // export const NavigationButton= ({
 // //   onClick,
 // //   ariaControls,
@@ -72,8 +70,6 @@
 
 // // export default AppHeader;
 
-
-
 // // ======================================================================================
 // "use client";
 
@@ -84,9 +80,6 @@
 // // import { NotificationDropdown } from "./_components/NotificationDropdown";
 // import { UserProfileDropdown } from "./components/UserProfileDropdown";
 // import { Icons } from "@/components/Icon";
-
-
-
 
 // export const NavigationButton = ({
 //   onClick,
@@ -141,7 +134,7 @@
 //           <div className="flex items-baseline gap-8 leading-normal border border-red-600">
 //             {/* <NotificationDropdown /> */}
 //             {/* <MessageDropdown /> */}
-//             <UserProfileDropdown />  
+//             <UserProfileDropdown />
 //           </div>
 //         </nav>
 //       </div>
@@ -160,14 +153,7 @@ import React, { useState } from "react";
 import { UserProfileDropdown } from "./components/UserProfileDropdown";
 import { useSidebar } from "@/contexts/SidebarContext";
 
-
-
-
-export const NavigationButton = ({
-  onClick,
-  ariaControls,
-  children,
-}) => (
+export const NavigationButton = ({ onClick, ariaControls, children }) => (
   <button
     onClick={onClick}
     aria-controls={ariaControls}
@@ -193,18 +179,17 @@ export const MenuIcon = () => (
       d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
     />
   </svg>
-
 );
 
 const AppHeader = () => {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200  shadow-lg">
       <div className="px-4 sm:px-10">
         <nav className="flex items-center justify-between py-3">
           {/* Left Side: Menu Toggle and Search (Desktop Only) */}
-          
+
           <div className="flex items-center">
             <NavigationButton
               onClick={toggleSidebar}
@@ -212,10 +197,9 @@ const AppHeader = () => {
             >
               <span className="sr-only">Toggle sidebar</span>
               <Icons.leftArrow />
-            
             </NavigationButton>
           </div>
-<p>faasdfjalsdfasdf</p>
+          <p>faasdfjalsdfasdf</p>
           {/* Right Side Actions */}
           <div className="flex items-baseline gap-8 leading-normal">
             {/* <NotificationDropdown /> */}

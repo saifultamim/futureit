@@ -1,15 +1,15 @@
 import Link from "next/link";
+
 import { redirect } from "next/navigation";
 
-
-
 import { Icons } from "@/components/Icon";
-import ManageNotice from "@/features/web/dashboard/Notice/components/ManageNotice";
+
 import Card from "@/components/ui/card/Card";
 import CardHead from "@/components/ui/card/CardHead";
 import CardTitle from "@/components/ui/card/CardTitle";
 import CardDescription from "@/components/ui/card/CardDescription";
 import CardContent from "@/components/ui/card/CardContent";
+import ManageStudyMaterial from "@/features/web/dashboard/study-material/components/ManageStudyMaterial";
 
 const Breadcrumb = () => {
   return (
@@ -21,33 +21,35 @@ const Breadcrumb = () => {
         Home
       </Link>
       <Icons.rightArrow className="w-4 h-4" />
-      <span className="text-blue-600 font-medium">Notices</span>
+      <span className="text-blue-600 font-medium">Study Materials</span>
     </nav>
   );
 };
 
-const NoticesPage = async () => {
+const StudyMaterialPage = async () => {
+  const session = {user:{id:'1'}}
+  if (!session?.user) {
+    redirect("/login");
+  }
 
-const studentEnrollCourses = [
-  {xitemcode:'1001',xdesc:"xdesc",}
-]
-const session = {user:{id:1}}
-console.log('session : ',session)
+  const studentEnrollCourses =  [
+    {xitemcode:'1012',xdesc:'xdesc'}
+  ];
 
   return (
     <div>
       <Breadcrumb />
       <Card>
         <CardHead>
-          <CardTitle>Important Notices</CardTitle>
+          <CardTitle>Study Material</CardTitle>
           <CardDescription>
-            Stay updated with the latest notices regarding your courses. This
-            page provides all the important announcements, deadlines, and
-            events.
+            Access a wide range of study materials including notes, video,
+            guides, and resources to help you excel in your academic journey.
+            Stay organized and prepare effectively for your exams.
           </CardDescription>
         </CardHead>
         <CardContent>
-          <ManageNotice
+          <ManageStudyMaterial
             studentEnrollCourses={studentEnrollCourses}
             studentId={session?.user?.id}
           />
@@ -57,4 +59,4 @@ console.log('session : ',session)
   );
 };
 
-export default NoticesPage;
+export default StudyMaterialPage;

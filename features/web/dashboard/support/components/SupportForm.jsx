@@ -3,14 +3,14 @@
 import React, { useState } from "react";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
-import { handleUploadImages, extractImagesFromContent, mergeUploadedImages, validateContent } from "@/features/support/utils";
-import { createSupportPost } from "../../actions/supportForm";
+// import { handleUploadImages, extractImagesFromContent, mergeUploadedImages, validateContent } from "@/features/support/utils";
+// import { createSupportPost } from "../../actions/supportForm";
 import { useRouter } from "next/navigation";
 import { Icons } from "@/components/Icon";
 
 export function SupportForm({ categories, setIsOpen,setIsAction,isAction }) {
     const router = useRouter();
-    const session = useSession();
+    // const session = useSession();
     const [category, setCategory] = useState("");
     const [subject, setSubject] = useState("");
     const [contentUploading, setContentUploading] = useState(false);
@@ -25,7 +25,7 @@ export function SupportForm({ categories, setIsOpen,setIsAction,isAction }) {
             ],
         },
     });
-    const { showAlert } = useAlert();
+    // const { showAlert } = useAlert();
 
     const formDataSubmit = async (_content) => {
         try {

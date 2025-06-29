@@ -5,18 +5,18 @@ import React, { useState } from "react";
 
 
 import { EmptyList } from "@/components/ui/EmptyList";
-import HomeworkTable from "./HomeWorkTable";
+
 import HomeworkModal from "./HomeWorkModal";
 import HomeworkFilter from "./HomeWorkFilter";
+import HomeworkTable from "./HomeWorkTable";
 
 const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
   const [homeworkState, setHomeworkState] = useState({
-    items: [],
+    items:[],
     isLoading: false,
     hasSearched: false,
     error: null,
   });
-
   const [modalState, setModalState] = useState({
     isOpen: false,
     selectedHomework: null,
@@ -25,7 +25,23 @@ const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
   });
 
   const [expandedRow, setExpandedRow] = useState(null);
-
+const courseItems = [ 
+  {
+    xquesid: 1,
+    xdate: "2025-06-24",
+    xduedate: "2025-04-12",
+    xtitle: "xdesc1",
+    xmarks: 20,
+    xfile_name: "algebra_practice.pdf",
+     xdesc: "Complete all exercises from page 42 to 45 in the worksheet.",
+    homework_submit: [
+      {
+        xmarks:18,
+        xfile_name: "https://example.com/uploads/student1_algebra_answer.pdf"
+      }
+    ]
+  },
+  ]
   const toggleExpand = (index) =>
     setExpandedRow(expandedRow === index ? null : index);
 
@@ -33,7 +49,7 @@ const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
     try {
       setHomeworkState((prev) => ({
         ...prev,
-        items: [],
+        items: courseItems ,
         isLoading: true,
         error: null,
       }));
@@ -43,7 +59,7 @@ const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
  
       setHomeworkState((prev) => ({
         ...prev,
-        items: results,
+        items: courseItems ,
         isLoading: false,
         hasSearched: true,
       }));
@@ -95,7 +111,7 @@ const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
       ) : homeworkState.items.length > 0 ? (
         <div className="border rounded-lg">
           <HomeworkTable
-            homeworkItems={homeworkState.items}
+             homeworkItems={homeworkState?.items}
             expandedRow={expandedRow}
             toggleExpand={toggleExpand}
             openModal={openModal}
@@ -103,7 +119,7 @@ const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
         </div>
       ) : null}
 
-      {modalState.selectedHomework && (
+      {modalState?.selectedHomework && (
         <HomeworkModal
           isModalOpen={modalState.isOpen}
           closeModal={closeModal}

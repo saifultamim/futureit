@@ -16,7 +16,7 @@ const Breadcrumb = function Breadcrumb() {
       >
         Home
       </Link>
-      <Icons.rightChevron className="w-4 h-4" />
+      <Icons.rightArrow className="w-4 h-4" />
       <span className="text-blue-600 font-medium">Exams</span>
     </nav>
   );

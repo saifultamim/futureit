@@ -9,6 +9,8 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineEdit } from "react-icons/md";
+import { LuLoaderCircle } from "react-icons/lu";
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 export const Icons = {
   carrowdown: IoIosArrowDown,
@@ -22,4 +24,6 @@ export const Icons = {
   leftArrow: IoIosArrowBack,
   rightArrow: IoIosArrowForward,
   edit: MdOutlineEdit,
+  loader: LuLoaderCircle,
+  calendar: FaRegCalendarAlt,
 };

@@ -1,24 +1,31 @@
-const CertificatePage = () => {
+import Link from "next/link";
+
+import { redirect } from "next/navigation";
+
+import Comingsoon from "@/components/ui/ComingSoon";
+
+const Breadcrumb = () => {
   return (
-    <section className="py-24 relative">
-      <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
-        <div className="w-full md:px-16 px-10 md:pt-16 pt-10 pb-10 bg-gray-900 rounded-2xl flex-col justify-end items-center lg:gap-28 md:gap-16 gap-10 inline-flex">
-          <div className="flex-col justify-end items-center lg:gap-16 gap-10 flex">
-            <div className="flex-col justify-center items-center gap-10 flex">
-              <div className="flex-col justify-start items-center gap-2.5 flex">
-                <h2 className="text-center text-emerald-400 md:text-6xl text-5xl font-bold font-manrope leading-normal">
-                  Coming Soon
-                </h2>
-                <p className="text-center text-gray-500 text-base font-normal leading-relaxed">
-                  Just some days remaining until the big reveal of our new
-                  product!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <nav className="flex items-center space-x-1 text-sm text-gray-400 mb-8">
+      <Link
+        href="/student/dashboard"
+        className="hover:text-blue-600 transition-all"
+      >
+        Home
+      </Link>
+    </nav>
+  );
+};
+
+const CertificatePage = async () => {
+  const session = {user:{id:1}};
+  if (!session?.user) {
+    redirect("/login");
+  }
+
+  return (
+    <Comingsoon />
+  
   );
 };
 

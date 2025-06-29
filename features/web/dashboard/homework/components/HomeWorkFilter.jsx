@@ -26,7 +26,7 @@ const HomeworkFilter = ({
 
     setIsFetching(true);
     try {
-      const newBatches = await fetchBatches(courseId, studentId);
+      const newBatches = [{id:1,xbatchname:'xbatchname1'},{id:2,xbatchname:'xbatchname2'}];
       setBatches(newBatches);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -43,10 +43,11 @@ const HomeworkFilter = ({
         courseId: selectedCourse,
         batchId: selectedBatch,
         studentId: studentId,
+     
       });
     });
   }, [selectedCourse, selectedBatch, onSearch]);
-
+  
   return (
     <form>
       <div className="flex items-center gap-4 mb-6">
@@ -82,7 +83,7 @@ const HomeworkFilter = ({
               <option value="">-select-</option>
               {batches.map((batch) => (
                 <option key={batch.id} value={batch.id}>
-                  {batch.xbatchname}
+                  {batch.xbatchname} 
                 </option>
               ))}
             </select>

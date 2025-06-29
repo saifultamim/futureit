@@ -40,7 +40,7 @@ export const AppSidebar = () => {
       <aside
         className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform 
             ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-         bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
+         bg-white border-r border-gray-200 sm:translate-x-0  shadow-lg`}
         aria-label="Sidebar"
       >
         <div className="flex items-center justify-between px-4 py-3.5 ">
@@ -62,16 +62,16 @@ export const AppSidebar = () => {
             aria-label="Toggle Sidebar"
           >
             {isSidebarOpen ? (
-                 <Icons.rightArrow size={24} className='text-white'/>
+                 <Icons.rightArrow size={24} className='text-gray-800'/>
 
             ) : (
-                 <Icons.leftArrow size={24} className='text-white' />
+                 <Icons.leftArrow size={24} className='text-gray-800' />
             
             )}
           </button>
         </div>
 
-        <div className="h-[calc(100%-80px)] px-3 pt-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+        <div className="h-[calc(100%-80px)] px-3 pt-3 pb-4 overflow-y-auto bg-white ">
           <ul className="space-y-2 font-medium">
             {dashboardMenuItems.map((item) => (
               <MenuItem
@@ -87,7 +87,7 @@ export const AppSidebar = () => {
       </aside>
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-50 z-30 sm:hidden"
+          className="fixed inset-0 bg-gray-100 opacity-50 z-30 sm:hidden"
           onClick={toggleSidebar}
         ></div>
       )}

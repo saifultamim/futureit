@@ -1,22 +1,21 @@
 "use client";
-// import { useStudent } from "@/contexts/StudentProvider";
+
 import { useState, useCallback, useTransition } from "react";
 
+import { Icons } from "@/components/Icon";
 
 
-const ExamFilter = ({ onSearch }) => {
+
+const HomeworkFilter = ({
+  studentEnrollCourses,
+  studentId,
+  onSearch,
+}) => {
   const [isPending, startTransition] = useTransition();
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedBatch, setSelectedBatch] = useState("");
-  const [selectedLesson, setSelectedLesson] = useState("");
   const [batches, setBatches] = useState([]);
-  const [lessons, setLessons] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
-
-  //  const { enrolledCourses } = useStudent();
-   const enrolledCourses = [
-    {xitem: "1001",xdesc: "4o2340875"},
-   ]
 
   const handleCourseChange = useCallback(async (courseId) => {
     setSelectedCourse(courseId);
@@ -24,16 +23,13 @@ const ExamFilter = ({ onSearch }) => {
 
     if (!courseId) {
       setBatches([]);
-      setLessons([]);
       return;
     }
 
     setIsFetching(true);
     try {
-      const { batches } = await fetchBatches(courseId);
-      const { lessons } = await fetchLessons(courseId);
-      setBatches(batches);
-      setLessons(lessons);
+      const newBatches = await fetchBatches(courseId, studentId);
+      setBatches(newBatches);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -42,22 +38,21 @@ const ExamFilter = ({ onSearch }) => {
   }, []);
 
   const handleSearch = useCallback(() => {
-    if (!selectedCourse || !selectedBatch || !selectedLesson) return;
+    if (!selectedCourse || !selectedBatch) return;
 
     startTransition(() => {
       onSearch({
         courseId: selectedCourse,
         batchId: selectedBatch,
-        lessonId: selectedLesson,
+        studentId: studentId,
       });
     });
-  }, [selectedCourse, selectedBatch, selectedLesson, onSearch]);
-
+  }, [selectedCourse, selectedBatch, onSearch]);
 
   return (
     <form>
-      <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
-        <div className="flex-1 w-full">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="flex-1">
           <label className="text-sm text-gray-500 font-semibold mb-1">
             Course
           </label>
@@ -66,14 +61,14 @@ const ExamFilter = ({ onSearch }) => {
             onChange={(e) => handleCourseChange(e.target.value)}
           >
             <option value="">-select course-</option>
-            {enrolledCourses?.map((course) => (
+            {studentEnrollCourses?.map((course) => (
               <option key={course.xitemcode} value={course.xitemcode}>
                 {course?.xdesc}
               </option>
             ))}
           </select>
         </div>
-        <div className="flex-1 w-full">
+        <div className="flex-1">
           <label className="text-sm text-gray-500 font-semibold mb-1">
             Batch
           </label>
@@ -95,35 +90,7 @@ const ExamFilter = ({ onSearch }) => {
             </select>
             {isFetching && (
               <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-                <Loader2 className="h-5 w-5 text-gray-400 animate-spin" />
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="flex-1 w-full">
-          <label className="text-sm text-gray-500 font-semibold mb-1">
-            Lesson
-          </label>
-          <div className="relative">
-            <select
-              className={`w-full p-2 border rounded-md bg-white ${
-                isFetching ? "text-gray-400" : ""
-              }`}
-              value={selectedLesson}
-              disabled={!selectedCourse || isFetching}
-              onChange={(e) => setSelectedLesson(e.target.value)}
-            >
-              <option value="">-select-</option>
-              {lessons.map((lesson) => (
-                <option key={lesson.xlesson} value={lesson.xlesson}>
-                  {parse(lesson.xdesc)}
-                </option>
-              ))}
-            </select>
-            {isFetching && (
-              <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-                <Loader2 className="h-5 w-5 text-gray-400 animate-spin" />
+                <Icons.loader className="h-5 w-5 text-gray-400 animate-spin" />
               </div>
             )}
           </div>
@@ -133,13 +100,11 @@ const ExamFilter = ({ onSearch }) => {
       <button
         className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
         onClick={handleSearch}
-        disabled={
-          !selectedCourse || !selectedBatch || !selectedLesson || isPending
-        }
+        disabled={!selectedCourse || !selectedBatch || isPending}
       >
         {isPending ? (
           <p className="flex items-center">
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Icons.loader className="mr-2 h-4 w-4 animate-spin" />
             Searching...
           </p>
         ) : (
@@ -150,4 +115,4 @@ const ExamFilter = ({ onSearch }) => {
   );
 };
 
-export default ExamFilter;
+export default HomeworkFilter;

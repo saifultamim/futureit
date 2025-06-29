@@ -142,8 +142,7 @@ export const CONTACT = {
   mail: "info.edufutureit@gmail.com",
 };
 
-
-export const dashboardMenuItems= [
+export const dashboardMenuItems = [
   {
     id: "dashboard",
     label: "Dashboard",
@@ -153,19 +152,19 @@ export const dashboardMenuItems= [
   {
     id: "class",
     label: "Join Class",
-     icon: <Icons.plus size={20} />,
+    icon: <Icons.plus size={20} />,
     href: "/dashboard/join-class",
   },
   {
     id: "homework",
     label: "Home Work Submit",
-     icon: <Icons.check size={20} />,
+    icon: <Icons.check size={20} />,
     href: "/dashboard/homework",
   },
   {
     id: "exams",
     label: "Exams",
-     icon: <Icons.book size={20} />,
+    icon: <Icons.book size={20} />,
     children: [
       {
         id: "manageexams",
@@ -182,30 +181,55 @@ export const dashboardMenuItems= [
   {
     id: "supports",
     label: "Support",
-     icon: <Icons.user size={20} />,
+    icon: <Icons.user size={20} />,
     children: [
       {
         id: "notice",
         label: "Notices",
-        href: "/student/notice",
+        href: "/dashboard/notice",
       },
       {
         id: "material",
         label: "Study Material",
-        href: "/student/study-material",
+        href: "/dashboard/study-material",
       },
       {
         id: "marketplace",
         label: "Marketplace Video",
-        href: "/student/marketplace-video",
+        href: "/dashboard/marketplace-video",
       },
     ],
   },
   {
     id: "livesupport",
     label: "Live support",
-     icon: <Icons.radio size={20} />,
+    icon: <Icons.radio size={20} />,
     href: "/dashboard/support",
   },
 ];
 
+export const SUPPORT_POST_STUDENT = "stu";
+export const SUPPORT_POST_TEACHER = "tea";
+export const SUPPORT_POST_ADMIN = "adm";
+
+export const POST_STATUS = {
+  SOLVED: "Solved",
+  APPROVED: "Approved",
+  PENDING: "Pending",
+  MY_POST: "My Post",
+};
+
+
+
+export const TAB_CONFIG = [
+  {
+    type: "Regular",
+    label: "Regular Exams",
+    emptyMessage: "No regular exams available at the moment.",
+  },
+  {
+    type: "Reexam",
+    label: "Re-Exams",
+    emptyMessage: "No re-exams scheduled currently.",
+  },
+] ;

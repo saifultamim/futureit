@@ -30,7 +30,7 @@ const Breadcrumb = () => {
 const HomeworkPage = async () => {
 
 
-const id  = 1
+const id  = '1'
 const studentEnrollCourses = [ 
   {xitemcode:'102002',xdesc:'xdesc1'},
    {xitemcode:'102004',xdesc:'xdesc2'},

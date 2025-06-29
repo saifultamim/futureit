@@ -1,0 +1,63 @@
+'use client'
+import { useCallback, useState } from "react";
+
+export const useExamState = () => {
+  const [examState, setExamState] = useState({
+    regularExams: [],
+    reexams: [],
+    isLoading: false,
+    hasSearched: false,
+    error: null,
+     examData : {
+  xexammstsl: '',
+  xitemcode: '',
+  xbatch: '',
+  xlesson: '',
+  xlessonno: '',
+  xtitle: '',
+  xdescription: '',
+  xset: '',
+  xdate: '',
+  xstarttime: '',
+  xendtime: '',
+  xenddate: '',
+}
+  });
+
+//   const handleSearch = useCallback(async (filters) => {
+//     try {
+//       setExamState((prev) => ({
+//         ...prev,
+//         isLoading: true,
+//         error: null,
+//       }));
+
+//       const results = await searchExam(filters);
+
+//       setExamState({
+//         regularExams: results.regularExams,
+//         reexams: results.reexams,
+//         isLoading: false,
+//         hasSearched: true,
+//         error: null,
+//       });
+//     } catch (error) {
+//       setExamState((prev) => ({
+//         ...prev,
+//         isLoading: false,
+//         hasSearched: true,
+//         error:
+//           error instanceof Error
+//             ? error
+//             : new Error("An error occurred while searching"),
+//       }));
+//     }
+//   }, []);
+const handleSearch = (filters) => {
+
+}
+  return {
+    examState,
+    handleSearch,
+  };
+};

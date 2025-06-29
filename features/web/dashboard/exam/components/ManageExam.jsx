@@ -1,11 +1,18 @@
+'use client'
 import React from "react";
 import ExamFilter from "./ExamFilter";
+
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { ErrorAlert } from "@/components/ui/ErrorAlert";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/Table";
+import { useExamState } from "@/hooks/useExamState";
+import { TAB_CONFIG } from "@/utils/data/constant";
+
 
 const ManageExam = () => {
-  //   const { examState, handleSearch } = useExamState();
-  const { isLoading, error, hasSearched } = examState;
+    const { examState, handleSearch } = useExamState();
+  const { isLoading, error, hasSearched, } = examState;
 
   return (
     <div>
