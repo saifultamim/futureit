@@ -33,8 +33,8 @@ const MarketplaceVideo = async () => {
 
 
 const studentEnrollCourses = [
-  {xitemcode:"1001",xedsc:"xdesc1"},
-  {xitemcode:"1002",xedsc:"xdesc2"},
+  {xitemcode:"1001",xdesc:"xdesc1",xyoutube_embed_link:"https://www.youtube.com/embed/gScdRiOngAQ?si=CfYu-KYq1k_4RK2L?autoplay=1",xdate:"2025-03-12"},
+  {xitemcode:"1002",xdesc:"xdesc2",xyoutube_embed_link:"https://www.youtube.com/embed/gScdRiOngAQ?si=CfYu-KYq1k_4RK2L?autoplay=1",xdate:"2025-03-12"},
 ]
   return (
     <div>

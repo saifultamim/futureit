@@ -35,7 +35,7 @@ const ManageHomeWork = ({
   const handleSearch = async (filters) => {
      console.log('++++++++++++++++++++++++++++++++++++++++++ ')
         if (!filters) {
-      return <div>this is not filter</div>;
+      return <div> filter</div>;
   }
     try {
       setHomeworkState((prev) => ({

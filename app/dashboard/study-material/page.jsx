@@ -33,7 +33,8 @@ const StudyMaterialPage = async () => {
   }
 
   const studentEnrollCourses =  [
-    {xitemcode:'1012',xdesc:'xdesc'}
+    {xitemcode:'1001',xdesc:'xdesc1',xemburl:'https://www.youtube.com/embed/gScdRiOngAQ?si=CfYu-KYq1k_4RK2L?autoplay=1',xdate:"2025-06-12",xlessonname:'xlessonname'},
+     {xitemcode:'1002',xdesc:'xdesc2',xemburl:'https://www.youtube.com/embed/gScdRiOngAQ?si=CfYu-KYq1k_4RK2L?autoplay=1',xdate:"2025-06-12",xlessonname:'xlessonname'},
   ];
 
   return (

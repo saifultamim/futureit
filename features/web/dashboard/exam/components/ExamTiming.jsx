@@ -1,3 +1,5 @@
+import { formatTimeToUTC } from "@/utils/dateTimeUtils";
+
 const ExamTiming = ({
   startTime,
   endTime,
@@ -11,3 +13,4 @@ const ExamTiming = ({
     </span>
   </div>
 );
+export default ExamTiming;

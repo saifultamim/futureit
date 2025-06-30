@@ -7,6 +7,7 @@ import Card from "@/components/ui/card/Card";
 import CardContent from "@/components/ui/card/CardContent";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { Icons } from "@/components/Icon";
+import { dateFormat } from "@/utils/dateTimeUtils";
 
 
 const ManageMarketPlaceVideo = ({
@@ -31,8 +32,48 @@ const ManageMarketPlaceVideo = ({
   };
 
   const handleSearch = async (filters) => {
-  
+    try {
+      setMarketPlaceVideoState((prev) => ({
+        ...prev,
+        items: studentEnrollCourses ,
+        isLoading: true,
+        error: null,
+      }));
+
+      // const results: MarketplaceVideoItem[] = await searchMarketPlaceVideo(
+      //   filters
+      // );
+
+      // Initialize loading state for new videos
+      // const newLoadingStates = results.reduce(
+      //   (acc: { [key: string]: boolean }, item) => ({
+      //     ...acc,
+      //     [item.xsl as number]: true,
+      //   }),
+      //   {}
+      // );
+
+      // setLoadingVideos(newLoadingStates);
+
+      // setMarketPlaceVideoState((prev) => ({
+      //   ...prev,
+      //   items: results,
+      //   isLoading: false,
+      //   hasSearched: true,
+      // }));
+    } catch (error) {
+      setMarketPlaceVideoState((prev) => ({
+        ...prev,
+        error:
+          error instanceof Error
+            ? error
+            : new Error("An error occurred while searching"),
+        isLoading: false,
+        hasSearched: true,
+      }));
+    }
   };
+
 
   return (
     <div>

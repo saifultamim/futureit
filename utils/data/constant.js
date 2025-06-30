@@ -219,6 +219,10 @@ export const POST_STATUS = {
   MY_POST: "My Post",
 };
 
+export const ExamType = {
+  REGULAR : "Regular",
+  REEXAM : "Reexam",
+}
 
 
 export const TAB_CONFIG = [

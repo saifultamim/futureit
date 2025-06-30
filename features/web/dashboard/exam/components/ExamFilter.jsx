@@ -1,4 +1,5 @@
 "use client";
+import { Icons } from "@/components/Icon";
 // import { useStudent } from "@/contexts/StudentProvider";
 import { useState, useCallback, useTransition } from "react";
 
@@ -7,15 +8,16 @@ import { useState, useCallback, useTransition } from "react";
 const ExamFilter = ({ onSearch }) => {
   const [isPending, startTransition] = useTransition();
   const [selectedCourse, setSelectedCourse] = useState("");
-  const [selectedBatch, setSelectedBatch] = useState("");
-  const [selectedLesson, setSelectedLesson] = useState("");
+  const [selectedBatch, setSelectedBatch] = useState([]);
+  const [selectedLesson, setSelectedLesson] = useState([]);
   const [batches, setBatches] = useState([]);
   const [lessons, setLessons] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
   //  const { enrolledCourses } = useStudent();
    const enrolledCourses = [
-    {xitem: "1001",xdesc: "4o2340875"},
+    {xitemcode: "1001",xdesc: "xdesc1"},
+    {xitemcode: "1002",xdesc: "xdesc2"},
    ]
 
   const handleCourseChange = useCallback(async (courseId) => {
@@ -28,10 +30,11 @@ const ExamFilter = ({ onSearch }) => {
       return;
     }
 
-    setIsFetching(true);
+    // setIsFetching(true);
     try {
-      const { batches } = await fetchBatches(courseId);
-      const { lessons } = await fetchLessons(courseId);
+      const batches  = [{id:1,xbatchname:'xbatchname1'},{id:2,xbatchname:'xbatchname2'}];
+      const lessons = [{xlesson:1,xdesc:'xdesc1'},{xlesson:2,xdesc:'xdesc2'}];
+      console.log("+++++++ batch",batches,lessons)
       setBatches(batches);
       setLessons(lessons);
     } catch (error) {
@@ -46,7 +49,7 @@ const ExamFilter = ({ onSearch }) => {
 
     startTransition(() => {
       onSearch({
-        courseId: selectedCourse,
+         courseId: selectedCourse,
         batchId: selectedBatch,
         lessonId: selectedLesson,
       });
@@ -117,13 +120,14 @@ const ExamFilter = ({ onSearch }) => {
               <option value="">-select-</option>
               {lessons.map((lesson) => (
                 <option key={lesson.xlesson} value={lesson.xlesson}>
-                  {parse(lesson.xdesc)}
+                  {/* {parse(lesson.xdesc)} */}
+                   {lesson.xdesc}
                 </option>
               ))}
             </select>
             {isFetching && (
               <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-                <Loader2 className="h-5 w-5 text-gray-400 animate-spin" />
+                <Icons.loader className="h-5 w-5 text-gray-400 animate-spin" />
               </div>
             )}
           </div>
@@ -139,7 +143,7 @@ const ExamFilter = ({ onSearch }) => {
       >
         {isPending ? (
           <p className="flex items-center">
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Icons.loader className="mr-2 h-4 w-4 animate-spin" />
             Searching...
           </p>
         ) : (

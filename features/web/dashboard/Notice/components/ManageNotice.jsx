@@ -19,7 +19,37 @@ const ManageNotice = ({ studentEnrollCourses, studentId }) => {
   const toggleExpand = (index) =>
     setExpandedRow(expandedRow === index ? null : index);
 
-  const handleSearch = async (filters) => {};
+   const handleSearch = async (filters) => {
+    try {
+      setNoticeState((prev) => ({
+        ...prev,
+        items: studentEnrollCourses,
+        isLoading: true,
+        error: null,
+      }));
+
+      setExpandedRow(null);
+
+      // const results = await searchNotice(filters);
+      // setNoticeState((prev) => ({
+      //   ...prev,
+      //   items: results,
+      //   isLoading: false,
+      //   hasSearched: true,
+      // }));
+    } catch (error) {
+      setNoticeState((prev) => ({
+        ...prev,
+        error:
+          error instanceof Error
+            ? error
+            : new Error("An error occurred while searching"),
+        isLoading: false,
+        hasSearched: true,
+      }));
+    }
+  };
+
 
   return (
     <div>

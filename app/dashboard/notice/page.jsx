@@ -29,10 +29,10 @@ const Breadcrumb = () => {
 const NoticesPage = async () => {
 
 const studentEnrollCourses = [
-  {xitemcode:'1001',xdesc:"xdesc",}
+  {xitemcode:'1001',xdesc:"xdesc1",},
+  {xitemcode:'1002',xdesc:"xdesc2",},
 ]
 const session = {user:{id:1}}
-console.log('session : ',session)
 
   return (
     <div>

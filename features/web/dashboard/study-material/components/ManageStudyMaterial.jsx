@@ -10,6 +10,7 @@ import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { EmptyList } from "@/components/ui/EmptyList";
 import Card from "@/components/ui/card/Card";
 import CardContent from "@/components/ui/card/CardContent";
+import { Icons } from "@/components/Icon";
 
 
 
@@ -35,8 +36,48 @@ const ManageStudyMaterial = ({
     }));
   };
 
-  const handleSearch = async (filters) => {
+  // const handleSearch = async (filters) => {
   
+  // };
+    const handleSearch = async (filters) => {
+    try {
+      setStudyMaterialState((prev) => ({
+        ...prev,
+        items: studentEnrollCourses,
+        isLoading: true,
+        error: null,
+      }));
+
+
+
+      // Initialize loading state for new videos
+      // const newLoadingStates = results.reduce(
+      //   (acc: { [key: string]: boolean }, item) => ({
+      //     ...acc,
+      //     [item.xsl as number]: true,
+      //   }),
+      //   {}
+      // );
+
+      // setLoadingVideos(newLoadingStates);
+
+      // setStudyMaterialState((prev) => ({
+      //   ...prev,
+      //   items: results,
+      //   isLoading: false,
+      //   hasSearched: true,
+      // }));
+    } catch (error) {
+      setStudyMaterialState((prev) => ({
+        ...prev,
+        error:
+          error instanceof Error
+            ? error
+            : new Error("An error occurred while searching"),
+        isLoading: false,
+        hasSearched: true,
+      }));
+    }
   };
 
   return (

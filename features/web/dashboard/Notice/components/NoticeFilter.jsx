@@ -8,13 +8,46 @@ const NoticeFilter = ({ studentEnrollCourses, studentId, onSearch }) => {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedBatch, setSelectedBatch] = useState("");
   const [isFetching, setIsFetching] = useState(false);
-  const batches = [
-    { id: 1, xbatchname: "xbatchname" },
-    { id: 2, xbatchname: "xbatchname" },
-  ];
-  const handleSearch = () => {
+   const [batches, setBatches] = useState([]);
+  // const batches = [
+  //   { id: '1001', xbatchname: "xbatchname1" },
+  //   { id: '1002', xbatchname: "xbatchname2" },
+  // ];
+  const handleCourseChange = useCallback(async (courseId) => {
+    setSelectedCourse(courseId);
+    setSelectedBatch("");
+
+    if (!courseId) {
+      setBatches([]);
+      return;
+    }
+
+    setIsFetching(true);
+    try {
+      const newBatches = [{ id: 1, xbatchname: "xbatchname1" },
+    { id: 2, xbatchname: "xbatchname2" },]
+      setBatches(newBatches);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setIsFetching(false);
+    }
+  }, []);
+
+  const handleSearch = useCallback(() => {
     
-  }
+    if (!selectedCourse || !selectedBatch) return;
+
+    startTransition(() => {
+      onSearch({
+        courseId: selectedCourse,
+        batchId: selectedBatch,
+        studentId: studentId,
+      });
+    });
+  
+  }, [selectedCourse, selectedBatch, onSearch]);
+  //===========================================================
 
   return (
     <form>
