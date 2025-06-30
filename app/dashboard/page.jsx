@@ -2,11 +2,11 @@ import Card from '@/components/ui/card/Card'
 import CardContent from '@/components/ui/card/CardContent'
 import CardHead from '@/components/ui/card/CardHead'
 import CardTitle from '@/components/ui/card/CardTitle'
-import ClassLists from '@/features/web/dashboard/join-class/components/ClassList'
-import NoticeList from '@/features/web/dashboard/Notice/components/List'
+import ClassLists from '@/features/dashboard/join-class/components/ClassList'
+import NoticeList from '@/features/dashboard/Notice/components/List'
+import AssignBatchList from '@/features/dashboard/StudentAssignBatchs'
+import ActiveCourseList from '@/features/dashboard/StudentEnrollCourses'
 
-import AssignBatchList from '@/features/web/dashboard/StudentAssignBatchs'
-import ActiveCourseList from '@/features/web/dashboard/StudentEnrollCourses'
 import React from 'react'
 
 const dashboardPage = () => {

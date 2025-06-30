@@ -29,14 +29,14 @@ export const SupportLogs = ({ logs }) => {
   const onClose = () => setModalOpen(false);
 
   return (
-    <div className='mt-12'>
-      <h4 className="text-center text-xl uppercase font-bold py-3">
-        Support Logs
+    <div className='mt-16 mb-14'>
+      <h4 className="text-[30px] bg-[#EE3373] max-sm:text-2xl uppercase font-bold text-center mb-3">
+        Support Log
       </h4>
-      <div className="overflow-x-auto xl:w-full mt-4">
+      {/* <div className="overflow-x-auto xl:w-full mt-4">
         <table className=" min-w-full bg-red-50 border border-red-200/85 rounded-md shadow">
           <thead>
-            <tr className="bg-red-200 text-gray-700 uppercase text-xs">
+            <tr className="bg-[#EE3373] text-gray-700 uppercase text-xs">
 
               <th className="px-3 py-4 text-left">#</th>
               <th className="px-3 py-4 text-left">Topic</th>
@@ -81,39 +81,87 @@ export const SupportLogs = ({ logs }) => {
             ))}
           </tbody>
         </table>
+      </div> */}
+<div className="overflow-hidden rounded-lg shadow-md">
+        <div className="overflow-hidden rounded-lg shadow-lg">
+          <table className="min-w-full divide-y divide-gray-200 bg-white font-hindSliguri ">
+            <thead className="bg-[#050506]">
+              <tr className="bg-[#EE3373] text-sm font-semibold uppercase">
+                <th className="px-6 py-3 text-left">#</th>
+                <th className="px-6 py-3 text-left">Topic</th>
+                <th className="px-6 py-3 text-left">Time</th>
+                <th className="px-6 py-3 text-left">Comment</th>
+                <th className="px-6 py-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {currentLogs?.map((item, index) => (
+                <tr
+                  key={index}
+                  className={`${
+                    index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                  } text-[#050506]`}
+                >
+                  <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
+                    {indexOfFirstLog + index + 1}
+                  </td>
+                  <td className="px-6 py-4 text-sm whitespace-nowrap">
+                    {item?.xtopic?.slice(0, 20)}
+                  </td>
+                  <td className="px-6 py-4 text-sm whitespace-nowrap">
+                    <div>
+                      <span>
+                        {new Date(item?.ztime).toLocaleTimeString("en-US", {
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                        })}
+                      </span>
+                      <br />
+                      <span>{new Date(item?.ztime).toLocaleDateString()}</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-sm whitespace-nowrap">
+                    {item?.xcomment?.slice(0, 20) || "-"}
+                  </td>
+                  <td className="px-6 py-4 text-right whitespace-nowrap">
+                    {!item?.xcomment && (
+                      <button
+                        onClick={() => {
+                          setCommentInfo(item);
+                          onOpen();
+                        }}
+                        className="text-sm font-medium text-white bg-[#EE3373] hover:bg-[#d38301] px-4 py-2 rounded-md shadow-md transition"
+                      >
+                        Give Review
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
-
       {/* Pagination Controls */}
-      <div className="flex justify-center space-x-2 mt-4">
-        {/* Previous button */}
+     <div className="flex justify-center space-x-2 mt-6">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className={`px-3 text-[12px] py-1 text-red-700 bg-red-200 hover:bg-red-300 rounded ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''
-            }`}
+          className={`px-4 py-2 bg-orange-200 hover:bg-orange-300 text-white rounded ${
+            currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
           Previous
         </button>
 
-        {/* Page numbers */}
-        {[...Array(totalPages)]?.map((_, i) => (
-          <button
-            key={i + 1}
-            onClick={() => handlePageChange(i + 1)}
-            className={`px-3 text-[12px] py-1 text-red-700 ${currentPage === i + 1 ? 'bg-red-300' : 'bg-red-200'
-              } hover:bg-red-300 rounded`}
-          >
-            {i + 1}
-          </button>
-        ))}
-
-        {/* Next button */}
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className={`px-3 text-[12px] py-1 text-red-700 bg-red-200 hover:bg-red-300 rounded ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''
-            }`}
+          className={`px-4 py-2 bg-orange-200 hover:bg-orange-300 text-white rounded ${
+            currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
           Next
         </button>

@@ -4,12 +4,13 @@ import { redirect } from "next/navigation";
 
 
 import { Icons } from "@/components/Icon";
-import ManageNotice from "@/features/web/dashboard/Notice/components/ManageNotice";
+
 import Card from "@/components/ui/card/Card";
 import CardHead from "@/components/ui/card/CardHead";
 import CardTitle from "@/components/ui/card/CardTitle";
 import CardDescription from "@/components/ui/card/CardDescription";
 import CardContent from "@/components/ui/card/CardContent";
+import ManageNotice from "@/features/dashboard/Notice/components/ManageNotice";
 
 const Breadcrumb = () => {
   return (

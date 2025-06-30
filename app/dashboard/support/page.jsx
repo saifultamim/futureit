@@ -1,4 +1,5 @@
-import { SupportManagement } from "@/features/web/dashboard/support/components/SupportManagement"
+import { SupportManagement } from "@/features/dashboard/support/components/SupportManagement"
+
 
 
 
@@ -6,7 +7,7 @@ const SupportPage = async () => {
 
   let initialPosts = []
   let initialLogs = []
-  let initialLinks = {xstatus:"Live",eduteacher:{xteachername:"Md.Shaiful Islam"}}
+  let initialLinks = {xsl:'1001',status:"Live",eduteacher:{xteachername:"Md.Shaiful Islam"}}
   let logs = [
     {xtopic:"xtopic1",xcomment:"xcomment1"},
     {xtopic:"xtopic2",xcomment:"xcomment2"},

@@ -8,7 +8,7 @@ import CardHead from "@/components/ui/card/CardHead";
 import CardTitle from "@/components/ui/card/CardTitle";
 import CardDescription from "@/components/ui/card/CardDescription";
 import CardContent from "@/components/ui/card/CardContent";
-import ManageHomeWork from "@/features/web/dashboard/homework/components/ManageHomeWork";
+import ManageHomeWork from "@/features/dashboard/homework/components/ManageHomeWork";
 
 
 const Breadcrumb = () => {

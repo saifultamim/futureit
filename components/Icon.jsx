@@ -11,6 +11,15 @@ import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineEdit } from "react-icons/md";
 import { LuLoaderCircle } from "react-icons/lu";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { HiOutlineVideoCamera } from "react-icons/hi2";
+import { CiSettings } from "react-icons/ci";
+import { FiDownload } from "react-icons/fi";
+import { RiVolumeDownLine } from "react-icons/ri";
+import { PiQuestionMark } from "react-icons/pi";
+import { PiHash } from "react-icons/pi";
+import { TfiMenuAlt } from "react-icons/tfi";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { PiFolderSimpleBold } from "react-icons/pi";
 
 export const Icons = {
   carrowdown: IoIosArrowDown,
@@ -20,10 +29,19 @@ export const Icons = {
   book: RiBookLine,
   user: LuUsers,
   radio: IoRadio,
-  menuICon:  FaRegUserCircle,
+  menuICon: FaRegUserCircle,
   leftArrow: IoIosArrowBack,
   rightArrow: IoIosArrowForward,
   edit: MdOutlineEdit,
   loader: LuLoaderCircle,
   calendar: FaRegCalendarAlt,
+  camera: HiOutlineVideoCamera,
+  setting: CiSettings,
+  download: FiDownload,
+  notice: RiVolumeDownLine,
+  question: PiQuestionMark,
+  file: PiFolderSimpleBold ,
+  hash: PiHash,
+  menu: TfiMenuAlt,
+  eye: MdOutlineRemoveRedEye,
 };

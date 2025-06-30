@@ -150,6 +150,12 @@ export const dashboardMenuItems = [
     icon: <Icons.dashboard size={20} />,
   },
   {
+    id: "courses",
+    label: "Courses",
+    icon: <Icons.camera size={20} />,
+    href: "/dashboard/recorded-video"
+  },
+  {
     id: "class",
     label: "Join Class",
     icon: <Icons.plus size={20} />,
@@ -170,11 +176,13 @@ export const dashboardMenuItems = [
         id: "manageexams",
         label: "Manage Exam",
         href: "/dashboard/exam",
+        icon: <Icons.setting size={20} />, 
       },
       {
         id: "certificate",
         label: "Download Certificate",
         href: "/dashboard/certificate",
+        icon: <Icons.download size={20} />, 
       },
     ],
   },
@@ -187,18 +195,41 @@ export const dashboardMenuItems = [
         id: "notice",
         label: "Notices",
         href: "/dashboard/notice",
+         icon: <Icons.notice size={20} />,
+      },
+          {
+        id: "faq",
+        label: "Ask A Question",
+        href: "/dashboard/faq",
+         icon: <Icons.question size={20} />,
       },
       {
         id: "material",
-        label: "Study Material",
+        label: "View Study Material",
         href: "/dashboard/study-material",
+       icon: <Icons.file size={20} />,
       },
-      {
-        id: "marketplace",
-        label: "Marketplace Video",
+ 
+          {
+        id: "supportpost",
+        label: "Support Post",
         href: "/dashboard/marketplace-video",
+         icon: <Icons.hash size={20} />,
       },
     ],
+  },
+   {
+    id: "blogs",
+    label: "Blogs",
+    icon: <Icons.eye size={20} />,
+    children:[
+       {
+    id: "manageblog",
+    label: "Manage Blog",
+    icon: <Icons.menu size={20} />,
+    href: "/dashboard/blog",
+  },
+    ]
   },
   {
     id: "livesupport",
@@ -237,3 +268,16 @@ export const TAB_CONFIG = [
     emptyMessage: "No re-exams scheduled currently.",
   },
 ] ;
+
+export const BLOG_CATEGORY_OPTIONS = [
+  { value: "", label: "--select--" },
+  { value: "Admissions", label: "Admissions" },
+  { value: "News", label: "News" },
+  { value: "Event", label: "Event" },
+  { value: "Discussion", label: "Discussion" },
+  { value: "Tips", label: "Tips" },
+  { value: "Digital Marketing", label: "Digital Marketing" },
+  { value: "Spoken English", label: "Spoken English" },
+  { value: "Skill Development", label: "Skill Development" },
+];
+

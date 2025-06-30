@@ -13,8 +13,8 @@ import CardTitle from "@/components/ui/card/CardTitle";
 import CardHead from "@/components/ui/card/CardHead";
 import CardDescription from "@/components/ui/card/CardDescription";
 import CardContent from "@/components/ui/card/CardContent";
-import ClassLists from "@/features/web/dashboard/join-class/components/ClassList";
 import { Suspense } from "react";
+import ClassLists from "@/features/dashboard/join-class/components/ClassList";
 
 const Breadcrumb = () => {
   return (

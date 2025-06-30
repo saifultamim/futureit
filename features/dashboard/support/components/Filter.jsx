@@ -34,7 +34,7 @@ export const Filter = ({ filter, setFilter, counts }) => {
             )}
             >
           <span className="mr-2 max-sm:text-xs max-sm:mr-1">{item.label}</span>
-          <span className='max-sm:text-xs'>({item.count ?? 0})</span>
+          <span className='max-sm:text-xs'>({item.count ?? 0})sssss</span>
         </button>
 
       ))}

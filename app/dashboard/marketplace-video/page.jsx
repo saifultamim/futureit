@@ -4,7 +4,7 @@ import CardContent from "@/components/ui/card/CardContent";
 import CardDescription from "@/components/ui/card/CardDescription";
 import CardHead from "@/components/ui/card/CardHead";
 import CardTitle from "@/components/ui/card/CardTitle";
-import ManageMarketPlaceVideo from "@/features/web/dashboard/marketplace-video/components/ManageMarketPlaceVideo";
+import ManageMarketPlaceVideo from "@/features/dashboard/marketplace-video/components/ManageMarketPlaceVideo";
 import Link from "next/link";
 
 import { redirect } from "next/navigation";

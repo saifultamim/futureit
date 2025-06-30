@@ -9,7 +9,8 @@ import CardHead from "@/components/ui/card/CardHead";
 import CardTitle from "@/components/ui/card/CardTitle";
 import CardDescription from "@/components/ui/card/CardDescription";
 import CardContent from "@/components/ui/card/CardContent";
-import ManageStudyMaterial from "@/features/web/dashboard/study-material/components/ManageStudyMaterial";
+import ManageStudyMaterial from "@/features/dashboard/study-material/components/ManageStudyMaterial";
+
 
 const Breadcrumb = () => {
   return (

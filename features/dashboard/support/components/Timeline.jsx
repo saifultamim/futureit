@@ -11,13 +11,13 @@ export const Timeline = ({ categories,setIsAction,isAction }) => {
 
     return (
         <>
-            <div className="py-10 px-6 w-full bg-red-50 border border-red-200/85 rounded-md shadow max-sm:mt-10 xl:mt-7 flex justify-center items-center max-sm:gap-4 xl:gap-10 relative">
-                <h4 className="text-black font-extrabold xl:text-2xl  uppercase text-center">
-                    Timeliness
+            <div className="relative rounded-b-3xl shadow-md min-h-[100px] md:min-h-[130px] bg-[#050506] text-white flex items-center justify-center">
+                <h4 className="text-[24px] bg-[#EE3373] max-sm:text-2xl uppercase font-bold">
+                    Timeline
                 </h4>
 
                 <div className="flex justify-center absolute right-0 left-0 bottom-[-20px]">
-                    <button onClick={() => setIsOpen(true)} className="bg-red-600 text-white px-4 py-2 rounded-md shadow-md  flex items-center gap-2"><Icons.edit /> <span className='uppercase'>Create a New Post</span></button>
+                    <button onClick={() => setIsOpen(true)} className="w-fit rounded shadow-lg md:px-14 md:py-3 px-3 py-3 max-sm:text-[10px] xl:text-[18px] text-[22px] uppercase font-bold bg-sky-400 text-white hover:bg-white hover:text-orange-500 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl flex items-center gap-2"><Icons.edit /> <span className='uppercase'>Create a New Post</span></button>
                 </div>
             </div>
             <DashboardModal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Timeline" isFooter={false} size='lg'>
