@@ -1,8 +1,73 @@
 
+// import * as React from "react";
+// import { cn } from "@/utils/tailwind-utils";
+
+// const Table = (({ className, ...props }, ref) => (
+//   <div className="relative w-full overflow-auto">
+//     <table
+//       ref={ref}
+//       className={cn("w-full caption-bottom text-sm", className)}
+//       {...props}
+//     />
+//   </div>
+// ));
+
+// Table.displayName = "Table";
+
+// const TableHeader = (({ className, ...props }, ref) => (
+//   <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+// ));
+// TableHeader.displayName = "TableHeader";
+
+// const TableBody = (({ className, ...props }, ref) => (
+//   <tbody
+//     ref={ref}
+//     className={cn("[&_tr:last-child]:border-0", className)}
+//     {...props}
+//   />
+// ));
+// TableBody.displayName = "TableBody";
+
+// const TableRow = (({ className, ...props }, ref) => (
+//   <tr
+//     ref={ref}
+//     className={cn(
+//       "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
+//       className
+//     )}
+//     {...props}
+//   />
+// ));
+// TableRow.displayName = "TableRow";
+
+// const TableHead =(({ className, ...props }, ref) => (
+//   <th
+//     ref={ref}
+//     className={cn(
+//       "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
+//       className
+//     )}
+//     {...props}
+//   />
+ 
+// ));
+// TableHead.displayName = "TableHead";
+
+// const TableCell =(({ className, ...props }, ref) => (
+//   <td
+//     ref={ref}
+//     className={cn("p-4 align-middle [&:has([role=checkbox])]:pr-0", className)}
+//     {...props}
+//   />
+// ));
+// TableCell.displayName = "TableCell";
+
+// export { Table, TableHeader, TableBody, TableRow, TableHead, TableCell };
+// ======================================================================================
 import * as React from "react";
 import { cn } from "@/utils/tailwind-utils";
 
-const Table = (({ className, ...props }, ref) => (
+const Table = React.forwardRef(({ className, ...props }, ref) => (
   <div className="relative w-full overflow-auto">
     <table
       ref={ref}
@@ -11,15 +76,14 @@ const Table = (({ className, ...props }, ref) => (
     />
   </div>
 ));
-
 Table.displayName = "Table";
 
-const TableHeader = (({ className, ...props }, ref) => (
+const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
   <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
 ));
 TableHeader.displayName = "TableHeader";
 
-const TableBody = (({ className, ...props }, ref) => (
+const TableBody = React.forwardRef(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
     className={cn("[&_tr:last-child]:border-0", className)}
@@ -28,7 +92,7 @@ const TableBody = (({ className, ...props }, ref) => (
 ));
 TableBody.displayName = "TableBody";
 
-const TableRow = (({ className, ...props }, ref) => (
+const TableRow = React.forwardRef(({ className, ...props }, ref) => (
   <tr
     ref={ref}
     className={cn(
@@ -40,7 +104,7 @@ const TableRow = (({ className, ...props }, ref) => (
 ));
 TableRow.displayName = "TableRow";
 
-const TableHead =(({ className, ...props }, ref) => (
+const TableHead = React.forwardRef(({ className, ...props }, ref) => (
   <th
     ref={ref}
     className={cn(
@@ -49,11 +113,10 @@ const TableHead =(({ className, ...props }, ref) => (
     )}
     {...props}
   />
- 
 ));
 TableHead.displayName = "TableHead";
 
-const TableCell =(({ className, ...props }, ref) => (
+const TableCell = React.forwardRef(({ className, ...props }, ref) => (
   <td
     ref={ref}
     className={cn("p-4 align-middle [&:has([role=checkbox])]:pr-0", className)}

@@ -1,68 +1,93 @@
 "use client";
 
+
 import React, { useState } from "react";
-
-
-
-import { EmptyList } from "@/components/ui/EmptyList";
-
-import HomeworkModal from "./HomeWorkModal";
 import HomeworkFilter from "./HomeWorkFilter";
+import { EmptyList } from "@/components/ui/EmptyList";
 import HomeworkTable from "./HomeWorkTable";
+import HomeworkModal from "./HomeWorkModal";
 
-const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
+
+
+const ManageHomeWork = ({
+  studentEnrollCourses,
+  studentId,
+}) => {
   const [homeworkState, setHomeworkState] = useState({
-    items:[],
+    items: [],
     isLoading: false,
     hasSearched: false,
     error: null,
   });
+
   const [modalState, setModalState] = useState({
     isOpen: false,
-    selectedHomework: null,
-    errors: null,
+    selectedHomework: null ,
+    errors: null ,
     isNewFile: false,
   });
 
   const [expandedRow, setExpandedRow] = useState(null);
-const courseItems = [ 
-  {
-    xquesid: 1,
-    xdate: "2025-06-24",
-    xduedate: "2025-04-12",
-    xtitle: "xdesc1",
-    xmarks: 20,
-    xfile_name: "algebra_practice.pdf",
-     xdesc: "Complete all exercises from page 42 to 45 in the worksheet.",
-    homework_submit: [
-      {
-        xmarks:18,
-        xfile_name: "https://example.com/uploads/student1_algebra_answer.pdf"
-      }
-    ]
-  },
-  ]
+
   const toggleExpand = (index) =>
     setExpandedRow(expandedRow === index ? null : index);
 
   const handleSearch = async (filters) => {
+     console.log('++++++++++++++++++++++++++++++++++++++++++ ')
+        if (!filters) {
+      return <div>this is not filter</div>;
+  }
     try {
       setHomeworkState((prev) => ({
         ...prev,
-        items: courseItems ,
+        items: [
+  {
+    xitemcode: "DSA101",
+    xbatch: "3",
+    xstudent: "2025001",
+    description: "Solved all exercises from lesson 3.",
+    xquesid: "1",
+    submissionId: null,
+       homework_submit: [
+      {
+        xmarks:10,
+        xfile_name: "https://drive.google.com/file/d/abc123xyz456/view?usp=sharing"
+      }
+    ],
+    xduedate: "2025-07-10",
+    existingFileKey: null
+  },
+  {
+    xitemcode: "WD202",
+    xbatch: "5",
+    xstudent: "2025002",
+    description: "Implemented responsive layout using CSS Grid.",
+    xquesid: 2,
+    submissionId: "9",
+   homework_submit: [
+      {
+        xmarks:18,
+        xfile_name: "this is pdf"
+      }
+    ],
+    xduedate: "2025-07-05",
+    existingFileKey: "file-key-123"
+  }
+]
+,
         isLoading: true,
         error: null,
       }));
 
       setExpandedRow(null);
 
- 
-      setHomeworkState((prev) => ({
-        ...prev,
-        items: courseItems ,
-        isLoading: false,
-        hasSearched: true,
-      }));
+      // const results = await searchHomework(filters);
+      // setHomeworkState((prev) => ({
+      //   ...prev,
+      //   items: results,
+      //   isLoading: false,
+      //   hasSearched: true,
+      // }));
     } catch (error) {
       setHomeworkState((prev) => ({
         ...prev,
@@ -94,7 +119,45 @@ const courseItems = [
     });
   };
 
-  const handleSubmit = async (formData) => {};
+  const handleSubmit = async (formData) => {
+    try {
+      const { selectedHomework, isNewFile } = modalState;
+
+      formData.set("xstudent", studentId);
+      formData.set("xitemcode", selectedHomework?.xitemcode || "");
+      formData.set("xbatch", selectedHomework?.xbatch || "");
+      formData.set("xduedate", selectedHomework?.xduedate || "");
+
+      const result = await submitHomework(formData);
+      if (result.success) {
+        const updatedHomeworkItems = homeworkState.items.map(
+          (item) =>
+            item.xquesid === selectedHomework?.xquesid
+              ? { ...item, homework_submit: [result?.data] }
+              : item
+        );
+
+        setHomeworkState((prev) => ({
+          ...prev,
+          items: updatedHomeworkItems,
+        }));
+
+        closeModal();
+      } else {
+        setModalState((prev) => ({
+          ...prev,
+          errors: result.errors || null,
+        }));
+      }
+    } catch (error) {
+      setModalState((prev) => ({
+        ...prev,
+        errors: {
+          general: ["Failed to submit homework. Please try again."],
+        },
+      }));
+    }
+  };
 
   return (
     <div>
@@ -111,15 +174,16 @@ const courseItems = [
       ) : homeworkState.items.length > 0 ? (
         <div className="border rounded-lg">
           <HomeworkTable
-             homeworkItems={homeworkState?.items}
+            homeworkItems={homeworkState.items}
             expandedRow={expandedRow}
             toggleExpand={toggleExpand}
             openModal={openModal}
           />
+   
         </div>
       ) : null}
 
-      {modalState?.selectedHomework && (
+      {modalState.selectedHomework && (
         <HomeworkModal
           isModalOpen={modalState.isOpen}
           closeModal={closeModal}
@@ -131,5 +195,7 @@ const courseItems = [
     </div>
   );
 };
+
+
 
 export default ManageHomeWork;

@@ -1,5 +1,6 @@
 "use client";
 
+import { Icons } from "@/components/Icon";
 import { useState, useCallback, useTransition } from "react";
 
 
@@ -89,8 +90,7 @@ const HomeworkFilter = ({
             </select>
             {isFetching && (
               <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-                {/* <Loader2 className="h-5 w-5 text-gray-400 animate-spin" /> */}
-                <p>Loader 2</p>
+                <Icons.loader className="h-5 w-5 text-gray-400 animate-spin" />
               </div>
             )}
           </div>
@@ -104,7 +104,7 @@ const HomeworkFilter = ({
       >
         {isPending ? (
           <p className="flex items-center">
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Icons.loader className="mr-2 h-4 w-4 animate-spin" />
             Searching...
           </p>
         ) : (
