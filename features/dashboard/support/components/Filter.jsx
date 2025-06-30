@@ -20,7 +20,7 @@ export const Filter = ({ filter, setFilter, counts }) => {
   };
 
   return (
-    <main className='flex items-center justify-center mt-12'>
+    <main className='flex items-center justify-center mt-12 '>
 
     <div className="flex gap-4 max-sm:gap-2 max-sm:flex-wrap">
       {renderSanitizeFilterWithCount(counts).map((item) => (
@@ -34,7 +34,7 @@ export const Filter = ({ filter, setFilter, counts }) => {
             )}
             >
           <span className="mr-2 max-sm:text-xs max-sm:mr-1">{item.label}</span>
-          <span className='max-sm:text-xs'>({item.count ?? 0})sssss</span>
+          <span className='max-sm:text-xs'>({item.count ?? 0})</span>
         </button>
 
       ))}
