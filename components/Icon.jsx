@@ -20,6 +20,11 @@ import { PiHash } from "react-icons/pi";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { PiFolderSimpleBold } from "react-icons/pi";
+import { LuLockKeyhole } from "react-icons/lu";
+import { LuCircleCheckBig } from "react-icons/lu";
+import { FaRegClock } from "react-icons/fa6";
+import { FiAlertCircle } from "react-icons/fi";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 export const Icons = {
   carrowdown: IoIosArrowDown,
@@ -40,8 +45,13 @@ export const Icons = {
   download: FiDownload,
   notice: RiVolumeDownLine,
   question: PiQuestionMark,
-  file: PiFolderSimpleBold ,
+  file: PiFolderSimpleBold,
   hash: PiHash,
   menu: TfiMenuAlt,
   eye: MdOutlineRemoveRedEye,
+  logout: LuLockKeyhole,
+  checkCircle: LuCircleCheckBig,
+  clock: FaRegClock,
+  errorAlert: FiAlertCircle,
+  closeOutline: IoMdCloseCircleOutline,
 };

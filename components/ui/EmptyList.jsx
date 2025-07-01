@@ -1,10 +1,8 @@
-
-
 export const EmptyList = ({
   // icon: Icon = Inbox,
   title = "No Data Found",
   description = "Get started by adding your first item",
-  className='',
+  className = "",
 }) => {
   return (
     <div

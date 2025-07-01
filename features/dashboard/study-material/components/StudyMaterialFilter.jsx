@@ -4,13 +4,7 @@ import { useState, useCallback, useTransition } from "react";
 
 import { Icons } from "@/components/Icon";
 
-
-
-const HomeworkFilter = ({
-  studentEnrollCourses,
-  studentId,
-  onSearch,
-}) => {
+const HomeworkFilter = ({ studentEnrollCourses, studentId, onSearch }) => {
   const [isPending, startTransition] = useTransition();
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedBatch, setSelectedBatch] = useState("");
@@ -28,8 +22,10 @@ const HomeworkFilter = ({
 
     setIsFetching(true);
     try {
-      const newBatches = [{ id: 1, xbatchname: "xbatchname1" },
-    { id: 2, xbatchname: "xbatchname2" },]
+      const newBatches = [
+        { id: 1, xbatchname: "xbatchname1" },
+        { id: 2, xbatchname: "xbatchname2" },
+      ];
       setBatches(newBatches);
     } catch (error) {
       console.error("Error fetching data:", error);

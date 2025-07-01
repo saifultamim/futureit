@@ -1,18 +1,12 @@
 "use client";
 
-
 import React, { useState } from "react";
 import HomeworkFilter from "./HomeWorkFilter";
 import { EmptyList } from "@/components/ui/EmptyList";
 import HomeworkTable from "./HomeWorkTable";
 import HomeworkModal from "./HomeWorkModal";
 
-
-
-const ManageHomeWork = ({
-  studentEnrollCourses,
-  studentId,
-}) => {
+const ManageHomeWork = ({ studentEnrollCourses, studentId }) => {
   const [homeworkState, setHomeworkState] = useState({
     items: [],
     isLoading: false,
@@ -22,8 +16,8 @@ const ManageHomeWork = ({
 
   const [modalState, setModalState] = useState({
     isOpen: false,
-    selectedHomework: null ,
-    errors: null ,
+    selectedHomework: null,
+    errors: null,
     isNewFile: false,
   });
 
@@ -33,61 +27,52 @@ const ManageHomeWork = ({
     setExpandedRow(expandedRow === index ? null : index);
 
   const handleSearch = async (filters) => {
-     console.log('++++++++++++++++++++++++++++++++++++++++++ ')
-        if (!filters) {
+    if (!filters) {
       return <div> filter</div>;
-  }
+    }
     try {
       setHomeworkState((prev) => ({
         ...prev,
         items: [
-  {
-    xitemcode: "DSA101",
-    xbatch: "3",
-    xstudent: "2025001",
-    description: "Solved all exercises from lesson 3.",
-    xquesid: "1",
-    submissionId: null,
-       homework_submit: [
-      {
-        xmarks:10,
-        xfile_name: "https://drive.google.com/file/d/abc123xyz456/view?usp=sharing"
-      }
-    ],
-    xduedate: "2025-07-10",
-    existingFileKey: null
-  },
-  {
-    xitemcode: "WD202",
-    xbatch: "5",
-    xstudent: "2025002",
-    description: "Implemented responsive layout using CSS Grid.",
-    xquesid: 2,
-    submissionId: "9",
-   homework_submit: [
-      {
-        xmarks:18,
-        xfile_name: "this is pdf"
-      }
-    ],
-    xduedate: "2025-07-05",
-    existingFileKey: "file-key-123"
-  }
-]
-,
+          {
+            xitemcode: "DSA101",
+            xbatch: "3",
+            xstudent: "2025001",
+            description: "Solved all exercises from lesson 3.",
+            xquesid: "1",
+            submissionId: null,
+            homework_submit: [
+              {
+                xmarks: 10,
+                xfile_name:
+                  "https://drive.google.com/file/d/abc123xyz456/view?usp=sharing",
+              },
+            ],
+            xduedate: "2025-07-10",
+            existingFileKey: null,
+          },
+          {
+            xitemcode: "WD202",
+            xbatch: "5",
+            xstudent: "2025002",
+            description: "Implemented responsive layout using CSS Grid.",
+            xquesid: 2,
+            submissionId: "9",
+            homework_submit: [
+              {
+                xmarks: 18,
+                xfile_name: "this is pdf",
+              },
+            ],
+            xduedate: "2025-07-05",
+            existingFileKey: "file-key-123",
+          },
+        ],
         isLoading: true,
         error: null,
       }));
 
       setExpandedRow(null);
-
-      // const results = await searchHomework(filters);
-      // setHomeworkState((prev) => ({
-      //   ...prev,
-      //   items: results,
-      //   isLoading: false,
-      //   hasSearched: true,
-      // }));
     } catch (error) {
       setHomeworkState((prev) => ({
         ...prev,
@@ -130,11 +115,10 @@ const ManageHomeWork = ({
 
       const result = await submitHomework(formData);
       if (result.success) {
-        const updatedHomeworkItems = homeworkState.items.map(
-          (item) =>
-            item.xquesid === selectedHomework?.xquesid
-              ? { ...item, homework_submit: [result?.data] }
-              : item
+        const updatedHomeworkItems = homeworkState.items.map((item) =>
+          item.xquesid === selectedHomework?.xquesid
+            ? { ...item, homework_submit: [result?.data] }
+            : item
         );
 
         setHomeworkState((prev) => ({
@@ -179,7 +163,6 @@ const ManageHomeWork = ({
             toggleExpand={toggleExpand}
             openModal={openModal}
           />
-   
         </div>
       ) : null}
 
@@ -195,7 +178,5 @@ const ManageHomeWork = ({
     </div>
   );
 };
-
-
 
 export default ManageHomeWork;

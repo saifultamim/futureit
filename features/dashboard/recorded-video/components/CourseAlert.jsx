@@ -7,10 +7,10 @@ const CourseAlert = () => (
     </h2>
 
     {/* Course Info List */}
-    <ul className="list-none space-y-4 text-sm lg:text-xl text-left">
+    <ul className="list-none space-y-4 text-sm lg:text-lg text-left">
       <li className="flex items-center gap-3">
         <div className="shrink-0">
-          <FiLock className="text-red-400 w-4 h-4 lg:w-8 lg:h-8" />
+          <FiLock className="text-red-400 w-4 h-4 lg:w-6 lg:h-6" />
         </div>
         <span className="text-gray-800">
           To unlock the next lesson or quiz, you must watch at least{" "}
@@ -19,7 +19,7 @@ const CourseAlert = () => (
       </li>
       <li className="flex items-center gap-3">
         <div className="shrink-0">
-          <FiLock className="text-red-600 w-4 h-4 lg:w-8 lg:h-8" />
+          <FiLock className="text-red-600 w-4 h-4 lg:w-6 lg:h-6" />
         </div>
         <span className="text-gray-800">
           If you did not attend this lesson’s live class, the content will
@@ -28,7 +28,7 @@ const CourseAlert = () => (
       </li>
       <li className="flex items-center gap-3">
         <div className="shrink-0">
-          <FiLock className="text-red-600 w-4 h-4 lg:w-8 lg:h-8" />
+          <FiLock className="text-red-600 w-4 h-4 lg:w-6 lg:h-6" />
         </div>
         <span className="text-gray-800">
           The lesson content will remain <strong>locked</strong> if the live
@@ -37,7 +37,7 @@ const CourseAlert = () => (
       </li>
       <li className="flex items-center gap-3">
         <div className="shrink-0">
-          <FiCheckCircle className="text-green-600 w-4 h-4 lg:w-8 lg:h-8" />
+          <FiCheckCircle className="text-green-600 w-4 h-4 lg:w-6 lg:h-6" />
         </div>
         <span className="text-gray-800">
           To unlock the next lesson, you must fully complete the previous
@@ -46,7 +46,7 @@ const CourseAlert = () => (
       </li>
       <li className="flex items-center gap-3">
         <div className="shrink-0">
-          <FiCheckCircle className="text-green-600 w-4 h-4 lg:w-8 lg:h-8" />
+          <FiCheckCircle className="text-green-600 w-4 h-4 lg:w-6 lg:h-6" />
         </div>
         <span className="text-gray-800">
           After completing the video, you must click the{" "}
@@ -57,7 +57,7 @@ const CourseAlert = () => (
     </ul>
 
     {/* Bottom Highlight Box */}
-    <div className="mt-4 text-sm lg:text-xl bg-green-50 border-l-4 border-[#09BCCF] text-[#09bbcff4] p-4 rounded">
+    <div className="mt-4 text-sm lg:text-lg bg-green-50 border-l-4 border-[#09BCCF] text-[#09bbcff4] p-4 rounded">
       <strong>Note:</strong> Please reach out to your instructor if you have any
       questions regarding the course requirements.
     </div>

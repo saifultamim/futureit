@@ -1,9 +1,8 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import { useRouter } from 'next/navigation';
-
+import { useRouter } from "next/navigation";
 
 export const SupportLogs = ({ logs }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -29,60 +28,12 @@ export const SupportLogs = ({ logs }) => {
   const onClose = () => setModalOpen(false);
 
   return (
-    <div className='mt-16 mb-14'>
+    <div className="mt-16 mb-14">
       <h4 className="text-[30px] bg-[#EE3373] max-sm:text-2xl uppercase font-bold text-center mb-3">
         Support Log
       </h4>
-      {/* <div className="overflow-x-auto xl:w-full mt-4">
-        <table className=" min-w-full bg-red-50 border border-red-200/85 rounded-md shadow">
-          <thead>
-            <tr className="bg-[#EE3373] text-gray-700 uppercase text-xs">
 
-              <th className="px-3 py-4 text-left">#</th>
-              <th className="px-3 py-4 text-left">Topic</th>
-              <th className="px-3 py-4 text-left">Time</th>
-              <th className="px-3 py-4 text-left">Comment</th>
-              <th className="px-3 py-4 text-right"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentLogs?.map((item, index) => (
-              <tr key={index} className="text-gray-600 text-sm border-b">
-                <td className="px-3 py-2 max-sm:text-[10px]">{indexOfFirstLog + index + 1}</td>
-                <td className="px-3 py-2 break-all max-sm:text-[10px]">{item?.xtopic?.slice(0, 20)}</td>
-                <td className="px-3 py-2 max-sm:text-[10px]">
-                  <div className='flex items-center gap-2'>
-                    <span className='max-sm:text-[10px] xl:text-[12px]'>
-                      {new Date(item?.ztime)?.toLocaleTimeString(
-                        'en-US',
-                        {
-                          hour: 'numeric',
-                          minute: 'numeric',
-                          hour12: true
-                        }
-                      )}</span>
-                    <span className='max-sm:text-[10px] xl:text-[12px]'>
-                      {
-                        new Date(item?.ztime).toLocaleDateString()
-                      }
-                    </span>
-                  </div>
-                </td>
-                <td className="px-3 py-2 max-sm:text-[10px]">{item?.xcomment?.slice(0, 20) || '-'}</td>
-                <td className="px-3 py-2">
-                  {
-                    item?.xcomment?.length > 0 ? null : <button onClick={() => {
-                      setCommentInfo(item);
-                      onOpen();
-                    }} className="text-red-700  bg-red-200 hover:bg-red-300 max-sm:px-1 px-2 py-[1px] rounded max-sm:text-[8px] text-[10px] text-nowrap">Give Review</button>
-                  }
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div> */}
-<div className="overflow-hidden rounded-lg shadow-md">
+      <div className="overflow-hidden rounded-lg shadow-md">
         <div className="overflow-hidden rounded-lg shadow-lg">
           <table className="min-w-full divide-y divide-gray-200 bg-white font-hindSliguri ">
             <thead className="bg-[#050506]">
@@ -145,7 +96,7 @@ export const SupportLogs = ({ logs }) => {
       </div>
 
       {/* Pagination Controls */}
-     <div className="flex justify-center space-x-2 mt-6">
+      <div className="flex justify-center space-x-2 mt-6">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -167,14 +118,12 @@ export const SupportLogs = ({ logs }) => {
         </button>
       </div>
 
-      {
-        modalOpen && <Modal isOpen={modalOpen} onClose={onClose} commentInfo={commentInfo} />
-      }
+      {modalOpen && (
+        <Modal isOpen={modalOpen} onClose={onClose} commentInfo={commentInfo} />
+      )}
     </div>
-
   );
 };
-
 
 const Modal = ({ isOpen, onClose, commentInfo }) => {
   const [loading, setLoading] = useState(false);
@@ -183,15 +132,18 @@ const Modal = ({ isOpen, onClose, commentInfo }) => {
     xcomment: "",
   });
   const { showAlert } = useAlert();
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
     try {
-
-      if (!formdata?.xcomment || formdata?.xcomment?.length < 1 || formdata?.xcomment?.trim() === '') {
+      if (
+        !formdata?.xcomment ||
+        formdata?.xcomment?.length < 1 ||
+        formdata?.xcomment?.trim() === ""
+      ) {
         // setError("Write Review First");
         return showAlert("error", "Write Review First");
       }
@@ -200,8 +152,8 @@ const Modal = ({ isOpen, onClose, commentInfo }) => {
       const data = await createSupportReview({
         xcomment: formdata?.xcomment,
         xsl: commentInfo?.xsl,
-        userId: commentInfo?.xstudent
-      })
+        userId: commentInfo?.xstudent,
+      });
 
       if (data?.error) {
         setError(data?.error);
@@ -213,9 +165,7 @@ const Modal = ({ isOpen, onClose, commentInfo }) => {
         xcomment: "",
       });
 
-
       router.refresh();
-
     } catch (error) {
       // setError(error);
     } finally {
@@ -258,13 +208,32 @@ const Modal = ({ isOpen, onClose, commentInfo }) => {
                 <p className="text-lg font-bold text-center py2-3">Review</p>
                 <div className="p-4">
                   <h4 className="text-gray-700 text-center text-sm font-semibold py-2">
-                    Topic: <span className='text-gray-600 font-normal'>{commentInfo?.xtopic}</span>
+                    Topic:{" "}
+                    <span className="text-gray-600 font-normal">
+                      {commentInfo?.xtopic}
+                    </span>
                   </h4>
-                  {error && <p className="text-red-500 text-center text-xs">{error}</p>}
-                  <textarea className='p-2 border w-full' value={formdata?.xcomment} onChange={(e) => setFormdata({ ...formdata, xcomment: e.target.value })} name="" id="" cols={20} rows={5}></textarea>
-                  <div className='mt-3 flex justify-end'>
-                    <button disabled={loading} onClick={handleSubmit} className="text-green-700  bg-green-200 hover:bg-green-300 px-4 py-1 rounded text-[14px]">
-                      {loading ? 'Submitting' : 'Submit'}
+                  {error && (
+                    <p className="text-red-500 text-center text-xs">{error}</p>
+                  )}
+                  <textarea
+                    className="p-2 border w-full"
+                    value={formdata?.xcomment}
+                    onChange={(e) =>
+                      setFormdata({ ...formdata, xcomment: e.target.value })
+                    }
+                    name=""
+                    id=""
+                    cols={20}
+                    rows={5}
+                  ></textarea>
+                  <div className="mt-3 flex justify-end">
+                    <button
+                      disabled={loading}
+                      onClick={handleSubmit}
+                      className="text-green-700  bg-green-200 hover:bg-green-300 px-4 py-1 rounded text-[14px]"
+                    >
+                      {loading ? "Submitting" : "Submit"}
                     </button>
                   </div>
                 </div>
@@ -277,6 +246,4 @@ const Modal = ({ isOpen, onClose, commentInfo }) => {
   );
 };
 
-
-
-SupportLogs.displayName = 'SupportLogs'
+SupportLogs.displayName = "SupportLogs";

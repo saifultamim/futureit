@@ -19,7 +19,7 @@ const ManageNotice = ({ studentEnrollCourses, studentId }) => {
   const toggleExpand = (index) =>
     setExpandedRow(expandedRow === index ? null : index);
 
-   const handleSearch = async (filters) => {
+  const handleSearch = async (filters) => {
     try {
       setNoticeState((prev) => ({
         ...prev,
@@ -29,14 +29,6 @@ const ManageNotice = ({ studentEnrollCourses, studentId }) => {
       }));
 
       setExpandedRow(null);
-
-      // const results = await searchNotice(filters);
-      // setNoticeState((prev) => ({
-      //   ...prev,
-      //   items: results,
-      //   isLoading: false,
-      //   hasSearched: true,
-      // }));
     } catch (error) {
       setNoticeState((prev) => ({
         ...prev,
@@ -49,7 +41,6 @@ const ManageNotice = ({ studentEnrollCourses, studentId }) => {
       }));
     }
   };
-
 
   return (
     <div>

@@ -25,8 +25,10 @@ const MarketPlaceVideoFilter = ({
 
     setIsFetching(true);
     try {
-      const newBatches =[{ id: 1, xbatchname: "xbatchname1" },
-    { id: 2, xbatchname: "xbatchname2" },]
+      const newBatches = [
+        { id: 1, xbatchname: "xbatchname1" },
+        { id: 2, xbatchname: "xbatchname2" },
+      ];
       setBatches(newBatches);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -59,8 +61,8 @@ const MarketPlaceVideoFilter = ({
             onChange={(e) => handleCourseChange(e.target.value)}
           >
             <option value="">-select course-</option>
-            { studentEnrollCourses?.map((course) => (
-              <option key={course.xitemcode} value={course.xitemcode} >
+            {studentEnrollCourses?.map((course) => (
+              <option key={course.xitemcode} value={course.xitemcode}>
                 {course?.xdesc}
               </option>
             ))}

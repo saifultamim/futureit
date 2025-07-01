@@ -9,18 +9,13 @@ import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { Icons } from "@/components/Icon";
 import { dateFormat } from "@/utils/dateTimeUtils";
 
-
-const ManageMarketPlaceVideo = ({
-  studentEnrollCourses,
-  studentId,
-}) => {
-  const [marketPlaceVideoState, setMarketPlaceVideoState] =
-    useState({
-      items: [],
-      isLoading: false,
-      hasSearched: false,
-      error: null,
-    });
+const ManageMarketPlaceVideo = ({ studentEnrollCourses, studentId }) => {
+  const [marketPlaceVideoState, setMarketPlaceVideoState] = useState({
+    items: [],
+    isLoading: false,
+    hasSearched: false,
+    error: null,
+  });
 
   const [loadingVideos, setLoadingVideos] = useState({});
 
@@ -35,32 +30,10 @@ const ManageMarketPlaceVideo = ({
     try {
       setMarketPlaceVideoState((prev) => ({
         ...prev,
-        items: studentEnrollCourses ,
+        items: studentEnrollCourses,
         isLoading: true,
         error: null,
       }));
-
-      // const results: MarketplaceVideoItem[] = await searchMarketPlaceVideo(
-      //   filters
-      // );
-
-      // Initialize loading state for new videos
-      // const newLoadingStates = results.reduce(
-      //   (acc: { [key: string]: boolean }, item) => ({
-      //     ...acc,
-      //     [item.xsl as number]: true,
-      //   }),
-      //   {}
-      // );
-
-      // setLoadingVideos(newLoadingStates);
-
-      // setMarketPlaceVideoState((prev) => ({
-      //   ...prev,
-      //   items: results,
-      //   isLoading: false,
-      //   hasSearched: true,
-      // }));
     } catch (error) {
       setMarketPlaceVideoState((prev) => ({
         ...prev,
@@ -73,7 +46,6 @@ const ManageMarketPlaceVideo = ({
       }));
     }
   };
-
 
   return (
     <div>

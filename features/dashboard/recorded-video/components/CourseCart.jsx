@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import { ROUTE_CLAIM_CERTIFICATE } from "@/app/constant";
 import { FiArrowRight } from "react-icons/fi";
 
 const CourseCart = ({ course }) => {

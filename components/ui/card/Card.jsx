@@ -1,7 +1,6 @@
 import React from "react";
 import { cn } from "@/utils/tailwind-utils";
 
-
 const Card = ({ children, className }) => {
   return (
     <div

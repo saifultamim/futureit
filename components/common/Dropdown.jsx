@@ -1,9 +1,5 @@
 "use client";
-
 import { ReactNode, useEffect, useRef } from "react";
-
-
-
 export const Dropdown = ({
   isOpen,
   onClose,
@@ -16,10 +12,7 @@ export const Dropdown = ({
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         onClose();
       }
     };

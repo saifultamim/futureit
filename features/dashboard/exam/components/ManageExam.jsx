@@ -1,26 +1,28 @@
-'use client'
+"use client";
 import React from "react";
 import ExamFilter from "./ExamFilter";
 
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { ErrorAlert } from "@/components/ui/ErrorAlert";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/Table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/Table";
 import { useExamState } from "@/hooks/useExamState";
 import { ExamType, TAB_CONFIG } from "@/utils/data/constant";
 import ExamStatus from "./ExamStatus";
 import { dateFormat } from "@/utils/dateTimeUtils";
 import ExamTiming from "./ExamTiming";
 
-
 const ManageExam = () => {
-    const { examState, handleSearch } = useExamState();
-  const { isLoading, error, hasSearched, } = examState;
-  // const exam = [
-  //   {xexammstsl:"1001",xdate:"2025-07-12",xset:"B",xstarttime:"8:00",xendtime:"10:00"},
-  // {xexammstsl:"1002",xdate:"2025-07-12",xset:"B",xstarttime:"8:00",xendtime:"10:00"}
-  // ]
-  console.log('+++++ examstate ++++++++++ ',examState)
+  const { examState, handleSearch } = useExamState();
+  const { isLoading, error, hasSearched } = examState;
+
   return (
     <div>
       <div className="max-w-4xl mx-auto mb-10">
@@ -96,7 +98,7 @@ const ExamTable = ({ examItems }) => (
     </TableHeader>
     <TableBody>
       {examItems.map((exam, index) => (
-        <ExamTableRow key={exam.xexammstsl} exam={exam} index={index} />   
+        <ExamTableRow key={exam.xexammstsl} exam={exam} index={index} />
       ))}
     </TableBody>
   </Table>
@@ -106,7 +108,7 @@ ExamTable.displayName = "ExamTable";
 const ExamTableRow = ({ exam, index }) => (
   <TableRow className="hover:bg-gray-50">
     <TableCell>{index + 1}</TableCell>
-    <TableCell>{exam?.xdate && dateFormat(exam.xdate)}</TableCell>     
+    <TableCell>{exam?.xdate && dateFormat(exam.xdate)}</TableCell>
     <TableCell>{exam?.xset}</TableCell>
     <TableCell>
       <ExamTiming startTime={exam?.xstarttime} endTime={exam?.xendtime} />

@@ -240,12 +240,6 @@ const QuizzContent = ({ quiz, isLastFreeVideoQuiz, onQuizComplete }) => {
           >
             Continue Learning
           </button>
-          {/* <Link
-            href="/stuportal/claim-certificate"
-            className="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg shadow-lg"
-          >
-            Download Certificate
-          </Link> */}
         </div>
       </div>
     </div>

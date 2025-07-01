@@ -2,13 +2,9 @@
 
 import { createContext, useContext, ReactNode } from "react";
 
-
 const StudentContext = createContext(undefined);
 
-export function StudentProvider({
-  children,
-  initialData,
-}) {
+export function StudentProvider({ children, initialData }) {
   return (
     <StudentContext.Provider
       value={{

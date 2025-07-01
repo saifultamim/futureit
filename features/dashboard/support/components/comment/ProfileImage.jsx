@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export  const ProfileImage = ({ comment }) => {
+export const ProfileImage = ({ comment }) => {
   const [imgSrc, setImgSrc] = useState(
     `${process.env.NEXT_PUBLIC_FILE_PATH_PROFILE}/avatar.jpg`
   ); // Default to fallback image
@@ -13,7 +13,7 @@ export  const ProfileImage = ({ comment }) => {
   const xreply_by = comment?.xreply_by || ""; // Handle potential null/undefined
   let jpgPath = null;
 
-  // Determine the correct image path based on user role 
+  // Determine the correct image path based on user role
   if (xreplyId) {
     if (xreply_by === "Teacher") {
       jpgPath = `${process.env.NEXT_PUBLIC_FILE_PATH_PROFILE}/${SUPPORT_POST_TEACHER}-${xreplyId}.jpg`;
@@ -62,4 +62,4 @@ export  const ProfileImage = ({ comment }) => {
   );
 };
 
- ProfileImage.displayName = "ProfileImage";
+ProfileImage.displayName = "ProfileImage";

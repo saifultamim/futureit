@@ -153,7 +153,7 @@ export const dashboardMenuItems = [
     id: "courses",
     label: "Courses",
     icon: <Icons.camera size={20} />,
-    href: "/dashboard/recorded-video"
+    href: "/dashboard/recorded-video",
   },
   {
     id: "class",
@@ -176,13 +176,13 @@ export const dashboardMenuItems = [
         id: "manageexams",
         label: "Manage Exam",
         href: "/dashboard/exam",
-        icon: <Icons.setting size={20} />, 
+        icon: <Icons.setting size={20} />,
       },
       {
         id: "certificate",
         label: "Download Certificate",
         href: "/dashboard/certificate",
-        icon: <Icons.download size={20} />, 
+        icon: <Icons.download size={20} />,
       },
     ],
   },
@@ -195,41 +195,41 @@ export const dashboardMenuItems = [
         id: "notice",
         label: "Notices",
         href: "/dashboard/notice",
-         icon: <Icons.notice size={20} />,
+        icon: <Icons.notice size={20} />,
       },
-          {
+      {
         id: "faq",
         label: "Ask A Question",
         href: "/dashboard/faq",
-         icon: <Icons.question size={20} />,
+        icon: <Icons.question size={20} />,
       },
       {
         id: "material",
         label: "View Study Material",
         href: "/dashboard/study-material",
-       icon: <Icons.file size={20} />,
+        icon: <Icons.file size={20} />,
       },
- 
-          {
+
+      {
         id: "supportpost",
         label: "Support Post",
         href: "/dashboard/marketplace-video",
-         icon: <Icons.hash size={20} />,
+        icon: <Icons.hash size={20} />,
       },
     ],
   },
-   {
+  {
     id: "blogs",
     label: "Blogs",
     icon: <Icons.eye size={20} />,
-    children:[
-       {
-    id: "manageblog",
-    label: "Manage Blog",
-    icon: <Icons.menu size={20} />,
-    href: "/dashboard/blog",
-  },
-    ]
+    children: [
+      {
+        id: "manageblog",
+        label: "Manage Blog",
+        icon: <Icons.menu size={20} />,
+        href: "/dashboard/blog",
+      },
+    ],
   },
   {
     id: "livesupport",
@@ -245,16 +245,15 @@ export const SUPPORT_POST_ADMIN = "adm";
 
 export const POST_STATUS = {
   SOLVED: "Solved",
-  APPROVED: "Approved",
+  // APPROVED: "Approved",
   PENDING: "Pending",
   MY_POST: "My Post",
 };
 
 export const ExamType = {
-  REGULAR : "Regular",
-  REEXAM : "Reexam",
-}
-
+  REGULAR: "Regular",
+  REEXAM: "Reexam",
+};
 
 export const TAB_CONFIG = [
   {
@@ -267,7 +266,7 @@ export const TAB_CONFIG = [
     label: "Re-Exams",
     emptyMessage: "No re-exams scheduled currently.",
   },
-] ;
+];
 
 export const BLOG_CATEGORY_OPTIONS = [
   { value: "", label: "--select--" },
@@ -281,3 +280,7 @@ export const BLOG_CATEGORY_OPTIONS = [
   { value: "Skill Development", label: "Skill Development" },
 ];
 
+export const ExamViewType = {
+  START: "start",
+  RESULT: "result",
+};

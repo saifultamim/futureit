@@ -1,9 +1,6 @@
 "use client";
 import { Icons } from "@/components/Icon";
-// import { useStudent } from "@/contexts/StudentProvider";
 import { useState, useCallback, useTransition } from "react";
-
-
 
 const ExamFilter = ({ onSearch }) => {
   const [isPending, startTransition] = useTransition();
@@ -14,11 +11,10 @@ const ExamFilter = ({ onSearch }) => {
   const [lessons, setLessons] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
-  //  const { enrolledCourses } = useStudent();
-   const enrolledCourses = [
-    {xitemcode: "1001",xdesc: "xdesc1"},
-    {xitemcode: "1002",xdesc: "xdesc2"},
-   ]
+  const enrolledCourses = [
+    { xitemcode: "1001", xdesc: "xdesc1" },
+    { xitemcode: "1002", xdesc: "xdesc2" },
+  ];
 
   const handleCourseChange = useCallback(async (courseId) => {
     setSelectedCourse(courseId);
@@ -30,11 +26,16 @@ const ExamFilter = ({ onSearch }) => {
       return;
     }
 
-    // setIsFetching(true);
     try {
-      const batches  = [{id:1,xbatchname:'xbatchname1'},{id:2,xbatchname:'xbatchname2'}];
-      const lessons = [{xlesson:1,xdesc:'xdesc1'},{xlesson:2,xdesc:'xdesc2'}];
-      console.log("+++++++ batch",batches,lessons)
+      const batches = [
+        { id: 1, xbatchname: "xbatchname1" },
+        { id: 2, xbatchname: "xbatchname2" },
+      ];
+      const lessons = [
+        { xlesson: 1, xdesc: "xdesc1" },
+        { xlesson: 2, xdesc: "xdesc2" },
+      ];
+      console.log("+++++++ batch", batches, lessons);
       setBatches(batches);
       setLessons(lessons);
     } catch (error) {
@@ -49,13 +50,12 @@ const ExamFilter = ({ onSearch }) => {
 
     startTransition(() => {
       onSearch({
-         courseId: selectedCourse,
+        courseId: selectedCourse,
         batchId: selectedBatch,
         lessonId: selectedLesson,
       });
     });
   }, [selectedCourse, selectedBatch, selectedLesson, onSearch]);
-
 
   return (
     <form>
@@ -120,8 +120,7 @@ const ExamFilter = ({ onSearch }) => {
               <option value="">-select-</option>
               {lessons.map((lesson) => (
                 <option key={lesson.xlesson} value={lesson.xlesson}>
-                  {/* {parse(lesson.xdesc)} */}
-                   {lesson.xdesc}
+                  {lesson.xdesc}
                 </option>
               ))}
             </select>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Icons } from "@/components/Icon";
 import Card from "@/components/ui/card/Card";
-
 import CardHead from "@/components/ui/card/CardHead";
 import CardTitle from "@/components/ui/card/CardTitle";
 import CardDescription from "@/components/ui/card/CardDescription";

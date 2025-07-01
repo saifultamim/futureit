@@ -7,8 +7,11 @@ const HomeworkModal = ({
   errors,
   handleSubmit,
 }) => (
-
-  <DashboardModal isOpen={isModalOpen} onClose={closeModal} title="Upload Homework">
+  <DashboardModal
+    isOpen={isModalOpen}
+    onClose={closeModal}
+    title="Upload Homework"
+  >
     {errors?.general && (
       <p className="text-sm text-red-600 bg-red-50 p-2 rounded">
         {errors.general}

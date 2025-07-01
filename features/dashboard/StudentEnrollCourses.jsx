@@ -1,5 +1,3 @@
-
-
 const ActiveCourseList = ({ courses }) => {
   return (
     <div className="overflow-x-auto">

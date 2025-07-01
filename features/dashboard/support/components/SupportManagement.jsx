@@ -6,18 +6,20 @@ import { SupportLogs } from "./SupportLogs";
 import { Timeline } from "./Timeline";
 import { Posts } from "./Posts";
 
-
-
-export const SupportManagement =  ({links,logs,categories}) => {
-    const [isAction,setIsAction] = useState(true);
-    return (
-        <main>
-            <StartSupport getLinks={links} />
-            <SupportLogs logs={logs} /> 
-            <Timeline setIsAction={setIsAction} isAction={isAction} categories={categories} />
-            <Posts setIsAction={setIsAction} isAction={isAction} /> 
-        </main>
-    );
+export const SupportManagement = ({ links, logs, categories }) => {
+  const [isAction, setIsAction] = useState(true);
+  return (
+    <main>
+      <StartSupport getLinks={links} />
+      <SupportLogs logs={logs} />
+      <Timeline
+        setIsAction={setIsAction}
+        isAction={isAction}
+        categories={categories}
+      />
+      <Posts setIsAction={setIsAction} isAction={isAction} />
+    </main>
+  );
 };
 
 SupportManagement.displayName = "SupportManagement";

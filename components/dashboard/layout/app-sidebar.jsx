@@ -1,10 +1,8 @@
 "use client";
-
-// import Logo from "@/public/images/logo.png";
 import { useSidebar } from "@/contexts/SidebarContext";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
- import { Icons } from "@/components/Icon";
+import { Icons } from "@/components/Icon";
 import { dashboardMenuItems } from "@/utils/data/constant";
 import { MenuItem } from "@/components/MenuItem";
 import Image from "next/image";
@@ -12,7 +10,6 @@ import Image from "next/image";
 export const AppSidebar = () => {
   const [openMenus, setOpenMenus] = useState(new Set());
   const { isSidebarOpen, toggleSidebar } = useSidebar();
-
   const pathname = usePathname();
   const toggleMenu = (menuId, parentId) => {
     setOpenMenus((prev) => {
@@ -44,9 +41,7 @@ export const AppSidebar = () => {
         aria-label="Sidebar"
       >
         <div className="flex items-center justify-between px-4 py-3.5 ">
-          {/* Logo Area */}
           <div className="flex-1 flex justify-center ">
-            {/* <Logo className="text-xl" /> */}
             <Image
               src="/images/logo.png"
               alt="logo"
@@ -62,11 +57,9 @@ export const AppSidebar = () => {
             aria-label="Toggle Sidebar"
           >
             {isSidebarOpen ? (
-                 <Icons.rightArrow size={24} className='text-gray-800'/>
-
+              <Icons.rightArrow size={24} className="text-gray-800" />
             ) : (
-                 <Icons.leftArrow size={24} className='text-gray-800' />
-            
+              <Icons.leftArrow size={24} className="text-gray-800" />
             )}
           </button>
         </div>

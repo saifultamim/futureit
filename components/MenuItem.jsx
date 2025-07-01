@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/utils/tailwind-utils";
 import { Icons } from "./Icon";
 
-
-
 export const MenuItem = ({
   item,
   isActive,

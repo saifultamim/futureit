@@ -1,10 +1,8 @@
-"use client"
-
+"use client";
 
 import { SUPPORT_POST_STUDENT } from "@/utils/data/constant";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
 
 export const ProfileImagePost = ({ question }) => {
   const [imgSrc, setImgSrc] = useState(
@@ -50,6 +48,5 @@ export const ProfileImagePost = ({ question }) => {
     />
   );
 };
-
 
 ProfileImagePost.displayName = "ProfileImagePost";

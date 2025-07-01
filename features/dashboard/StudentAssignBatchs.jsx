@@ -1,4 +1,3 @@
-
 const AssignBatchList = ({ assignBatches }) => {
   return (
     <table className="w-full table-auto">

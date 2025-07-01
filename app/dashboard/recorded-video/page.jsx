@@ -15,10 +15,10 @@ export default function RecordedVideo({ courses }) {
             <CourseAlert />
           </div>
           <div
-            className="flex-1 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"
+            className="flex-1 bg-[#FFD0CE] border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"
             role="alert"
           >
-            <strong className="font-bold text-lg">No course found</strong>
+            <strong className="font-bold text-base">No course found</strong>
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import { cn } from "@/utils/tailwind-utils";
-
+import { FiAlertCircle } from "react-icons/fi";
 
 export const ErrorAlert = ({
-  icon: Icon = AlertCircle,
+  icon: Icon = FiAlertCircle,
   title = "Error Occurred",
   description = "Something went wrong, please try again.",
   className,

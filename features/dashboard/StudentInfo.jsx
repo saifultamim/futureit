@@ -1,7 +1,7 @@
 // import { Doughnut } from "react-chartjs-2";
 
 import { useSession } from "next-auth/react";
-export default function StudentInfo({ user }: any) {
+export default function StudentInfo({ user }) {
   // const { data: session } = useSession();
   //   const { student, stats } = data;
   //   const { id, name, overallProgress, moduleInfo } = student;

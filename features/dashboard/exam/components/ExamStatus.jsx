@@ -43,7 +43,7 @@ function ExamStatus({ examData }) {
   if (typeof hasResult === "undefined" && hasResult !== null && hasResult < 3) {
     return (
       <Link
-        href={`/student/exam/[id]`}
+        href={`/dashboard/exam/[id]`}
         as={`/student/exam/${examData.xexammstsl}/batch/${examData.xbatch}`}
         target="__blank"
         className="bg-blue-100 text-blue-500 px-3 py-2 rounded-full text-xs font-medium"
@@ -54,7 +54,7 @@ function ExamStatus({ examData }) {
   } else if (hasResult === 1) {
     return (
       <Link
-        href={"/student/exam/[id]"}
+        href={"/dashboard/exam/[id]"}
         as={`/student/exam/${examData.xexammstsl}/result`}
         className="bg-green-100 text-green-500 px-3 py-2 rounded-full text-xs font-medium"
         target="_blank"
@@ -76,8 +76,8 @@ function ExamStatus({ examData }) {
   } else if (currentTime.isBetween(examStartTime, examEndTime)) {
     return (
       <Link
-        href={`/student/exam/[id]`}
-        as={`/student/exam/${examData.xexammstsl}`}
+        href={`/dashboard/exam/[id]`}
+        as={`/dashboard/exam/${examData.xexammstsl}`}
         target="__blank"
         className="bg-blue-100 text-blue-500 px-3 py-2 rounded-full text-xs font-medium"
       >

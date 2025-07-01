@@ -3,7 +3,6 @@
 import { dateFormat } from "@/utils/dateTimeUtils";
 import { useState } from "react";
 
-
 const ExpandableNoticeRow = ({ notice }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 

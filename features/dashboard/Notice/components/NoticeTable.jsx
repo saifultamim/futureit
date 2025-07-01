@@ -1,11 +1,14 @@
 import React from "react";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/Table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/Table";
 
-const NoticeTable = ({
-  noticeItems,
-  expandedRow,
-  toggleExpand,
-}) => (
+const NoticeTable = ({ noticeItems, expandedRow, toggleExpand }) => (
   <Table className="table-auto">
     <TableHeader>
       <TableRow className="bg-gray-50 border-b">

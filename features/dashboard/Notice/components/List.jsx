@@ -1,7 +1,5 @@
 import ExpandableNoticeRow from "./ExpandableRow";
 
-
-
 const NoticeList = ({ notices }) => {
   return (
     <table className="w-full table-auto">

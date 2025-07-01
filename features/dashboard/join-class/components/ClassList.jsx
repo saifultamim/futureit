@@ -1,7 +1,5 @@
-
 import { dateFormat, formatTimeToUTC } from "@/utils/dateTimeUtils";
 
-// import { use } from "react";
 import { EmptyList } from "@/components/ui/EmptyList";
 import {
   Table,
@@ -13,24 +11,17 @@ import {
 } from "@/components/ui/Table";
 import JoinButton from "./JoinButton";
 
-// interface ClassPromotionsProps {
-//   classesPromise: Promise<any[]>;
-//   timezone: string;
-// }
 import { Suspense } from "react";
 const ClassLists = ({ classes }) => {
   if (classes.length === 0) {
     return (
-    <div>
-         <Suspense
-                    fallback={
-                      <div className="text-red-200">Loading Classess...</div>
-                    }
-                  >
-                    <EmptyList description="No classes found according to recent filter" />
-                  </Suspense>
-    </div>
-      
+      <div>
+        <Suspense
+          fallback={<div className="text-red-200">Loading Classess...</div>}
+        >
+          <EmptyList description="No classes found according to recent filter" />
+        </Suspense>
+      </div>
     );
   }
 
@@ -67,9 +58,7 @@ const ClassLists = ({ classes }) => {
                 </TableCell>
                 <TableCell>{classItem?.xmeetingpass}</TableCell>
                 <TableCell>
-                 
-                    <JoinButton classItem={classItem} />
-                
+                  <JoinButton classItem={classItem} />
                 </TableCell>
               </TableRow>
             );

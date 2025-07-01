@@ -1,11 +1,7 @@
 import React from "react";
 import { TabsContext } from "./tabs-context";
 
-export const TabsTrigger = ({
-  value,
-  children,
-  className = "",
-}) => {
+export const TabsTrigger = ({ value, children, className = "" }) => {
   const { value: selectedValue, setValue } = React.useContext(TabsContext);
   const isSelected = value === selectedValue;
 

@@ -59,16 +59,6 @@ const Navbar = () => {
 
             <div className="block md:hidden lg:hidden w-full">
               <div className="flex items-center gap-4">
-                {/* <Link
-                  href="/course"
-                  className="font-siliguri text-[#1F1E1E] md:text-white border border-secondary
-                  bg-transparent md:bg-secondary rounded-md font-bold text-lg flex items-center justify-center  py-3 px-4"
-                >
-                  <span className="uppercase leading-5 ">
-                    {NAVBAR_PARAMETER?.browseCourse}
-                  </span>
-                  <FaChevronDown className="ml-3 text-sm" />
-                </Link> */}
                 <Link
                   href="/"
                   className="block md:hidden w-full max-w-[160px] logo"

@@ -12,20 +12,13 @@ import Card from "@/components/ui/card/Card";
 import CardContent from "@/components/ui/card/CardContent";
 import { Icons } from "@/components/Icon";
 
-
-
-
-const ManageStudyMaterial = ({
-  studentEnrollCourses,
-  studentId,
-}) => {
-  const [studyMaterialState, setStudyMaterialState] =
-    useState({
-      items: [],
-      isLoading: false,
-      hasSearched: false,
-      error: null,
-    });
+const ManageStudyMaterial = ({ studentEnrollCourses, studentId }) => {
+  const [studyMaterialState, setStudyMaterialState] = useState({
+    items: [],
+    isLoading: false,
+    hasSearched: false,
+    error: null,
+  });
 
   const [loadingVideos, setLoadingVideos] = useState({});
 
@@ -36,10 +29,7 @@ const ManageStudyMaterial = ({
     }));
   };
 
-  // const handleSearch = async (filters) => {
-  
-  // };
-    const handleSearch = async (filters) => {
+  const handleSearch = async (filters) => {
     try {
       setStudyMaterialState((prev) => ({
         ...prev,
@@ -47,26 +37,6 @@ const ManageStudyMaterial = ({
         isLoading: true,
         error: null,
       }));
-
-
-
-      // Initialize loading state for new videos
-      // const newLoadingStates = results.reduce(
-      //   (acc: { [key: string]: boolean }, item) => ({
-      //     ...acc,
-      //     [item.xsl as number]: true,
-      //   }),
-      //   {}
-      // );
-
-      // setLoadingVideos(newLoadingStates);
-
-      // setStudyMaterialState((prev) => ({
-      //   ...prev,
-      //   items: results,
-      //   isLoading: false,
-      //   hasSearched: true,
-      // }));
     } catch (error) {
       setStudyMaterialState((prev) => ({
         ...prev,
