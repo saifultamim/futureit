@@ -3,15 +3,27 @@ import { Icons } from "@/components/Icon";
 import React, { useState } from "react";
 import { UserProfileDropdown } from "./components/UserProfileDropdown";
 import { useSidebar } from "@/contexts/SidebarContext";
+import logo from '@/public/images/logo.png'
+import Image from "next/image";
 
 export const NavigationButton = ({ onClick, ariaControls, children }) => (
   <button
     onClick={onClick}
     aria-controls={ariaControls}
     type="button"
-    className="inline-flex items-center p-2 text-sm text-white rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-secondary dark:focus:ring-secondary"
+    className="inline-flex items-center p-2 text-sm text-white rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white border border-secondary "
   >
-    <p>EduFuture</p>
+    {/* <p>EduFuturesss</p> */}
+    {/* <Image src={logo} alt='logo' /> */}
+        <div className="flex-1 flex justify-center ">
+                <Image
+                  src="/images/logo.png"
+                  alt="logo"
+                  width={1000}
+                  height={100}
+                  className="max-w-28"
+                />
+              </div>
     {children}
   </button>
 );
@@ -45,7 +57,7 @@ const AppHeader = () => {
               ariaControls="logo-sidebar"
             >
               <span className="sr-only">Toggle sidebar</span>
-              <Icons.leftArrow size={16} className="text-white" />
+              <Icons.leftArrow size={16} className="text-black" />
             </NavigationButton>
           </div>
           <div className="flex items-baseline gap-8 leading-normal">

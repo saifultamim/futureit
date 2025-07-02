@@ -2,13 +2,15 @@
 
 import React, { useState } from "react";
 
-import { ProfileImage } from "./profileImage";
+// import { ProfileImage } from "./profileImage";
 
-import { CommentForm } from "./commentForm";
+// import { CommentForm } from "./commentForm";
 
 import { POST_STATUS } from "@/utils/data/constant";
 import { Icons } from "@/components/Icon";
 import { timeFormat } from "@/utils/dateTimeUtils";
+import { CommentForm } from "./CommentForm";
+import { ProfileImage } from "./ProfileImage";
 
 export const Comment = ({
   post,

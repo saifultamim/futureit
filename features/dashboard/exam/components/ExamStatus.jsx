@@ -79,14 +79,14 @@ function ExamStatus({ examData }) {
         href={`/dashboard/exam/[id]`}
         as={`/dashboard/exam/${examData.xexammstsl}`}
         target="__blank"
-        className="bg-blue-100 text-blue-500 px-3 py-2 rounded-full text-xs font-medium"
+        className="bg-blue-100 text-blue-500 lg:px-3 md:px-2 px-2 py-2 rounded-full text-xs font-medium"
       >
         Start Exam
       </Link>
     );
   } else {
     return (
-      <strong className="bg-orange-100 text-orange-500 px-3 py-2 rounded-full text-xs font-medium">
+      <strong className="bg-orange-100 text-orange-500 md:px-3 px-3 py-2 rounded-full text-xs font-medium">
         Upcoming
       </strong>
     );

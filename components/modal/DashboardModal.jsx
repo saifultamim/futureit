@@ -9,6 +9,7 @@ const DashboardModal = ({
   children,
   isFooter = true,
   size = "md",
+  className=''
 }) => {
   if (!isOpen) return null;
 
@@ -39,7 +40,7 @@ const DashboardModal = ({
           </h3>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 focus:outline-none"
+            className="text-gray-400 hover:text-gray-600 focus:outline-none group"
           >
             {/* &times; */}{" "}
             <Icons.closeOutline className="text-4xl text-red-400 hover:text-red-500 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:rotate-180" />

@@ -98,7 +98,7 @@ const MarketPlaceVideoFilter = ({
       </div>
 
       <button
-        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
+        className="bg-secondary text-white px-4 py-2 rounded-md  disabled:opacity-50"
         onClick={handleSearch}
         disabled={!selectedCourse || !selectedBatch || isPending}
       >

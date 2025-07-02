@@ -171,7 +171,7 @@ export default function Blog() {
           {/* Create blog button */}
           <div className="form-group text-right mb-5">
             <button
-              className="border py-2 rounded-lg px-2 bg-[#6366F1] text-white font-semibold"
+              className="border py-2 rounded-lg px-2 bg-secondary text-white font-semibold"
               onClick={() => setIsModalOpen(true)}
             >
               Create Blog
@@ -380,7 +380,7 @@ export default function Blog() {
                 </select>
               </div>
               <div className="form-group flex-none">
-                <button className="border py-2 rounded-lg px-4 bg-[#6366F1] text-white font-semibold">
+                <button className="border py-2 rounded-lg px-4 bg-secondary text-white font-semibold">
                   Search
                 </button>
               </div>

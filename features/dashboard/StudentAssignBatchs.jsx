@@ -1,6 +1,7 @@
 const AssignBatchList = ({ assignBatches }) => {
   return (
-    <table className="w-full table-auto">
+   <div className='overflow-x-auto'>
+     <table className="w-full table-auto">
       <thead>
         <tr className="bg-gray-50 border-b">
           <th className="text-left px-6 py-3 text-sm font-semibold text-gray-600 uppercase">
@@ -27,6 +28,7 @@ const AssignBatchList = ({ assignBatches }) => {
         ))}
       </tbody>
     </table>
+   </div>
   );
 };
 

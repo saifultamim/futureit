@@ -107,13 +107,13 @@ const FaqModal = ({ modalProps }) => {
 
                 <div className="flex justify-end">
                   <button
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
+                    className="bg-[#f36093] hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
                     type="submit"
                   >
                     {isEditMode ? "Update" : "Submit"}
                   </button>
                   <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-[#f36093] hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="button"
                     onClick={onClose}
                   >
@@ -198,7 +198,7 @@ const courseWiseFAQ = (e) => {
           {/* Create FAQ button */}
           <div className="form-group text-right mb-5">
             <button
-              className="border py-2 rounded-lg px-2 bg-[#6366F1] text-white font-semibold"
+              className="border py-2 rounded-lg px-2 bg-secondary text-white font-semibold"
               onClick={() => setModal(true)}
             >
               Create Question
@@ -228,7 +228,7 @@ const courseWiseFAQ = (e) => {
                 </select>
               </div>
               <div className="form-group flex-none">
-                <button className="border py-2 rounded-lg px-4 bg-[#6366F1] text-white font-semibold">
+                <button className="border py-2 rounded-lg px-4 bg-secondary text-white font-semibold">
                   Search
                 </button>
               </div>
@@ -272,7 +272,7 @@ const courseWiseFAQ = (e) => {
                         <td className="border p-2">{supportDtl.xanswer}</td>
                         <td className="border p-2">
                           <button
-                            className="border-2 border-blue-500 py-1 px-2 text-gray-600 font-semibold rounded-lg"
+                            className="border-2 border-secondary py-1 px-2 text-gray-600 font-semibold rounded-lg"
                             onClick={() =>
                               setModal(true, true, supportDtl, "update")
                             }

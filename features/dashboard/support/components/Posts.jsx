@@ -2,14 +2,17 @@
 
 import React, { useEffect, useState, useCallback, useRef } from "react";
 
-import { Filter } from "./filter";
+// import { Filter } from "./filter";
 
-import { ProfileImagePost } from "./profileImagePost";
+// import { ProfileImagePost } from "./profileImagePost";
 
 import { FaComment } from "react-icons/fa";
-import { Comment } from "./comment/comment";
+// import { Comment } from "./comment/comment";
 import { Icons } from "@/components/Icon";
 import { POST_STATUS } from "@/utils/data/constant";
+import { Filter } from "./Filter";
+import { ProfileImagePost } from "./ProfileImagePost";
+import { Comment } from "./comment/Comment";
 
 export const Posts = ({ setIsAction, isAction }) => {
   const session = { data: { user: { id: 1 } } };

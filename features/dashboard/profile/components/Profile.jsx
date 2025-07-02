@@ -126,14 +126,14 @@ export default function Profile({ session, student }) {
             </div>
             {/* Change Avatar Section */}
             <div className="my-8">
-              <h4 className="text-xl font-medium tracking-tight text-[rgb(80,115,220)]">
+              <h4 className="text-xl font-medium tracking-tight text-secondary">
                 Change Avatar
               </h4>
               <div className="bg-white max-sm:max-w-md w-full mt-4">
                 {/* Image Upload Section */}
                 <div className="w-full flex flex-col items-center justify-center">
                   <div
-                    className={`relative w-48 h-48 bg-[#3B82F6] rounded-full border-4 border-gray-300 flex items-center justify-center cursor-pointer shadow-lg ${
+                    className={`relative w-48 h-48 bg-secondary rounded-full border-4 border-gray-300 flex items-center justify-center cursor-pointer shadow-lg ${
                       imagePreview ? "border-gray-500" : ""
                     }`}
                     onClick={() => {
@@ -178,7 +178,7 @@ export default function Profile({ session, student }) {
                     <button
                       onClick={uploadImage}
                       disabled={uploading}
-                      className={`w-full lg:w-auto bg-[#3B82F6] text-white text-sm px-6 py-2 hover:bg-blue-800 rounded-lg transition-all duration-300 ${
+                      className={`w-full lg:w-auto bg-[#f36093] text-white text-sm px-6 py-2 hover:bg-secondary rounded-lg transition-all duration-300 ${
                         uploading ? "opacity-50 cursor-not-allowed" : ""
                       }`}
                     >
@@ -284,7 +284,7 @@ export default function Profile({ session, student }) {
               </div>
               <button
                 type="submit"
-                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full bg-[#f36093] hover:bg-secondary text-white font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 Update Password
               </button>

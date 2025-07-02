@@ -2,7 +2,8 @@ import ExpandableNoticeRow from "./ExpandableRow";
 
 const NoticeList = ({ notices }) => {
   return (
-    <table className="w-full table-auto">
+ <div className='lg:overflow-hidden md:overflow-x-auto'>
+     <table className="w-full table-auto">
       <thead>
         <tr className="bg-gray-50 border-b">
           <th className="text-left px-6 py-3 text-sm font-semibold text-gray-600 uppercase">
@@ -25,6 +26,7 @@ const NoticeList = ({ notices }) => {
         ))}
       </tbody>
     </table>
+ </div>
   );
 };
 
